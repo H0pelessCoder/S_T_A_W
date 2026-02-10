@@ -25,6 +25,7 @@ script = ExtResource("1_0fbet")
 position = Vector2(-2, -4)
 
 [node name="MainMenu" type="Control" parent="." unique_id=962578855]
+visible = false
 layout_mode = 1
 anchors_preset = 0
 offset_left = -581.0
@@ -88,6 +89,7 @@ script = ExtResource("3_kbped")
 metadata/LastOpen = ""
 
 [node name="VolumeBar" type="Control" parent="Settings" unique_id=1323716124]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -130,7 +132,49 @@ offset_bottom = 75.0
 text = "X"
 script = ExtResource("4_ee4bf")
 
+[node name="NewsMenu" type="Control" parent="." unique_id=2121891766]
+anchors_preset = 0
+offset_left = -581.0
+offset_top = -322.0
+offset_right = 583.0
+offset_bottom = 319.0
+
+[node name="NewsHeader" type="RichTextLabel" parent="NewsMenu" unique_id=367163225]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 143.0
+offset_right = 686.0
+offset_bottom = 240.0
+text = "					PNN
+PAXTORIA NEWS NETWORK"
+
+[node name="MinorEventTextA" type="RichTextLabel" parent="NewsMenu" unique_id=1921124857]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 319.0
+offset_right = 495.0
+offset_bottom = 416.0
+text = "Something A"
+
+[node name="MinorEventTextB" type="RichTextLabel" parent="NewsMenu" unique_id=1231000588]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 316.0
+offset_right = 964.0
+offset_bottom = 413.0
+text = "Something B"
+
+[node name="SettingsOpener" type="Button" parent="NewsMenu" unique_id=1692128919]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 434.0
+offset_right = 775.0
+offset_bottom = 528.0
+text = "Settings"
+script = ExtResource("2_62e2m")
+
 [connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/SettingsOpener" to="MainMenu/SettingsOpener" method="_on_pressed"]
 [connection signal="value_changed" from="Settings/VolumeBar/VolumeSlider" to="Settings/VolumeBar" method="_on_h_scroll_bar_value_changed"]
 [connection signal="pressed" from="Settings/ExitSettings" to="Settings/ExitSettings" method="_on_pressed"]
+[connection signal="pressed" from="NewsMenu/SettingsOpener" to="NewsMenu/SettingsOpener" method="_on_pressed"]
