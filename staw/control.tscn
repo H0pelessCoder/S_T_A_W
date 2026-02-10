@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://dymxvad1jkhfp"]
+
+[ext_resource type="Script" uid="uid://g8n6s1ggvuwy" path="res://control.gd" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://dca4vvbq07xvn" path="res://settings_opener.gd" id="2_62e2m"]
+[ext_resource type="Script" uid="uid://d2dcaog7gtwym" path="res://settings.gd" id="3_kbped"]
+[ext_resource type="Script" uid="uid://mkjjs8awu8go" path="res://volume_bar.gd" id="3_qtu10"]
+[ext_resource type="Script" uid="uid://dx2vt5sywsjui" path="res://exit_settings.gd" id="4_ee4bf"]
+
+[sub_resource type="Gradient" id="Gradient_62e2m"]
+colors = PackedColorArray(1, 1, 1, 1, 0.9111111, 0.9111111, 0.9111111, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qtu10"]
+gradient = SubResource("Gradient_62e2m")
+
+[node name="Control" type="Control" unique_id=2053659831]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1545337886]
+position = Vector2(-2, -4)
+
+[node name="MainMenu" type="Control" parent="." unique_id=962578855]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -581.0
+offset_top = -330.0
+offset_right = 574.0
+offset_bottom = 317.0
+
+[node name="Button" type="Button" parent="MainMenu" unique_id=736862732]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 599.0
+offset_right = 62.0
+offset_bottom = 636.0
+text = "QUIT"
+
+[node name="PlayText" type="RichTextLabel" parent="MainMenu" unique_id=216645975]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 81.0
+offset_right = 906.0
+offset_bottom = 173.0
+text = "Stock Trading in an Alternate World"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGame" type="Button" parent="MainMenu" unique_id=2067489760]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 198.0
+offset_right = 786.0
+offset_bottom = 292.0
+text = "Play"
+
+[node name="SettingsOpener" type="Button" parent="MainMenu" unique_id=1252875900]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 356.0
+offset_right = 786.0
+offset_bottom = 450.0
+text = "Settings"
+script = ExtResource("2_62e2m")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1092133334]
+visible = false
+z_index = -2
+z_as_relative = false
+position = Vector2(-4, -4.999998)
+scale = Vector2(4.5, 649)
+texture = SubResource("GradientTexture1D_qtu10")
+
+[node name="Settings" type="Control" parent="." unique_id=598453037]
+visible = false
+anchors_preset = 0
+offset_left = -577.0
+offset_top = -330.0
+offset_right = 585.0
+offset_bottom = 316.0
+script = ExtResource("3_kbped")
+metadata/LastOpen = ""
+
+[node name="VolumeBar" type="Control" parent="Settings" unique_id=1323716124]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(213, 127)
+script = ExtResource("3_qtu10")
+
+[node name="VolumeSlider" type="HScrollBar" parent="Settings/VolumeBar" unique_id=1516015970]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 205.0
+offset_right = 622.0
+offset_bottom = 213.0
+step = 1.0
+rounded = true
+
+[node name="VolumeReader" type="RichTextLabel" parent="Settings/VolumeBar" unique_id=129023184]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 197.0
+offset_right = 681.0
+offset_bottom = 219.0
+text = "0"
+scroll_active = false
+
+[node name="VolumeHeader" type="RichTextLabel" parent="Settings/VolumeBar" unique_id=690886591]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 171.0
+offset_right = 642.0
+offset_bottom = 193.0
+text = "Volume "
+scroll_active = false
+
+[node name="ExitSettings" type="Button" parent="Settings" unique_id=1795321709]
+layout_mode = 0
+offset_left = 1033.129
+offset_top = 29.0
+offset_right = 1091.0
+offset_bottom = 75.0
+text = "X"
+script = ExtResource("4_ee4bf")
+
+[connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MainMenu/SettingsOpener" to="MainMenu/SettingsOpener" method="_on_pressed"]
+[connection signal="value_changed" from="Settings/VolumeBar/VolumeSlider" to="Settings/VolumeBar" method="_on_h_scroll_bar_value_changed"]
+[connection signal="pressed" from="Settings/ExitSettings" to="Settings/ExitSettings" method="_on_pressed"]
