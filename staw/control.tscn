@@ -5,6 +5,9 @@
 [ext_resource type="Script" uid="uid://d2dcaog7gtwym" path="res://settings.gd" id="3_kbped"]
 [ext_resource type="Script" uid="uid://mkjjs8awu8go" path="res://volume_bar.gd" id="3_qtu10"]
 [ext_resource type="Script" uid="uid://dx2vt5sywsjui" path="res://exit_settings.gd" id="4_ee4bf"]
+[ext_resource type="Script" uid="uid://b0ywn45ekt5m8" path="res://return_menu_button.gd" id="6_fj5cn"]
+[ext_resource type="Script" uid="uid://doikjrtifeshd" path="res://news_screen_mover.gd" id="7_iy58a"]
+[ext_resource type="Script" uid="uid://danx0ybhte6gs" path="res://stock_screen_mover.gd" id="8_6a6wx"]
 
 [sub_resource type="Gradient" id="Gradient_62e2m"]
 colors = PackedColorArray(1, 1, 1, 1, 0.9111111, 0.9111111, 0.9111111, 1)
@@ -91,7 +94,6 @@ script = ExtResource("3_kbped")
 metadata/LastOpen = ""
 
 [node name="VolumeBar" type="Control" parent="Settings" unique_id=1323716124]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -170,15 +172,95 @@ text = "Something B"
 [node name="SettingsIcon" type="Button" parent="NewsMenu" unique_id=1692128919]
 layout_mode = 0
 offset_left = 25.0
-offset_top = 538.0
-offset_right = 105.0
+offset_top = 570.4375
+offset_right = 74.0
 offset_bottom = 621.7097
 icon = SubResource("CompressedTexture2D_kbped")
 expand_icon = true
 script = ExtResource("2_62e2m")
 
+[node name="ReturnMenuButton" type="Button" parent="NewsMenu" unique_id=2070657731]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 570.0
+offset_right = 140.0
+offset_bottom = 621.2722
+text = "X"
+expand_icon = true
+script = ExtResource("6_fj5cn")
+
+[node name="NewsScreenMover" type="Button" parent="NewsMenu" unique_id=449558072]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 138.0
+offset_bottom = 49.0
+text = "NEWS SCREEN"
+flat = true
+script = ExtResource("7_iy58a")
+
+[node name="StockScreenMover" type="Button" parent="NewsMenu" unique_id=74585702]
+layout_mode = 0
+offset_left = 1020.0
+offset_right = 1143.0
+offset_bottom = 49.0
+text = "STOCK SCREEN"
+script = ExtResource("8_6a6wx")
+
+[node name="StockMenu" type="Control" parent="." unique_id=201495546]
+visible = false
+anchors_preset = 0
+offset_left = -577.0
+offset_top = -322.0
+offset_right = 581.0
+offset_bottom = 328.0
+
+[node name="SettingsIcon" type="Button" parent="StockMenu" unique_id=1637362966]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 564.4375
+offset_right = 72.0
+offset_bottom = 615.7097
+icon = SubResource("CompressedTexture2D_kbped")
+expand_icon = true
+script = ExtResource("2_62e2m")
+
+[node name="ReturnMenuButton" type="Button" parent="StockMenu" unique_id=182424745]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 564.0
+offset_right = 138.0
+offset_bottom = 615.2722
+text = "X"
+expand_icon = true
+script = ExtResource("6_fj5cn")
+
+[node name="NewsScreenMover" type="Button" parent="StockMenu" unique_id=289866005]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 10.0
+offset_right = 146.0
+offset_bottom = 59.0
+text = "NEWS SCREEN"
+script = ExtResource("7_iy58a")
+
+[node name="StockScreenMover" type="Button" parent="StockMenu" unique_id=1630498464]
+layout_mode = 0
+offset_left = 1018.0
+offset_right = 1141.0
+offset_bottom = 49.0
+text = "STOCK SCREEN"
+flat = true
+script = ExtResource("8_6a6wx")
+
 [connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MainMenu/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MainMenu/SettingsOpener" to="MainMenu/SettingsOpener" method="_on_pressed"]
 [connection signal="value_changed" from="Settings/VolumeBar/VolumeSlider" to="Settings/VolumeBar" method="_on_h_scroll_bar_value_changed"]
 [connection signal="pressed" from="Settings/ExitSettings" to="Settings/ExitSettings" method="_on_pressed"]
 [connection signal="pressed" from="NewsMenu/SettingsIcon" to="NewsMenu/SettingsIcon" method="_on_pressed"]
+[connection signal="pressed" from="NewsMenu/ReturnMenuButton" to="NewsMenu/ReturnMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="NewsMenu/NewsScreenMover" to="NewsMenu/NewsScreenMover" method="_on_pressed"]
+[connection signal="pressed" from="NewsMenu/StockScreenMover" to="NewsMenu/StockScreenMover" method="_on_pressed"]
+[connection signal="pressed" from="StockMenu/SettingsIcon" to="StockMenu/SettingsIcon" method="_on_pressed"]
+[connection signal="pressed" from="StockMenu/ReturnMenuButton" to="StockMenu/ReturnMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="StockMenu/NewsScreenMover" to="StockMenu/NewsScreenMover" method="_on_pressed"]
