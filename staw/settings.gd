@@ -1,5 +1,8 @@
 extends Control
 
+
+func _ready():
+	print("HI")
 #So lies here the bones of a failed save and load script,
 #Know ye well oft forgotten traveller,
 #These times lead to the downfall of men
