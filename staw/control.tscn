@@ -252,6 +252,327 @@ text = "STOCK SCREEN"
 flat = true
 script = ExtResource("8_6a6wx")
 
+[node name="IndustryTabs" type="HBoxContainer" parent="StockMenu" unique_id=1910791419]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 552.0
+offset_right = 999.0
+offset_bottom = 619.0
+
+[node name="StockBGraph" type="Control" parent="StockMenu" unique_id=1021260822]
+anchors_preset = 0
+offset_left = 589.0
+offset_top = 153.0
+offset_right = 1160.0
+offset_bottom = 419.0
+
+[node name="1" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=455449413]
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="2" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1576540435]
+layout_mode = 0
+offset_left = 41.0
+offset_right = 78.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="3" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=432347568]
+layout_mode = 0
+offset_left = 82.0
+offset_right = 119.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="4" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1750446482]
+layout_mode = 0
+offset_left = 123.0
+offset_right = 160.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="5" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1358033182]
+layout_mode = 0
+offset_left = 164.0
+offset_right = 201.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="6" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1199955121]
+layout_mode = 0
+offset_left = 205.0
+offset_right = 242.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="7" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=923774420]
+layout_mode = 0
+offset_left = 246.0
+offset_right = 283.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="8" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=39047321]
+layout_mode = 0
+offset_left = 287.0
+offset_right = 324.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="9" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1235686329]
+layout_mode = 0
+offset_left = 328.0
+offset_right = 365.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="10" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=268087350]
+layout_mode = 0
+offset_left = 369.0
+offset_right = 406.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="11" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=633077052]
+layout_mode = 0
+offset_left = 410.0
+offset_right = 447.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="12" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1694203252]
+layout_mode = 0
+offset_left = 451.0
+offset_right = 488.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="13" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=2052904402]
+layout_mode = 0
+offset_left = 492.0
+offset_right = 529.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="14" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=261392992]
+layout_mode = 0
+offset_left = 533.0
+offset_right = 571.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="StockAGraph" type="Control" parent="StockMenu" unique_id=1725282977]
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 153.0
+offset_right = 559.0
+offset_bottom = 419.0
+
+[node name="1" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=894554967]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="2" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=2051707412]
+layout_mode = 0
+offset_left = 39.0
+offset_right = 75.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="3" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1065471422]
+layout_mode = 0
+offset_left = 79.0
+offset_right = 115.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="4" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1144659654]
+layout_mode = 0
+offset_left = 119.0
+offset_right = 155.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="5" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1959131046]
+layout_mode = 0
+offset_left = 159.0
+offset_right = 195.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="6" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1903810803]
+layout_mode = 0
+offset_left = 199.0
+offset_right = 235.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="7" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1350974249]
+layout_mode = 0
+offset_left = 239.0
+offset_right = 275.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="8" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=959391610]
+layout_mode = 0
+offset_left = 279.0
+offset_right = 315.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="9" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=586422257]
+layout_mode = 0
+offset_left = 319.0
+offset_right = 355.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="10" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=428529717]
+layout_mode = 0
+offset_left = 359.0
+offset_right = 395.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="11" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=905857346]
+layout_mode = 0
+offset_left = 399.0
+offset_right = 435.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="12" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1795700958]
+layout_mode = 0
+offset_left = 439.0
+offset_right = 475.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="13" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=814998002]
+layout_mode = 0
+offset_left = 479.0
+offset_right = 515.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="14" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=710849186]
+layout_mode = 0
+offset_left = 519.0
+offset_right = 555.0
+offset_bottom = 266.0
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="StockAText" type="Control" parent="StockMenu" unique_id=1597895618]
+anchors_preset = 0
+offset_left = 155.0
+offset_top = 8.0
+offset_right = 349.0
+offset_bottom = 89.0
+
+[node name="Title" type="RichTextLabel" parent="StockMenu/StockAText" unique_id=600777301]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -1.0
+offset_right = 96.0
+offset_bottom = 39.0
+text = "RFK"
+
+[node name="TitleShort" type="RichTextLabel" parent="StockMenu/StockAText" unique_id=1692091611]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 33.0
+offset_right = 168.0
+offset_bottom = 73.0
+text = "Rich Big Dick"
+
+[node name="PercentChange" type="RichTextLabel" parent="StockMenu/StockAText" unique_id=1568165512]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 35.0
+offset_right = 194.0
+offset_bottom = 75.0
+text = "-0"
+
+[node name="Description" type="MenuButton" parent="StockMenu/StockAText" unique_id=406745686]
+layout_mode = 0
+offset_left = 111.0
+offset_top = -7.0
+offset_right = 156.0
+offset_bottom = 24.0
+text = "?"
+
+[node name="StockBText" type="Control" parent="StockMenu" unique_id=1121687254]
+anchors_preset = 0
+offset_left = 766.0
+offset_top = -3.0
+offset_right = 960.0
+offset_bottom = 78.0
+
+[node name="Title" type="RichTextLabel" parent="StockMenu/StockBText" unique_id=106225299]
+layout_mode = 0
+offset_left = -60.0
+offset_top = 1.0
+offset_right = 27.0
+offset_bottom = 41.0
+text = "RFK"
+
+[node name="TitleShort" type="RichTextLabel" parent="StockMenu/StockBText" unique_id=1430591403]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 31.0
+offset_right = 154.0
+offset_bottom = 71.0
+text = "Rich Big Dick"
+
+[node name="PercentChange" type="RichTextLabel" parent="StockMenu/StockBText" unique_id=1002877396]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 35.0
+offset_right = 194.0
+offset_bottom = 75.0
+text = "-0"
+
+[node name="Description" type="MenuButton" parent="StockMenu/StockBText" unique_id=2074831499]
+layout_mode = 0
+offset_left = 109.0
+offset_top = -1.0
+offset_right = 154.0
+offset_bottom = 30.0
+text = "?"
+
 [connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MainMenu/SettingsOpener" to="MainMenu/SettingsOpener" method="_on_pressed"]

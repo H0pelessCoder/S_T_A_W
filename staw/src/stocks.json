@@ -1,0 +1,27 @@
+{
+	"Shipping" : { 
+		"Stocks" : [ 
+			{
+			"firstStockPoint" : 345,
+			"savedStockPoint" : 0,
+			"companyName" : "Mercatoria Shipping",
+			"stockShort" : "MSP",
+			"stockDescription" : "A naval shipping company which specializes in smuggling. Key ties in Xiadia and Drastara.",
+			"timeFrame" : [345, 342, 341, 347, 351, 350, 346, 345, 346, 342, 341, 343, 343, 341]
+			}, 
+			{
+				"firstStockPoint" : 954,
+				"savedStockPoint" : 0,
+				"companyName" : "Flaeton Shipping",
+				"stockShort" : "FLS",
+				"stockDescription" : "A large distrubutor based out of Flaeton.",
+				"timeFrame" : [954, 952, 951, 947, 948, 942, 941, 938, 936, 932, 929, 921, 925, 920]
+		 	} 
+		],
+		"industryName" : "Shipping",
+		"industryShort" : "SHP"
+	 }
+	
+
+
+}
