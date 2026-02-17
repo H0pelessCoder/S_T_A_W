@@ -18,6 +18,15 @@ gradient = SubResource("Gradient_62e2m")
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kbped"]
 load_path = "res://.godot/imported/settings_icon.png-2aec0f18b1e0fd16c56ba34ef69ef014.ctex"
 
+[sub_resource type="GDScript" id="GDScript_6a6wx"]
+script/source = "extends ColorRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.position.x
+"
+
 [node name="Control" type="Control" unique_id=2053659831]
 layout_mode = 3
 anchors_preset = 15
@@ -268,230 +277,289 @@ offset_bottom = 419.0
 
 [node name="1" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=455449413]
 layout_mode = 0
-offset_right = 37.0
-offset_bottom = 266.0
+offset_left = 39.0
+offset_top = 266.0
+offset_right = 76.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="2" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1576540435]
 layout_mode = 0
-offset_left = 41.0
-offset_right = 78.0
-offset_bottom = 266.0
+offset_left = 80.0
+offset_top = 266.0
+offset_right = 117.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="3" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=432347568]
 layout_mode = 0
-offset_left = 82.0
-offset_right = 119.0
-offset_bottom = 266.0
+offset_left = 121.0
+offset_top = 266.0
+offset_right = 158.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="4" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1750446482]
 layout_mode = 0
-offset_left = 123.0
-offset_right = 160.0
-offset_bottom = 266.0
+offset_left = 162.0
+offset_top = 266.0
+offset_right = 199.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="5" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1358033182]
 layout_mode = 0
-offset_left = 164.0
-offset_right = 201.0
-offset_bottom = 266.0
+offset_left = 203.0
+offset_top = 266.0
+offset_right = 240.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="6" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1199955121]
 layout_mode = 0
-offset_left = 205.0
-offset_right = 242.0
-offset_bottom = 266.0
+offset_left = 244.0
+offset_top = 266.0
+offset_right = 281.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="7" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=923774420]
 layout_mode = 0
-offset_left = 246.0
-offset_right = 283.0
-offset_bottom = 266.0
+offset_left = 285.0
+offset_top = 266.0
+offset_right = 322.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="8" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=39047321]
 layout_mode = 0
-offset_left = 287.0
-offset_right = 324.0
-offset_bottom = 266.0
+offset_left = 326.0
+offset_top = 266.0
+offset_right = 363.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="9" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1235686329]
 layout_mode = 0
-offset_left = 328.0
-offset_right = 365.0
-offset_bottom = 266.0
+offset_left = 367.0
+offset_top = 266.0
+offset_right = 404.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="10" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=268087350]
 layout_mode = 0
-offset_left = 369.0
-offset_right = 406.0
-offset_bottom = 266.0
+offset_left = 408.0
+offset_top = 266.0
+offset_right = 445.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="11" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=633077052]
 layout_mode = 0
-offset_left = 410.0
-offset_right = 447.0
-offset_bottom = 266.0
+offset_left = 449.0
+offset_top = 266.0
+offset_right = 486.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="12" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1694203252]
 layout_mode = 0
-offset_left = 451.0
-offset_right = 488.0
-offset_bottom = 266.0
+offset_left = 490.0
+offset_top = 266.0
+offset_right = 527.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="13" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=2052904402]
 layout_mode = 0
-offset_left = 492.0
-offset_right = 529.0
-offset_bottom = 266.0
+offset_left = 531.0
+offset_top = 266.0
+offset_right = 568.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="14" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=261392992]
 layout_mode = 0
-offset_left = 533.0
-offset_right = 571.0
-offset_bottom = 266.0
+offset_left = 572.0
+offset_top = 266.0
+offset_right = 610.0
+offset_bottom = 532.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
-[node name="StockAGraph" type="Control" parent="StockMenu" unique_id=1725282977]
+[node name="StockAGraph" type="Control" parent="StockMenu" unique_id=1106917816]
 anchors_preset = 0
-offset_left = 4.0
+offset_left = 16.0
 offset_top = 153.0
-offset_right = 559.0
+offset_right = 571.0
 offset_bottom = 419.0
 
 [node name="1" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=894554967]
 layout_mode = 0
-offset_right = 35.0
-offset_bottom = 266.0
+offset_left = 33.0
+offset_top = 270.0
+offset_right = 68.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
+script = SubResource("GDScript_6a6wx")
 
 [node name="2" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=2051707412]
 layout_mode = 0
-offset_left = 39.0
-offset_right = 75.0
-offset_bottom = 266.0
+offset_left = 72.0
+offset_top = 270.0
+offset_right = 108.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="3" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1065471422]
 layout_mode = 0
-offset_left = 79.0
-offset_right = 115.0
-offset_bottom = 266.0
+offset_left = 112.0
+offset_top = 270.0
+offset_right = 148.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="4" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1144659654]
 layout_mode = 0
-offset_left = 119.0
-offset_right = 155.0
-offset_bottom = 266.0
+offset_left = 152.0
+offset_top = 270.0
+offset_right = 188.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="5" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1959131046]
 layout_mode = 0
-offset_left = 159.0
-offset_right = 195.0
-offset_bottom = 266.0
+offset_left = 192.0
+offset_top = 270.0
+offset_right = 228.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="6" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1903810803]
 layout_mode = 0
-offset_left = 199.0
-offset_right = 235.0
-offset_bottom = 266.0
+offset_left = 232.0
+offset_top = 270.0
+offset_right = 268.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="7" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1350974249]
 layout_mode = 0
-offset_left = 239.0
-offset_right = 275.0
-offset_bottom = 266.0
+offset_left = 272.0
+offset_top = 270.0
+offset_right = 308.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="8" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=959391610]
 layout_mode = 0
-offset_left = 279.0
-offset_right = 315.0
-offset_bottom = 266.0
+offset_left = 312.0
+offset_top = 270.0
+offset_right = 348.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="9" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=586422257]
 layout_mode = 0
-offset_left = 319.0
-offset_right = 355.0
-offset_bottom = 266.0
+offset_left = 352.0
+offset_top = 270.0
+offset_right = 388.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="10" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=428529717]
 layout_mode = 0
-offset_left = 359.0
-offset_right = 395.0
-offset_bottom = 266.0
+offset_left = 392.0
+offset_top = 270.0
+offset_right = 428.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="11" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=905857346]
 layout_mode = 0
-offset_left = 399.0
-offset_right = 435.0
-offset_bottom = 266.0
+offset_left = 432.0
+offset_top = 270.0
+offset_right = 468.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="12" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1795700958]
 layout_mode = 0
-offset_left = 439.0
-offset_right = 475.0
-offset_bottom = 266.0
+offset_left = 472.0
+offset_top = 270.0
+offset_right = 508.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="13" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=814998002]
 layout_mode = 0
-offset_left = 479.0
-offset_right = 515.0
-offset_bottom = 266.0
+offset_left = 512.0
+offset_top = 270.0
+offset_right = 548.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
 [node name="14" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=710849186]
 layout_mode = 0
-offset_left = 519.0
-offset_right = 555.0
-offset_bottom = 266.0
+offset_left = 552.0
+offset_top = 270.0
+offset_right = 588.0
+offset_bottom = 536.0
+rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 
