@@ -1,8 +1,9 @@
 extends Control
-@export 
-var currentIndustry = "Shipping"
-@export
-var Industries: Dictionary
+class_name global
+
+
+static var currentIndustry := "Shipping"
+static var Industries : Dictionary
 
 func _on_button_pressed():
 	get_tree().quit() # Replace with function body.
@@ -29,17 +30,15 @@ func makeStockScreen():
 	var maximum = findMaximum(StockA, StockB)
 	var maxHeight = $StockMenu/StockAGraph.size.y
 	var scaleFactor = (maximum - minimum) / maxHeight
-	print(minimum)
-	print(maximum)
-	print(scaleFactor)
-	print((maximum - minimum)/scaleFactor)
-	print(maxHeight)
 	$StockMenu/StockAText/Title.text = StockA["stockShort"]
 	$StockMenu/StockAText/TitleShort.text = StockA["companyName"]
 	$StockMenu/StockBText/Title.text = StockB["stockShort"]
 	$StockMenu/StockBText/TitleShort.text = StockB["companyName"]
-		
+	$StockMenu/RangeIndicators/Bottom.text = str(int(minimum))	
+	$StockMenu/RangeIndicators/Top.text = str(int(maximum))
+	
 	for x in range(StockA["timeFrame"].size()):
+		
 		var bar = get_node("StockMenu/StockAGraph/" + str(x+1))
 		bar.set_size(Vector2(35, (StockA["timeFrame"][x] - minimum) / scaleFactor ) ) 
 		if(StockA["timeFrame"][x-1] > StockA["timeFrame"][x]):
@@ -48,6 +47,7 @@ func makeStockScreen():
 			bar.color = Color("darkgreen")	
 		else:
 			bar.color = get_node("StockMenu/StockAGraph/" + str(x)).color
+		
 		
 	for x in range(StockB["timeFrame"].size()):
 		#sizing
