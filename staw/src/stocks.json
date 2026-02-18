@@ -20,7 +20,32 @@
 		],
 		"industryName" : "Shipping",
 		"industryShort" : "SHP"
+	 },
+	
+	"Electricity" : { 
+		"Stocks" : [ 
+			{
+				"firstStockPoint" : 654,
+				"savedStockPoint" : 0,
+				"companyName" : "Firm Fuel",
+				"stockShort" : "FFL",
+				"stockDescription" : "A power firm based on non-rewnable energy, supplies most power everywhere.",
+				"timeFrame" : [654, 651, 660, 668, 679, 669, 690, 681, 704, 712, 733, 726, 733, 741]
+			}, 
+			{
+				"firstStockPoint" : 404,
+				"savedStockPoint" : 0,
+				"companyName" : "Natural Energy",
+				"stockShort" : "NTE",
+				"stockDescription" : "A clean energy company based out of central Kaddia. Has ties to the mafia, Xiadia, and many criminal syndicates.",
+				"timeFrame" : [404, 395, 388, 404, 412, 419, 407, 426, 409, 417, 429, 432, 441, 438]
+		 	} 
+		],
+		"industryName" : "Electricity",
+		"industryShort" : "ECY"
 	 }
+	
+
 	
 
 

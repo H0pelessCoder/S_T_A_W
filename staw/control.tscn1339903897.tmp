@@ -268,11 +268,10 @@ offset_bottom = 619.0
 
 [node name="StockBGraph" type="Control" parent="StockMenu" unique_id=1021260822]
 anchors_preset = 0
-offset_left = 592.26886
-offset_top = 130.68819
-offset_right = 1163.2689
-offset_bottom = 396.68817
-scale = Vector2(1, 1.4377737)
+offset_left = 587.9592
+offset_top = 243.35042
+offset_right = 1158.9592
+offset_bottom = 509.3504
 metadata/stock = 1
 
 [node name="1" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=455449413]
@@ -432,9 +431,8 @@ script = ExtResource("9_pxugv")
 [node name="StockIndicator" type="RichTextLabel" parent="StockMenu/StockBGraph" unique_id=1575145100]
 visible = false
 layout_mode = 0
-offset_right = 56.025436
+offset_right = 40.0
 offset_bottom = 40.0
-theme_override_font_sizes/normal_font_size = 16
 
 [node name="StockAText" type="Control" parent="StockMenu" unique_id=1597895618]
 anchors_preset = 0
@@ -527,7 +525,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Bottom" type="RichTextLabel" parent="StockMenu/RangeIndicators" unique_id=2121165116]
-z_index = 1
 layout_mode = 0
 offset_left = 556.56036
 offset_top = 500.2203
@@ -539,12 +536,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Top" type="RichTextLabel" parent="StockMenu/RangeIndicators" unique_id=873784738]
-z_index = 1
 layout_mode = 0
 offset_left = 555.94464
-offset_top = 112.662224
+offset_top = 222.10553
 offset_right = 600.8881
-offset_bottom = 135.66223
+offset_bottom = 245.10553
 text = "0"
 scroll_active = false
 horizontal_alignment = 1
@@ -579,11 +575,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="StockAGraph" type="Control" parent="StockMenu" unique_id=1109519887]
 anchors_preset = 0
-offset_left = -4.3096414
-offset_top = 133.2633
-offset_right = 566.69037
-offset_bottom = 399.2633
-scale = Vector2(1, 1.4265008)
+offset_left = -1.8469849
+offset_top = 242.06285
+offset_right = 569.153
+offset_bottom = 508.06287
 metadata/stock = 0
 
 [node name="1" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=935817042]
@@ -740,15 +735,9 @@ size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
 script = ExtResource("9_pxugv")
 
-[node name="StockIndicator" type="RichTextLabel" parent="StockMenu/StockAGraph" unique_id=370377435]
+[node name="StockIndicator" type="RichTextLabel" parent="StockMenu/StockAGraph" unique_id=951024674]
 visible = false
 layout_mode = 0
-offset_right = 56.025436
-offset_bottom = 40.0
-theme_override_font_sizes/normal_font_size = 16
-
-[node name="IndustryTab" type="Control" parent="StockMenu" unique_id=99318137]
-anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 

@@ -268,12 +268,10 @@ offset_bottom = 619.0
 
 [node name="StockBGraph" type="Control" parent="StockMenu" unique_id=1021260822]
 anchors_preset = 0
-offset_left = 592.26886
-offset_top = 130.68819
-offset_right = 1163.2689
-offset_bottom = 396.68817
-scale = Vector2(1, 1.4377737)
-metadata/stock = 1
+offset_left = 587.9592
+offset_top = 243.35042
+offset_right = 1158.9592
+offset_bottom = 509.3504
 
 [node name="1" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=455449413]
 layout_mode = 0
@@ -432,9 +430,155 @@ script = ExtResource("9_pxugv")
 [node name="StockIndicator" type="RichTextLabel" parent="StockMenu/StockBGraph" unique_id=1575145100]
 visible = false
 layout_mode = 0
-offset_right = 56.025436
+offset_right = 40.0
 offset_bottom = 40.0
-theme_override_font_sizes/normal_font_size = 16
+
+[node name="StockAGraph" type="Control" parent="StockMenu" unique_id=1106917816]
+anchors_preset = 0
+offset_left = 13.544596
+offset_top = 243.35042
+offset_right = 568.5446
+offset_bottom = 509.3504
+
+[node name="1" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=894554967]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 270.0
+offset_right = 68.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="2" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=2051707412]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 270.0
+offset_right = 108.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="3" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1065471422]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 270.0
+offset_right = 148.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="4" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1144659654]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 270.0
+offset_right = 188.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="5" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1959131046]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 270.0
+offset_right = 228.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="6" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1903810803]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 270.0
+offset_right = 268.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="7" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1350974249]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 270.0
+offset_right = 308.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="8" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=959391610]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 270.0
+offset_right = 348.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="9" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=586422257]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 270.0
+offset_right = 388.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="10" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=428529717]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 270.0
+offset_right = 428.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="11" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=905857346]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 270.0
+offset_right = 468.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="12" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1795700958]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 270.0
+offset_right = 508.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="13" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=814998002]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 270.0
+offset_right = 548.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="14" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=710849186]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 270.0
+offset_right = 588.0
+offset_bottom = 536.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
 
 [node name="StockAText" type="Control" parent="StockMenu" unique_id=1597895618]
 anchors_preset = 0
@@ -527,7 +671,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Bottom" type="RichTextLabel" parent="StockMenu/RangeIndicators" unique_id=2121165116]
-z_index = 1
 layout_mode = 0
 offset_left = 556.56036
 offset_top = 500.2203
@@ -539,12 +682,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Top" type="RichTextLabel" parent="StockMenu/RangeIndicators" unique_id=873784738]
-z_index = 1
 layout_mode = 0
 offset_left = 555.94464
-offset_top = 112.662224
+offset_top = 222.10553
 offset_right = 600.8881
-offset_bottom = 135.66223
+offset_bottom = 245.10553
 text = "0"
 scroll_active = false
 horizontal_alignment = 1
@@ -576,181 +718,6 @@ offset_bottom = 1056.4381
 rotation = 3.1415927
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 1)
-
-[node name="StockAGraph" type="Control" parent="StockMenu" unique_id=1109519887]
-anchors_preset = 0
-offset_left = -4.3096414
-offset_top = 133.2633
-offset_right = 566.69037
-offset_bottom = 399.2633
-scale = Vector2(1, 1.4265008)
-metadata/stock = 0
-
-[node name="1" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=935817042]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 266.0
-offset_right = 76.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="2" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=2001313693]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 266.0
-offset_right = 117.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="3" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1124554853]
-layout_mode = 0
-offset_left = 121.0
-offset_top = 266.0
-offset_right = 158.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="4" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=346531300]
-layout_mode = 0
-offset_left = 162.0
-offset_top = 266.0
-offset_right = 199.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="5" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1227300771]
-layout_mode = 0
-offset_left = 203.0
-offset_top = 266.0
-offset_right = 240.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="6" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1410471386]
-layout_mode = 0
-offset_left = 244.0
-offset_top = 266.0
-offset_right = 281.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="7" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1517767087]
-layout_mode = 0
-offset_left = 285.0
-offset_top = 266.0
-offset_right = 322.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="8" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1120850887]
-layout_mode = 0
-offset_left = 326.0
-offset_top = 266.0
-offset_right = 363.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="9" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=561618149]
-layout_mode = 0
-offset_left = 367.0
-offset_top = 266.0
-offset_right = 404.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="10" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=548848008]
-layout_mode = 0
-offset_left = 408.0
-offset_top = 266.0
-offset_right = 445.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="11" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1216578806]
-layout_mode = 0
-offset_left = 449.0
-offset_top = 266.0
-offset_right = 486.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="12" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1699632715]
-layout_mode = 0
-offset_left = 490.0
-offset_top = 266.0
-offset_right = 527.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="13" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=14597694]
-layout_mode = 0
-offset_left = 531.0
-offset_top = 266.0
-offset_right = 568.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="14" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=904690143]
-layout_mode = 0
-offset_left = 572.0
-offset_top = 266.0
-offset_right = 610.0
-offset_bottom = 532.0
-rotation = 3.1415927
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
-script = ExtResource("9_pxugv")
-
-[node name="StockIndicator" type="RichTextLabel" parent="StockMenu/StockAGraph" unique_id=370377435]
-visible = false
-layout_mode = 0
-offset_right = 56.025436
-offset_bottom = 40.0
-theme_override_font_sizes/normal_font_size = 16
-
-[node name="IndustryTab" type="Control" parent="StockMenu" unique_id=99318137]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="StockDescriptionScreen" type="Control" parent="." unique_id=1323499153]
 visible = false
@@ -805,61 +772,19 @@ script = ExtResource("10_0ytqx")
 [connection signal="pressed" from="StockMenu/ReturnMenuButton" to="StockMenu/ReturnMenuButton" method="_on_pressed"]
 [connection signal="pressed" from="StockMenu/NewsScreenMover" to="StockMenu/NewsScreenMover" method="_on_pressed"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/1" to="StockMenu/StockBGraph/1" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/1" to="StockMenu/StockBGraph/1" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/2" to="StockMenu/StockBGraph/2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/2" to="StockMenu/StockBGraph/2" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/3" to="StockMenu/StockBGraph/3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/3" to="StockMenu/StockBGraph/3" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/4" to="StockMenu/StockBGraph/4" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/4" to="StockMenu/StockBGraph/4" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/5" to="StockMenu/StockBGraph/5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/5" to="StockMenu/StockBGraph/5" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/6" to="StockMenu/StockBGraph/6" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/6" to="StockMenu/StockBGraph/6" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/7" to="StockMenu/StockBGraph/7" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/7" to="StockMenu/StockBGraph/7" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/8" to="StockMenu/StockBGraph/8" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/8" to="StockMenu/StockBGraph/8" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/9" to="StockMenu/StockBGraph/9" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/9" to="StockMenu/StockBGraph/9" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/10" to="StockMenu/StockBGraph/10" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/10" to="StockMenu/StockBGraph/10" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/11" to="StockMenu/StockBGraph/11" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/11" to="StockMenu/StockBGraph/11" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/12" to="StockMenu/StockBGraph/12" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/12" to="StockMenu/StockBGraph/12" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/13" to="StockMenu/StockBGraph/13" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/13" to="StockMenu/StockBGraph/13" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/14" to="StockMenu/StockBGraph/14" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockBGraph/14" to="StockMenu/StockBGraph/14" method="_on_mouse_exited"]
 [connection signal="pressed" from="StockMenu/StockAText/Description" to="StockMenu/StockAText/Description" method="_on_pressed"]
 [connection signal="pressed" from="StockMenu/StockBText/Description" to="StockMenu/StockBText/Description" method="_on_pressed"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/1" to="StockMenu/StockAGraph/1" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/1" to="StockMenu/StockAGraph/1" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/2" to="StockMenu/StockAGraph/2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/2" to="StockMenu/StockAGraph/2" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/3" to="StockMenu/StockAGraph/3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/3" to="StockMenu/StockAGraph/3" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/4" to="StockMenu/StockAGraph/4" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/4" to="StockMenu/StockAGraph/4" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/5" to="StockMenu/StockAGraph/5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/5" to="StockMenu/StockAGraph/5" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/6" to="StockMenu/StockAGraph/6" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/6" to="StockMenu/StockAGraph/6" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/7" to="StockMenu/StockAGraph/7" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/7" to="StockMenu/StockAGraph/7" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/8" to="StockMenu/StockAGraph/8" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/8" to="StockMenu/StockAGraph/8" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/9" to="StockMenu/StockAGraph/9" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/9" to="StockMenu/StockAGraph/9" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/10" to="StockMenu/StockAGraph/10" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/10" to="StockMenu/StockAGraph/10" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/11" to="StockMenu/StockAGraph/11" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/11" to="StockMenu/StockAGraph/11" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/12" to="StockMenu/StockAGraph/12" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/12" to="StockMenu/StockAGraph/12" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/13" to="StockMenu/StockAGraph/13" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/13" to="StockMenu/StockAGraph/13" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StockMenu/StockAGraph/14" to="StockMenu/StockAGraph/14" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StockMenu/StockAGraph/14" to="StockMenu/StockAGraph/14" method="_on_mouse_exited"]
 [connection signal="pressed" from="StockDescriptionScreen/StockDescriptionScreenCloser" to="StockDescriptionScreen/StockDescriptionScreenCloser" method="_on_pressed"]
