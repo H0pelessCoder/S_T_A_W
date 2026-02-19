@@ -9,6 +9,7 @@ static var currentIndustryPosition = 0
 func drawIndustrySelectors():
 	var Industries = global.Industries
 	var x = 0
+	$IndustryIndicator.text = str(currentIndustryPosition +3) + "/" + str(Industries.size())
 	for selector in get_node("IndustryTabs").get_children():
 		
 		var industry = Industries[Industries.keys()[currentIndustryPosition + x]]
