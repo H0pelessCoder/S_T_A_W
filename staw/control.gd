@@ -1,6 +1,7 @@
 extends Control
 class_name global
 
+signal drawStockSelectors
 
 static var currentIndustry := "Shipping"
 static var Industries : Dictionary
@@ -62,7 +63,7 @@ func makeStockScreen():
 			bar.color = Color("darkgreen")	
 		else:
 			bar.color = get_node("StockMenu/StockBGraph/" + str(x)).color		
-			
+		emit_signal("drawStockSelectors")
 func findMinimum(stockA,stockB):
 	var smallestB = stockB["timeFrame"][0]
 	var smallestA = stockA["timeFrame"][0]

@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://b7iu4tsfe51uv" path="res://stockBar.gd" id="9_pxugv"]
 [ext_resource type="Script" uid="uid://d276l67lust3j" path="res://descriptionOpener.gd" id="9_sky72"]
 [ext_resource type="Script" uid="uid://bl2bl40b43v2b" path="res://stock_description_screen_closer.gd" id="10_0ytqx"]
+[ext_resource type="Script" uid="uid://0dxvbkfdxlxa" path="res://industry_selector.gd" id="11_eh0v1"]
+[ext_resource type="Script" uid="uid://ckt5mujchmblv" path="res://selectIndustry.gd" id="12_am1vj"]
 
 [sub_resource type="Gradient" id="Gradient_62e2m"]
 colors = PackedColorArray(1, 1, 1, 1, 0.9111111, 0.9111111, 0.9111111, 1)
@@ -747,10 +749,57 @@ offset_right = 56.025436
 offset_bottom = 40.0
 theme_override_font_sizes/normal_font_size = 16
 
-[node name="IndustryTab" type="Control" parent="StockMenu" unique_id=99318137]
+[node name="IndustrySelector" type="Control" parent="StockMenu" unique_id=1103404980]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 248.11264
+offset_top = 543.3538
+offset_right = 643.369
+offset_bottom = 652.1533
+script = ExtResource("11_eh0v1")
+
+[node name="IndustryTabs" type="HBoxContainer" parent="StockMenu/IndustrySelector" unique_id=1141203383]
+layout_mode = 0
+offset_right = 297.98148
+offset_bottom = 110.172485
+
+[node name="1" type="Button" parent="StockMenu/IndustrySelector/IndustryTabs" unique_id=150176686]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("12_am1vj")
+
+[node name="2" type="Button" parent="StockMenu/IndustrySelector/IndustryTabs" unique_id=1846420398]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("12_am1vj")
+
+[node name="3" type="Button" parent="StockMenu/IndustrySelector/IndustryTabs" unique_id=1022304297]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("12_am1vj")
+
+[node name="IndustryForward" type="Button" parent="StockMenu/IndustrySelector" unique_id=6135620]
+layout_mode = 0
+offset_left = 321.99234
+offset_top = 13.519466
+offset_right = 355.85388
+offset_bottom = 44.519466
+text = "->"
+
+[node name="IndustryBack" type="Button" parent="StockMenu/IndustrySelector" unique_id=866899067]
+layout_mode = 0
+offset_left = 322.608
+offset_top = 74.03518
+offset_right = 356.46954
+offset_bottom = 105.03519
+text = "<-"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StockMenu/IndustrySelector" unique_id=493915967]
+layout_mode = 0
+offset_left = 323.22363
+offset_top = 46.99625
+offset_right = 378.0177
+offset_bottom = 70.81625
+text = "0/0"
 
 [node name="StockDescriptionScreen" type="Control" parent="." unique_id=1323499153]
 visible = false
@@ -792,6 +841,7 @@ offset_bottom = 51.0
 text = "X"
 script = ExtResource("10_0ytqx")
 
+[connection signal="drawStockSelectors" from="." to="StockMenu/IndustrySelector" method="drawIndustrySelectors"]
 [connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MainMenu/SettingsOpener" to="MainMenu/SettingsOpener" method="_on_pressed"]
@@ -804,6 +854,8 @@ script = ExtResource("10_0ytqx")
 [connection signal="pressed" from="StockMenu/SettingsIcon" to="StockMenu/SettingsIcon" method="_on_pressed"]
 [connection signal="pressed" from="StockMenu/ReturnMenuButton" to="StockMenu/ReturnMenuButton" method="_on_pressed"]
 [connection signal="pressed" from="StockMenu/NewsScreenMover" to="StockMenu/NewsScreenMover" method="_on_pressed"]
+[connection signal="drawStockMenu" from="StockMenu/StockScreenMover" to="." method="makeStockScreen"]
+[connection signal="drawStockMenu" from="StockMenu/StockScreenMover" to="." method="_on_stock_screen_mover_draw_stock_menu"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/1" to="StockMenu/StockBGraph/1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StockMenu/StockBGraph/1" to="StockMenu/StockBGraph/1" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/2" to="StockMenu/StockBGraph/2" method="_on_mouse_entered"]
@@ -862,4 +914,12 @@ script = ExtResource("10_0ytqx")
 [connection signal="mouse_exited" from="StockMenu/StockAGraph/13" to="StockMenu/StockAGraph/13" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockAGraph/14" to="StockMenu/StockAGraph/14" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StockMenu/StockAGraph/14" to="StockMenu/StockAGraph/14" method="_on_mouse_exited"]
+[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/1" to="." method="makeStockScreen"]
+[connection signal="pressed" from="StockMenu/IndustrySelector/IndustryTabs/1" to="StockMenu/IndustrySelector/IndustryTabs/1" method="_on_pressed"]
+[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/2" to="." method="makeStockScreen"]
+[connection signal="pressed" from="StockMenu/IndustrySelector/IndustryTabs/2" to="StockMenu/IndustrySelector/IndustryTabs/2" method="_on_pressed"]
+[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/3" to="." method="makeStockScreen"]
+[connection signal="pressed" from="StockMenu/IndustrySelector/IndustryTabs/3" to="StockMenu/IndustrySelector/IndustryTabs/3" method="_on_pressed"]
+[connection signal="pressed" from="StockMenu/IndustrySelector/IndustryForward" to="StockMenu/IndustrySelector" method="forward"]
+[connection signal="pressed" from="StockMenu/IndustrySelector/IndustryBack" to="StockMenu/IndustrySelector" method="backwards"]
 [connection signal="pressed" from="StockDescriptionScreen/StockDescriptionScreenCloser" to="StockDescriptionScreen/StockDescriptionScreenCloser" method="_on_pressed"]

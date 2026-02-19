@@ -42,7 +42,96 @@
 		 	} 
 		],
 		"industryName" : "Electricity",
-		"industryShort" : "ECY"
+		"industryShort" : "ETY"
+	 },
+	"Food" : { 
+		"Stocks" : [ 
+			{
+				"firstStockPoint" : 212,
+				"savedStockPoint" : 0,
+				"companyName" : "Beef Brothers",
+				"stockShort" : "BBS",
+				"stockDescription" : "A cattle industry based out of central Kaddia, acts as a distributed network of local ranches.",
+				"timeFrame" :  [212, 215, 208, 213, 207, 211, 221, 213, 212, 219, 208, 202, 198, 201]
+			}, 
+			{
+				"firstStockPoint" : 404,
+				"savedStockPoint" : 0,
+				"companyName" : "Keddles'",
+				"stockShort" : "KDL",
+				"stockDescription" : "Food behemoth founded in 1821. Controls much of the market.",
+				"timeFrame" : [711, 709, 717, 694, 718, 700, 726, 720, 716, 727, 733, 726, 737, 741]
+		 	} 
+		],
+		"industryName" : "Food",
+		"industryShort" : "FOD"
+	 },
+	"Shippig" : { 
+		"Stocks" : [ 
+			{
+				"firstStockPoint" : 745,
+				"savedStockPoint" : 0,
+				"companyName" : "VVV",
+				"stockShort" : "VSC",
+				"stockDescription" : "A naval shipping company which specializes in smuggling. Key ties in Xiadia and Drastara.",
+				"timeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
+			}, 
+			{
+				"firstStockPoint" : 954,
+				"savedStockPoint" : 0,
+				"companyName" : "AWA",
+				"stockShort" : "FASD",
+				"stockDescription" : "A large distrubutor based out of Flaeton.",
+				"timeFrame" : [954, 952, 951, 947, 948, 942, 941, 978, 976, 972, 929, 921, 925, 920]
+		 	} 
+		],
+		"industryName" : "Shipping",
+		"industryShort" : "SHA"
+	 },
+	
+	"Electrcity" : { 
+		"Stocks" : [ 
+			{
+				"firstStockPoint" : 654,
+				"savedStockPoint" : 0,
+				"companyName" : "SFAS",
+				"stockShort" : "AVD",
+				"stockDescription" : "A power firm based on non-rewnable energy, supplies most power everywhere.",
+				"timeFrame" : [654, 651, 660, 668, 679, 669, 690, 681, 704, 712, 733, 726, 733, 741]
+			}, 
+			{
+				"firstStockPoint" : 404,
+				"savedStockPoint" : 0,
+				"companyName" : "DVSSvy",
+				"stockShort" : "adv",
+				"stockDescription" : "A clean energy company based out of central Kaddia. Has ties to the mafia, Xiadia, and many criminal syndicates.",
+				"timeFrame" : [404, 395, 388, 404, 412, 419, 407, 426, 409, 417, 429, 432, 441, 438]
+		 	} 
+		],
+		"industryName" : "Electricity",
+		"industryShort" : "ETF"
+	 },
+	"Fod" : { 
+		"Stocks" : [ 
+			{
+				"firstStockPoint" : 212,
+				"savedStockPoint" : 0,
+				"companyName" : "vsa",
+				"stockShort" : "aff",
+				"stockDescription" : "A cattle industry based out of central Kaddia, acts as a distributed network of local ranches.",
+				"timeFrame" :  [212, 215, 208, 213, 207, 211, 221, 213, 212, 219, 208, 202, 198, 201]
+			}, 
+			{
+				"firstStockPoint" : 404,
+				"savedStockPoint" : 0,
+				"companyName" : "FDAS'",
+				"stockShort" : "SFA",
+				"stockDescription" : "Food behemoth founded in 1821. Controls much of the market.",
+				"timeFrame" : [711, 709, 717, 694, 718, 700, 726, 720, 716, 727, 733, 726, 737, 741]
+		 	} 
+		],
+		"industryName" : "Food",
+		"industryShort" : "FBD"
 	 }
 	
 
