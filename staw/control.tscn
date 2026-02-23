@@ -8,12 +8,12 @@
 [ext_resource type="Script" uid="uid://b0ywn45ekt5m8" path="res://return_menu_button.gd" id="6_fj5cn"]
 [ext_resource type="Script" uid="uid://doikjrtifeshd" path="res://news_screen_mover.gd" id="7_iy58a"]
 [ext_resource type="Script" uid="uid://danx0ybhte6gs" path="res://stock_screen_mover.gd" id="8_6a6wx"]
-[ext_resource type="Script" uid="uid://bwx8rjvngreaf" path="res://stock_menu.gd" id="9_g31lc"]
-[ext_resource type="Script" uid="uid://b7iu4tsfe51uv" path="res://stockBar.gd" id="9_pxugv"]
-[ext_resource type="Script" uid="uid://d276l67lust3j" path="res://descriptionOpener.gd" id="9_sky72"]
-[ext_resource type="Script" uid="uid://bl2bl40b43v2b" path="res://stock_description_screen_closer.gd" id="10_0ytqx"]
-[ext_resource type="Script" uid="uid://0dxvbkfdxlxa" path="res://industry_selector.gd" id="11_eh0v1"]
-[ext_resource type="Script" uid="uid://ckt5mujchmblv" path="res://selectIndustry.gd" id="12_am1vj"]
+[ext_resource type="Script" path="res://stock_menu.gd" id="9_g31lc"]
+[ext_resource type="Script" path="res://stockBar.gd" id="9_pxugv"]
+[ext_resource type="Script" path="res://descriptionOpener.gd" id="9_sky72"]
+[ext_resource type="Script" path="res://stock_description_screen_closer.gd" id="10_0ytqx"]
+[ext_resource type="Script" path="res://industry_selector.gd" id="11_eh0v1"]
+[ext_resource type="Script" path="res://selectIndustry.gd" id="12_am1vj"]
 
 [sub_resource type="Gradient" id="Gradient_62e2m"]
 colors = PackedColorArray(1, 1, 1, 1, 0.9111111, 0.9111111, 0.9111111, 1)

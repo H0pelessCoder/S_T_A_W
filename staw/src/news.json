@@ -1,13 +1,60 @@
 {
-    "Geese" : {
-        "NewsTitle" : "GEESE STRIKE AT THE CRESCENT MOON PORT!",
-        "NewsFull" : "Earlier today, shocked bystanders reported swarms of Geese numbering in the tens of thousands at the crescent moon port, transport teams have been forced to fully stop all work at the port, and ships pile up outside the bay waiting for permission to dock.",
-        "Next" : "none",
-        "Super" : false,
-        "Image" : ""
-    }
-
-
+	"Geese" : {
+		"NewsTitle" : "GEESE STRIKE AT THE CRESCENT MOON PORT!",
+		"NewsFull" : "Earlier today, shocked bystanders reported swarms of Geese numbering in the tens of thousands at the crescent moon port, transport teams have been forced to fully stop all work at the port, and ships pile up outside the bay waiting for permission to dock.",
+		"Next" : {
+			"None" : 1.0
+		},
+		"Type": "Major",
+		"Image" : ""
+	},
+	"BorderWar" : {
+		"NewsTitle" : "Ambernesia and Drastara engage at Minthol",
+		"NewsFull" : "The historic town of Minthol, split between Ambernesia and Drastara, became the focal point of a renewed border conflict between the states.",
+		"Next" : {
+			"EmbassyBombed" : 0.25,
+			"TroopMovement" : 0.5,
+			"Descalation" : 0.25
+ 		},
+		"Type": "Super",
+		"Image" : ""
+	},
+	"EmbassyBombed" : {
+		"NewsTitle" : "The Ambernesian Embassy in Drastara bombed!",
+		"NewsFull" : "Drastara has since the second Ambernesian-Drastaran war closed off most of the foreign influence of their northern brothers. However, in the heart of Drastara, one embassy remained, representing peace between Ambernesia and Drastara. Now that dream of unity might be forever dead.",
+		"Next" : {
+			"TroopMovement" : 1.0,
+ 		},
+		"Type": "Super",
+		"Image" : ""
+	},
+	"TroopMovement" : {
+		"NewsTitle" : "Mass Moblization in both Drastara and Ambernesia",
+		"NewsFull" : "Drastaran streets have seen endless columns of tanks and soldiers marching through them, initially Drastaran president Belcome offered reassurances that they were purely for peacekeeping purposes, now that Ambernesia has responded in kind it seems like thhe two countries are barrelling torwards war.",
+		"Next" : {
+			"TroopMovement" : 1.0,
+ 		},
+		"Type": "Super",
+		"Image" : ""
+	},
+	"Descalation" : {
+		"NewsTitle" : "Peace Talks Between Ambernesia and Drastara",
+		"NewsFull" : "Peace summits at the ICA headquarters have begun. Although the are around Minthol remains dangerous, our on the ground reporter is adamant that the situation is descelating",
+		"Next" : {
+			"None" : 1.0,
+ 		},
+		"Type": "Major",
+		"Image" : ""
+	},
+	"None" : {
+		"NewsTitle" : "How are you here?",
+		"NewsFull" : "what?",
+		"Next" : {
+			"None" : 1.0,
+ 		},
+		"Type": "None",
+		"Image" : ""
+	},
 
 
 

@@ -47,7 +47,5 @@ static func findMaximum(stockA,stockB):
 	
 static func calculateStockChange(Stock):
 	var change = Stock["timeFrame"][13] - Stock["timeFrame"][0]
-	print(change)
 	var pchange = change / Stock["timeFrame"][0]
-	print(pchange)
-	return pchange
+	return pchange * 100
