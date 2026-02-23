@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b0ywn45ekt5m8" path="res://return_menu_button.gd" id="6_fj5cn"]
 [ext_resource type="Script" uid="uid://doikjrtifeshd" path="res://news_screen_mover.gd" id="7_iy58a"]
 [ext_resource type="Script" uid="uid://danx0ybhte6gs" path="res://stock_screen_mover.gd" id="8_6a6wx"]
+[ext_resource type="Script" uid="uid://bwx8rjvngreaf" path="res://stock_menu.gd" id="9_g31lc"]
 [ext_resource type="Script" uid="uid://b7iu4tsfe51uv" path="res://stockBar.gd" id="9_pxugv"]
 [ext_resource type="Script" uid="uid://d276l67lust3j" path="res://descriptionOpener.gd" id="9_sky72"]
 [ext_resource type="Script" uid="uid://bl2bl40b43v2b" path="res://stock_description_screen_closer.gd" id="10_0ytqx"]
@@ -222,6 +223,7 @@ offset_top = -518.0
 offset_right = 215.0
 offset_bottom = 132.0
 scale = Vector2(1.6242623, 1.5533156)
+script = ExtResource("9_g31lc")
 
 [node name="SettingsIcon" type="Button" parent="StockMenu" unique_id=1637362966]
 layout_mode = 0
@@ -464,10 +466,10 @@ text = "Rich Big Dick"
 
 [node name="PercentChange" type="RichTextLabel" parent="StockMenu/StockAText" unique_id=1568165512]
 layout_mode = 0
-offset_left = 146.0
-offset_top = 35.0
-offset_right = 194.0
-offset_bottom = 75.0
+offset_left = 189.15622
+offset_top = -12.506491
+offset_right = 274.71173
+offset_bottom = 27.49351
 text = "-0"
 
 [node name="Description" type="Button" parent="StockMenu/StockAText" unique_id=1819697334]
@@ -507,10 +509,10 @@ text = "Rich Big Dick"
 
 [node name="PercentChange" type="RichTextLabel" parent="StockMenu/StockBText" unique_id=1002877396]
 layout_mode = 0
-offset_left = 17.740406
-offset_top = 46.133545
-offset_right = 65.7404
-offset_bottom = 86.133545
+offset_left = 30.053688
+offset_top = -6.6567574
+offset_right = 111.91521
+offset_bottom = 33.343243
 text = "-0"
 
 [node name="Description" type="Button" parent="StockMenu/StockBText" unique_id=1293567142]
@@ -841,7 +843,7 @@ offset_bottom = 51.0
 text = "X"
 script = ExtResource("10_0ytqx")
 
-[connection signal="drawStockSelectors" from="." to="StockMenu/IndustrySelector" method="drawIndustrySelectors"]
+[connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
 [connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MainMenu/SettingsOpener" to="MainMenu/SettingsOpener" method="_on_pressed"]
@@ -850,12 +852,13 @@ script = ExtResource("10_0ytqx")
 [connection signal="pressed" from="NewsMenu/SettingsIcon" to="NewsMenu/SettingsIcon" method="_on_pressed"]
 [connection signal="pressed" from="NewsMenu/ReturnMenuButton" to="NewsMenu/ReturnMenuButton" method="_on_pressed"]
 [connection signal="pressed" from="NewsMenu/NewsScreenMover" to="NewsMenu/NewsScreenMover" method="_on_pressed"]
+[connection signal="drawStockMenu" from="NewsMenu/StockScreenMover" to="StockMenu" method="makeStockScreen"]
 [connection signal="pressed" from="NewsMenu/StockScreenMover" to="NewsMenu/StockScreenMover" method="_on_pressed"]
+[connection signal="drawStockSelectors" from="StockMenu" to="StockMenu/IndustrySelector" method="drawIndustrySelectors"]
 [connection signal="pressed" from="StockMenu/SettingsIcon" to="StockMenu/SettingsIcon" method="_on_pressed"]
 [connection signal="pressed" from="StockMenu/ReturnMenuButton" to="StockMenu/ReturnMenuButton" method="_on_pressed"]
 [connection signal="pressed" from="StockMenu/NewsScreenMover" to="StockMenu/NewsScreenMover" method="_on_pressed"]
-[connection signal="drawStockMenu" from="StockMenu/StockScreenMover" to="." method="_on_stock_screen_mover_draw_stock_menu"]
-[connection signal="drawStockMenu" from="StockMenu/StockScreenMover" to="." method="makeStockScreen"]
+[connection signal="drawStockMenu" from="StockMenu/StockScreenMover" to="StockMenu" method="makeStockScreen"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/1" to="StockMenu/StockBGraph/1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StockMenu/StockBGraph/1" to="StockMenu/StockBGraph/1" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockBGraph/2" to="StockMenu/StockBGraph/2" method="_on_mouse_entered"]
@@ -914,11 +917,12 @@ script = ExtResource("10_0ytqx")
 [connection signal="mouse_exited" from="StockMenu/StockAGraph/13" to="StockMenu/StockAGraph/13" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="StockMenu/StockAGraph/14" to="StockMenu/StockAGraph/14" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StockMenu/StockAGraph/14" to="StockMenu/StockAGraph/14" method="_on_mouse_exited"]
-[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/1" to="." method="makeStockScreen"]
+[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/1" to="StockMenu" method="makeStockScreen"]
 [connection signal="pressed" from="StockMenu/IndustrySelector/IndustryTabs/1" to="StockMenu/IndustrySelector/IndustryTabs/1" method="_on_pressed"]
 [connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/2" to="." method="makeStockScreen"]
+[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/2" to="StockMenu" method="makeStockScreen"]
 [connection signal="pressed" from="StockMenu/IndustrySelector/IndustryTabs/2" to="StockMenu/IndustrySelector/IndustryTabs/2" method="_on_pressed"]
-[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/3" to="." method="makeStockScreen"]
+[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/3" to="StockMenu" method="makeStockScreen"]
 [connection signal="pressed" from="StockMenu/IndustrySelector/IndustryTabs/3" to="StockMenu/IndustrySelector/IndustryTabs/3" method="_on_pressed"]
 [connection signal="pressed" from="StockMenu/IndustrySelector/IndustryForward" to="StockMenu/IndustrySelector" method="forward"]
 [connection signal="pressed" from="StockMenu/IndustrySelector/IndustryBack" to="StockMenu/IndustrySelector" method="backwards"]
