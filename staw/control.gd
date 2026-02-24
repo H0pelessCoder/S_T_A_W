@@ -1,10 +1,11 @@
 extends Control
 class_name global
-
+signal determineNews
 signal drawStockMenu
+static var day := 0
 static var currentIndustry := "Shipping"
 static var Industries : Dictionary
-
+static var News : Dictionary
 func _on_button_pressed():
 	get_tree().quit() # Replace with function body.
 func _ready():
@@ -15,13 +16,17 @@ func _on_start_game_pressed() -> void:
 	get_node("MainMenu").visible = false
 	get_node("NewsMenu").visible = true
 	instantiateIndustries()
+	instantiateNews()
 	emit_signal("drawStockMenu")
+	emit_signal("determineNews")
 
 func instantiateIndustries():
 	var Ijson = preload("res://src/stocks.json")
 	for Industry in Ijson.data:
 		Industries.set(Industry, Ijson.data[Industry])
-
+func instantiateNews():
+	var Njson = preload("res://src/news.json")
+	News = Njson.data
 
 static func findMinimum(stockA,stockB):
 	var smallestB = stockB["timeFrame"][0]

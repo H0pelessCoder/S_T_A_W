@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://mkjjs8awu8go" path="res://volume_bar.gd" id="3_qtu10"]
 [ext_resource type="Script" uid="uid://dx2vt5sywsjui" path="res://exit_settings.gd" id="4_ee4bf"]
 [ext_resource type="Script" uid="uid://b0ywn45ekt5m8" path="res://return_menu_button.gd" id="6_fj5cn"]
+[ext_resource type="Script" uid="uid://cj4hgckj6lw23" path="res://news_menu.gd" id="6_knq72"]
 [ext_resource type="Script" uid="uid://doikjrtifeshd" path="res://news_screen_mover.gd" id="7_iy58a"]
 [ext_resource type="Script" uid="uid://danx0ybhte6gs" path="res://stock_screen_mover.gd" id="8_6a6wx"]
 [ext_resource type="Script" uid="uid://bwx8rjvngreaf" path="res://stock_menu.gd" id="9_g31lc"]
@@ -152,6 +153,7 @@ offset_top = -518.0
 offset_right = 217.0
 offset_bottom = 123.0
 scale = Vector2(1.6242623, 1.5533156)
+script = ExtResource("6_knq72")
 
 [node name="NewsHeader" type="RichTextLabel" parent="NewsMenu" unique_id=367163225]
 layout_mode = 0
@@ -843,6 +845,7 @@ offset_bottom = 51.0
 text = "X"
 script = ExtResource("10_0ytqx")
 
+[connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]
 [connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
 [connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/StartGame" to="." method="_on_start_game_pressed"]
