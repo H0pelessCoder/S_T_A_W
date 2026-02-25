@@ -3,11 +3,11 @@
 		"0" : {
 			"Super" : 1,
 			"Major" : 1,
-			"Minor" : 2
+			"Minor" : 1
 		},
 		"1" : {
 			"Super" : 1,
-			"Major" : 2,
+			"Major" : 1,
 			"Minor" : 1
 		}
 		
@@ -16,14 +16,18 @@
 	"Events" : {
 		
 		"Geese" : {
+			"Title" : "Geese",
 			"NewsTitle" : "GEESE STRIKE AT THE CRESCENT MOON PORT!",
 			"NewsFull" : "Earlier today, shocked bystanders reported swarms of Geese numbering in the tens of thousands descending on the crescent moon port, transport teams have been forced to fully stop all work at the port, and ships pile up outside the bay waiting for permission to dock.",
 			"Next" : {},
 			"Prev" : ["BorderWar"],
+			"Mutually_Exclusive" : [],
 			"Type": "Major",
+			"Done" : false,
 			"Image" : ""
 		},
 		"BorderWar" : {
+			"Title" : "BorderWar",
 			"NewsTitle" : "Ambernesia and Drastara engage at Minthol",
 			"NewsFull" : "The historic town of Minthol, split between Ambernesia and Drastara, became the focal point of a renewed border conflict between the states.",
 			"Next" : {
@@ -32,58 +36,78 @@
 				"Descalation" : 0.25
  			},
 			"Prev" : [],
+			"Mutually_Exclusive" : [],
 			"Type": "Super",
+			"Done" : false,
 			"Image" : "",
 			
 		},
 		"EmbassyBombed" : {
+			"Title" : "EmbassyBombed",
 			"NewsTitle" : "The Ambernesian Embassy in Drastara bombed!",
 			"NewsFull" : "Drastara has since the second Ambernesian-Drastaran war closed off most of the foreign influence of their northern brothers. However, in the heart of Drastara, one embassy remained, representing peace between Ambernesia and Drastara. Now that dream of unity might be forever dead.",
 			"Next" : {
 				"TroopMovement" : 1.0
  			},
 			"Prev" : ["BorderWar"],
+			"Mutually_Exclusive" : ["Descalation"],
 			"Type": "Super",
+			"Done" : false,
 			"Image" : ""
 		},
 		"TroopMovement" : {
+			"Title" : "TroopMovement",
 			"NewsTitle" : "Mass Moblization in both Drastara and Ambernesia",
 			"NewsFull" : "Drastaran streets have seen endless columns of tanks and soldiers marching through them, initially Drastaran president Belcome offered reassurances that they were purely for peacekeeping purposes, now that Ambernesia has responded in kind it seems like thhe two countries are barrelling torwards war.",
 			"Next" : {},
 			"Prev" : ["BorderWar"],
+			"Mutually_Exclusive" : ["Descalation"],
 			"Type": "Super",
+			"Done" : false,
 			"Image" : ""
 		},
 		"Descalation" : {
+			"Title" : "Descalation",
 			"NewsTitle" : "Peace Talks Between Ambernesia and Drastara",
 			"NewsFull" : "Peace summits at the ICA headquarters have begun. Although the area around Minthol remains dangerous, our on the ground reporter is adamant that the situation is descelating",
 			"Next" : {},
 			"Prev" : ["BorderWar"],
+			"Mutually_Exclusive" : ["TroopMovement", "EmbassyBombed"],
 			"Type": "Super",
+			"Done" : false,
 			"Image" : ""
 		},
 		"CelebrityDeathA" : {
+			"Title" : "CelebrityDeathA",
 			"NewsTitle" : "Celebrity Dead at 21!",
 			"NewsFull" : "Samantha Harvey Bercha, grandaughter of Milos Bercha and successful singer-songwriter was found in her studio apartment earlier today ripped to shreds by a vicious pack of geese!",
 			"Next" : {},
 			"Prev" : [],
+			"Mutually_Exclusive" : [],
 			"Type": "Minor",
+			"Done" : false,
 			"Image" : ""
 		},
 		"Sphere" : {
+			"Title" : "Sphere",
 			"NewsTitle" : "Mysterious Object off the Coast of Praxtoria",
 			"NewsFull" : "A strange oblong sphere was found floating off the coast of the Catarius Beach earlier this week. Dr. Dain explores the object in an exclusive interview with the Praxtoria News Network.",
 			"Next" : {},
 			"Prev" : [],
+			"Mutually_Exclusive" : [],
 			"Type": "Minor",
+			"Done" : false,
 			"Image" : ""
 		},
 		"Pirates" : {
+			"Title" : "Pirates",
 			"NewsTitle" : "Pirate Attack on Flaeton Shipping!",
 			"NewsFull" : "A pirate fleet consisting of 8 ships, multiple over 300m in length attacked a Flaeton Shipping convoy valued at well over $130 Million Pax. Cautiously, Flaeton shipping has begun negotiations for the return of the ships and goods, especially the wheat shipment to Paxtoria.",
 			"Next" : {},
 			"Prev" : [],
+			"Mutually_Exclusive" : [],
 			"Type": "Major",
+			"Done" : false,
 			"Image" : ""
 		}
 		}

@@ -1,0 +1,932 @@
+[gd_scene format=3 uid="uid://dymxvad1jkhfp"]
+
+[ext_resource type="Script" uid="uid://g8n6s1ggvuwy" path="res://control.gd" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://dca4vvbq07xvn" path="res://settings_opener.gd" id="2_62e2m"]
+[ext_resource type="Script" uid="uid://d2dcaog7gtwym" path="res://settings.gd" id="3_kbped"]
+[ext_resource type="Script" uid="uid://mkjjs8awu8go" path="res://volume_bar.gd" id="3_qtu10"]
+[ext_resource type="Script" uid="uid://dx2vt5sywsjui" path="res://exit_settings.gd" id="4_ee4bf"]
+[ext_resource type="Script" uid="uid://b0ywn45ekt5m8" path="res://return_menu_button.gd" id="6_fj5cn"]
+[ext_resource type="Script" uid="uid://cj4hgckj6lw23" path="res://news_menu.gd" id="6_knq72"]
+[ext_resource type="Script" uid="uid://doikjrtifeshd" path="res://news_screen_mover.gd" id="7_iy58a"]
+[ext_resource type="Script" uid="uid://danx0ybhte6gs" path="res://stock_screen_mover.gd" id="8_6a6wx"]
+[ext_resource type="Script" uid="uid://bwx8rjvngreaf" path="res://stock_menu.gd" id="9_g31lc"]
+[ext_resource type="Script" uid="uid://b7iu4tsfe51uv" path="res://stockBar.gd" id="9_pxugv"]
+[ext_resource type="Script" uid="uid://d276l67lust3j" path="res://descriptionOpener.gd" id="9_sky72"]
+[ext_resource type="Script" uid="uid://bl2bl40b43v2b" path="res://stock_description_screen_closer.gd" id="10_0ytqx"]
+[ext_resource type="Script" uid="uid://0dxvbkfdxlxa" path="res://industry_selector.gd" id="11_eh0v1"]
+[ext_resource type="Script" uid="uid://ckt5mujchmblv" path="res://selectIndustry.gd" id="12_am1vj"]
+
+[sub_resource type="Gradient" id="Gradient_62e2m"]
+colors = PackedColorArray(1, 1, 1, 1, 0.9111111, 0.9111111, 0.9111111, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qtu10"]
+gradient = SubResource("Gradient_62e2m")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kbped"]
+load_path = "res://.godot/imported/settings_icon.png-2aec0f18b1e0fd16c56ba34ef69ef014.ctex"
+
+[node name="Control" type="Control" unique_id=2053659831]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1545337886]
+position = Vector2(-2, -4)
+
+[node name="MainMenu" type="Control" parent="." unique_id=962578855]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -947.0
+offset_top = -526.0
+offset_right = 208.0
+offset_bottom = 121.0
+scale = Vector2(1.6242623, 1.5533156)
+
+[node name="Button" type="Button" parent="MainMenu" unique_id=736862732]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 599.0
+offset_right = 62.0
+offset_bottom = 636.0
+text = "QUIT"
+
+[node name="PlayText" type="RichTextLabel" parent="MainMenu" unique_id=216645975]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 81.0
+offset_right = 906.0
+offset_bottom = 173.0
+text = "Stock Trading in an Alternate World"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGame" type="Button" parent="MainMenu" unique_id=2067489760]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 198.0
+offset_right = 786.0
+offset_bottom = 292.0
+text = "Play"
+
+[node name="SettingsOpener" type="Button" parent="MainMenu" unique_id=1252875900]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 356.0
+offset_right = 786.0
+offset_bottom = 450.0
+text = "Settings"
+script = ExtResource("2_62e2m")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1092133334]
+visible = false
+z_index = -2
+z_as_relative = false
+position = Vector2(-4, -4.999998)
+scale = Vector2(4.5, 649)
+texture = SubResource("GradientTexture1D_qtu10")
+
+[node name="Settings" type="Control" parent="." unique_id=598453037]
+visible = false
+anchors_preset = 0
+offset_left = -943.0
+offset_top = -526.0
+offset_right = 219.0
+offset_bottom = 120.0
+scale = Vector2(1.6242623, 1.5533156)
+script = ExtResource("3_kbped")
+metadata/LastOpen = ""
+
+[node name="VolumeBar" type="Control" parent="Settings" unique_id=1323716124]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(213, 127)
+script = ExtResource("3_qtu10")
+
+[node name="VolumeSlider" type="HScrollBar" parent="Settings/VolumeBar" unique_id=1516015970]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 205.0
+offset_right = 622.0
+offset_bottom = 213.0
+step = 1.0
+rounded = true
+
+[node name="VolumeReader" type="RichTextLabel" parent="Settings/VolumeBar" unique_id=129023184]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 197.0
+offset_right = 681.0
+offset_bottom = 219.0
+text = "0"
+scroll_active = false
+
+[node name="VolumeHeader" type="RichTextLabel" parent="Settings/VolumeBar" unique_id=690886591]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 171.0
+offset_right = 642.0
+offset_bottom = 193.0
+text = "Volume "
+scroll_active = false
+
+[node name="ExitSettings" type="Button" parent="Settings" unique_id=1795321709]
+layout_mode = 0
+offset_left = 1033.129
+offset_top = 29.0
+offset_right = 1091.0
+offset_bottom = 75.0
+text = "X"
+script = ExtResource("4_ee4bf")
+
+[node name="NewsMenu" type="Control" parent="." unique_id=2121891766]
+visible = false
+anchors_preset = 0
+offset_left = -947.0
+offset_top = -518.0
+offset_right = 217.0
+offset_bottom = 123.0
+scale = Vector2(1.6242623, 1.5533156)
+script = ExtResource("6_knq72")
+
+[node name="NewsHeader" type="RichTextLabel" parent="NewsMenu" unique_id=367163225]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 143.0
+offset_right = 686.0
+offset_bottom = 240.0
+text = "					PNN
+PAXTORIA NEWS NETWORK"
+
+[node name="MinorEventTextA" type="RichTextLabel" parent="NewsMenu" unique_id=1921124857]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 319.0
+offset_right = 495.0
+offset_bottom = 416.0
+text = "Something A"
+
+[node name="MinorEventTextB" type="RichTextLabel" parent="NewsMenu" unique_id=1231000588]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 316.0
+offset_right = 964.0
+offset_bottom = 413.0
+text = "Something B"
+
+[node name="SettingsIcon" type="Button" parent="NewsMenu" unique_id=1692128919]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 570.4375
+offset_right = 74.0
+offset_bottom = 621.7097
+icon = SubResource("CompressedTexture2D_kbped")
+expand_icon = true
+script = ExtResource("2_62e2m")
+
+[node name="ReturnMenuButton" type="Button" parent="NewsMenu" unique_id=2070657731]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 570.0
+offset_right = 140.0
+offset_bottom = 621.2722
+text = "X"
+expand_icon = true
+script = ExtResource("6_fj5cn")
+
+[node name="NewsScreenMover" type="Button" parent="NewsMenu" unique_id=449558072]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 138.0
+offset_bottom = 49.0
+text = "NEWS SCREEN"
+flat = true
+script = ExtResource("7_iy58a")
+
+[node name="StockScreenMover" type="Button" parent="NewsMenu" unique_id=74585702]
+layout_mode = 0
+offset_left = 1020.0
+offset_right = 1143.0
+offset_bottom = 49.0
+text = "STOCK SCREEN"
+script = ExtResource("8_6a6wx")
+
+[node name="StockMenu" type="Control" parent="." unique_id=201495546]
+visible = false
+anchors_preset = 0
+offset_left = -943.0
+offset_top = -518.0
+offset_right = 215.0
+offset_bottom = 132.0
+scale = Vector2(1.6242623, 1.5533156)
+script = ExtResource("9_g31lc")
+
+[node name="SettingsIcon" type="Button" parent="StockMenu" unique_id=1637362966]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 564.4375
+offset_right = 72.0
+offset_bottom = 615.7097
+icon = SubResource("CompressedTexture2D_kbped")
+expand_icon = true
+script = ExtResource("2_62e2m")
+
+[node name="ReturnMenuButton" type="Button" parent="StockMenu" unique_id=182424745]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 564.0
+offset_right = 138.0
+offset_bottom = 615.2722
+text = "X"
+expand_icon = true
+script = ExtResource("6_fj5cn")
+
+[node name="NewsScreenMover" type="Button" parent="StockMenu" unique_id=289866005]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 10.0
+offset_right = 146.0
+offset_bottom = 59.0
+text = "NEWS SCREEN"
+script = ExtResource("7_iy58a")
+
+[node name="StockScreenMover" type="Button" parent="StockMenu" unique_id=1630498464]
+layout_mode = 0
+offset_left = 1018.0
+offset_right = 1141.0
+offset_bottom = 49.0
+text = "STOCK SCREEN"
+flat = true
+script = ExtResource("8_6a6wx")
+
+[node name="IndustryTabs" type="HBoxContainer" parent="StockMenu" unique_id=1910791419]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 552.0
+offset_right = 999.0
+offset_bottom = 619.0
+
+[node name="StockBGraph" type="Control" parent="StockMenu" unique_id=1021260822]
+anchors_preset = 0
+offset_left = 592.26886
+offset_top = 130.68819
+offset_right = 1163.2689
+offset_bottom = 396.68817
+scale = Vector2(1, 1.4377737)
+metadata/stock = 1
+
+[node name="1" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=455449413]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 266.0
+offset_right = 76.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="2" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1576540435]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 266.0
+offset_right = 117.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="3" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=432347568]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 266.0
+offset_right = 158.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="4" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1750446482]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 266.0
+offset_right = 199.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="5" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1358033182]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 266.0
+offset_right = 240.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="6" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1199955121]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 266.0
+offset_right = 281.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="7" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=923774420]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 266.0
+offset_right = 322.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="8" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=39047321]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 266.0
+offset_right = 363.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="9" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1235686329]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 266.0
+offset_right = 404.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="10" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=268087350]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 266.0
+offset_right = 445.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="11" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=633077052]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 266.0
+offset_right = 486.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="12" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=1694203252]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 266.0
+offset_right = 527.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="13" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=2052904402]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 266.0
+offset_right = 568.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="14" type="ColorRect" parent="StockMenu/StockBGraph" unique_id=261392992]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 266.0
+offset_right = 610.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="StockIndicator" type="RichTextLabel" parent="StockMenu/StockBGraph" unique_id=1575145100]
+visible = false
+layout_mode = 0
+offset_right = 56.025436
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 16
+
+[node name="StockAText" type="Control" parent="StockMenu" unique_id=1597895618]
+anchors_preset = 0
+offset_left = 155.0
+offset_top = 8.0
+offset_right = 349.0
+offset_bottom = 89.0
+
+[node name="Title" type="RichTextLabel" parent="StockMenu/StockAText" unique_id=600777301]
+layout_mode = 0
+offset_left = -4.777957
+offset_top = -2.8497202
+offset_right = 73.222046
+offset_bottom = 37.15028
+theme_override_font_sizes/normal_font_size = 29
+text = "RFK"
+
+[node name="TitleShort" type="RichTextLabel" parent="StockMenu/StockAText" unique_id=1692091611]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 33.0
+offset_right = 168.0
+offset_bottom = 73.0
+text = "Rich Big Dick"
+
+[node name="PercentChange" type="RichTextLabel" parent="StockMenu/StockAText" unique_id=1568165512]
+layout_mode = 0
+offset_left = 189.15622
+offset_top = -12.506491
+offset_right = 274.71173
+offset_bottom = 27.49351
+text = "-0"
+
+[node name="Description" type="Button" parent="StockMenu/StockAText" unique_id=1819697334]
+layout_mode = 0
+offset_left = 133.13078
+offset_top = -9.931332
+offset_right = 178.13078
+offset_bottom = 21.068668
+text = "?"
+script = ExtResource("9_sky72")
+metadata/Stock = 0
+
+[node name="StockBText" type="Control" parent="StockMenu" unique_id=1121687254]
+anchors_preset = 0
+offset_left = 766.0
+offset_top = -3.0
+offset_right = 960.0
+offset_bottom = 78.0
+
+[node name="Title" type="RichTextLabel" parent="StockMenu/StockBText" unique_id=106225299]
+layout_mode = 0
+offset_left = -162.03351
+offset_top = 2.356214
+offset_right = -75.03351
+offset_bottom = 42.356213
+theme_override_font_sizes/normal_font_size = 29
+text = "RFK"
+
+[node name="TitleShort" type="RichTextLabel" parent="StockMenu/StockBText" unique_id=1430591403]
+layout_mode = 0
+offset_left = -164.49617
+offset_top = 46.133568
+offset_right = 40.50383
+offset_bottom = 86.13357
+theme_override_font_sizes/normal_font_size = 16
+text = "Rich Big Dick"
+
+[node name="PercentChange" type="RichTextLabel" parent="StockMenu/StockBText" unique_id=1002877396]
+layout_mode = 0
+offset_left = 30.053688
+offset_top = -6.6567574
+offset_right = 111.91521
+offset_bottom = 33.343243
+text = "-0"
+
+[node name="Description" type="Button" parent="StockMenu/StockBText" unique_id=1293567142]
+layout_mode = 0
+offset_left = 133.13078
+offset_top = -9.931332
+offset_right = 178.13078
+offset_bottom = 21.068668
+text = "?"
+script = ExtResource("9_sky72")
+metadata/Stock = 1
+
+[node name="RangeIndicators" type="Control" parent="StockMenu" unique_id=993433959]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bottom" type="RichTextLabel" parent="StockMenu/RangeIndicators" unique_id=2121165116]
+z_index = 1
+layout_mode = 0
+offset_left = 556.56036
+offset_top = 500.2203
+offset_right = 600.2725
+offset_bottom = 523.22034
+text = "0"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Top" type="RichTextLabel" parent="StockMenu/RangeIndicators" unique_id=873784738]
+z_index = 1
+layout_mode = 0
+offset_left = 555.94464
+offset_top = 112.662224
+offset_right = 600.8881
+offset_bottom = 135.66223
+text = "0"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dividers" type="Control" parent="StockMenu" unique_id=1156125850]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Divider" type="ColorRect" parent="StockMenu/Dividers" unique_id=373323992]
+z_index = -1
+layout_mode = 0
+offset_left = 1170.3774
+offset_top = 515.02734
+offset_right = 1177.611
+offset_bottom = 1691.1643
+rotation = 1.5707964
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Divider2" type="ColorRect" parent="StockMenu/Dividers" unique_id=1333294583]
+z_index = -1
+layout_mode = 0
+offset_left = 582.41833
+offset_top = 521.6905
+offset_right = 589.65186
+offset_bottom = 1056.4381
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="StockAGraph" type="Control" parent="StockMenu" unique_id=1109519887]
+anchors_preset = 0
+offset_left = -4.3096414
+offset_top = 133.2633
+offset_right = 566.69037
+offset_bottom = 399.2633
+scale = Vector2(1, 1.4265008)
+metadata/stock = 0
+
+[node name="1" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=935817042]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 266.0
+offset_right = 76.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="2" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=2001313693]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 266.0
+offset_right = 117.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="3" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1124554853]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 266.0
+offset_right = 158.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="4" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=346531300]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 266.0
+offset_right = 199.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="5" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1227300771]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 266.0
+offset_right = 240.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="6" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1410471386]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 266.0
+offset_right = 281.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="7" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1517767087]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 266.0
+offset_right = 322.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="8" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1120850887]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 266.0
+offset_right = 363.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="9" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=561618149]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 266.0
+offset_right = 404.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="10" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=548848008]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 266.0
+offset_right = 445.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="11" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1216578806]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 266.0
+offset_right = 486.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="12" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=1699632715]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 266.0
+offset_right = 527.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="13" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=14597694]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 266.0
+offset_right = 568.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="14" type="ColorRect" parent="StockMenu/StockAGraph" unique_id=904690143]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 266.0
+offset_right = 610.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="StockIndicator" type="RichTextLabel" parent="StockMenu/StockAGraph" unique_id=370377435]
+visible = false
+layout_mode = 0
+offset_right = 56.025436
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 16
+
+[node name="IndustrySelector" type="Control" parent="StockMenu" unique_id=1103404980]
+anchors_preset = 0
+offset_left = 248.11264
+offset_top = 543.3538
+offset_right = 643.369
+offset_bottom = 652.1533
+script = ExtResource("11_eh0v1")
+
+[node name="IndustryTabs" type="HBoxContainer" parent="StockMenu/IndustrySelector" unique_id=1141203383]
+layout_mode = 0
+offset_right = 297.98148
+offset_bottom = 110.172485
+
+[node name="1" type="Button" parent="StockMenu/IndustrySelector/IndustryTabs" unique_id=150176686]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("12_am1vj")
+
+[node name="2" type="Button" parent="StockMenu/IndustrySelector/IndustryTabs" unique_id=1846420398]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("12_am1vj")
+
+[node name="3" type="Button" parent="StockMenu/IndustrySelector/IndustryTabs" unique_id=1022304297]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("12_am1vj")
+
+[node name="IndustryForward" type="Button" parent="StockMenu/IndustrySelector" unique_id=6135620]
+layout_mode = 0
+offset_left = 321.99234
+offset_top = 13.519466
+offset_right = 355.85388
+offset_bottom = 44.519466
+text = "->"
+
+[node name="IndustryBack" type="Button" parent="StockMenu/IndustrySelector" unique_id=866899067]
+layout_mode = 0
+offset_left = 322.608
+offset_top = 74.03518
+offset_right = 356.46954
+offset_bottom = 105.03519
+text = "<-"
+
+[node name="IndustryIndicator" type="RichTextLabel" parent="StockMenu/IndustrySelector" unique_id=493915967]
+layout_mode = 0
+offset_left = 323.22363
+offset_top = 46.99625
+offset_right = 378.0177
+offset_bottom = 70.81625
+text = "0/0"
+
+[node name="StockDescriptionScreen" type="Control" parent="." unique_id=1323499153]
+visible = false
+z_index = 1
+anchors_preset = 0
+offset_left = -449.0
+offset_top = -296.0
+offset_right = 479.0
+offset_bottom = 362.0
+
+[node name="StockTitle" type="RichTextLabel" parent="StockDescriptionScreen" unique_id=522833551]
+z_index = 1
+layout_mode = 0
+offset_right = 884.0
+offset_bottom = 135.0
+theme_override_font_sizes/normal_font_size = 48
+
+[node name="StockDescription" type="RichTextLabel" parent="StockDescriptionScreen" unique_id=414633076]
+z_index = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 137.0
+offset_right = 865.0
+offset_bottom = 615.0
+theme_override_font_sizes/normal_font_size = 48
+
+[node name="ColorRect" type="ColorRect" parent="StockDescriptionScreen" unique_id=1710374063]
+layout_mode = 0
+offset_right = 928.0
+offset_bottom = 658.0
+color = Color(0, 0, 0, 1)
+
+[node name="StockDescriptionScreenCloser" type="Button" parent="StockDescriptionScreen" unique_id=916535694]
+layout_mode = 0
+offset_left = 867.0
+offset_top = 9.0
+offset_right = 918.0
+offset_bottom = 51.0
+text = "X"
+script = ExtResource("10_0ytqx")
+
+[connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]
+[connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
+[connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MainMenu/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MainMenu/SettingsOpener" to="MainMenu/SettingsOpener" method="_on_pressed"]
+[connection signal="value_changed" from="Settings/VolumeBar/VolumeSlider" to="Settings/VolumeBar" method="_on_h_scroll_bar_value_changed"]
+[connection signal="pressed" from="Settings/ExitSettings" to="Settings/ExitSettings" method="_on_pressed"]
+[connection signal="pressed" from="NewsMenu/SettingsIcon" to="NewsMenu/SettingsIcon" method="_on_pressed"]
+[connection signal="pressed" from="NewsMenu/ReturnMenuButton" to="NewsMenu/ReturnMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="NewsMenu/NewsScreenMover" to="NewsMenu/NewsScreenMover" method="_on_pressed"]
+[connection signal="drawStockMenu" from="NewsMenu/StockScreenMover" to="StockMenu" method="makeStockScreen"]
+[connection signal="pressed" from="NewsMenu/StockScreenMover" to="NewsMenu/StockScreenMover" method="_on_pressed"]
+[connection signal="drawStockSelectors" from="StockMenu" to="StockMenu/IndustrySelector" method="drawIndustrySelectors"]
+[connection signal="pressed" from="StockMenu/SettingsIcon" to="StockMenu/SettingsIcon" method="_on_pressed"]
+[connection signal="pressed" from="StockMenu/ReturnMenuButton" to="StockMenu/ReturnMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="StockMenu/NewsScreenMover" to="StockMenu/NewsScreenMover" method="_on_pressed"]
+[connection signal="drawStockMenu" from="StockMenu/StockScreenMover" to="StockMenu" method="makeStockScreen"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/1" to="StockMenu/StockBGraph/1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/1" to="StockMenu/StockBGraph/1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/2" to="StockMenu/StockBGraph/2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/2" to="StockMenu/StockBGraph/2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/3" to="StockMenu/StockBGraph/3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/3" to="StockMenu/StockBGraph/3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/4" to="StockMenu/StockBGraph/4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/4" to="StockMenu/StockBGraph/4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/5" to="StockMenu/StockBGraph/5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/5" to="StockMenu/StockBGraph/5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/6" to="StockMenu/StockBGraph/6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/6" to="StockMenu/StockBGraph/6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/7" to="StockMenu/StockBGraph/7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/7" to="StockMenu/StockBGraph/7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/8" to="StockMenu/StockBGraph/8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/8" to="StockMenu/StockBGraph/8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/9" to="StockMenu/StockBGraph/9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/9" to="StockMenu/StockBGraph/9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/10" to="StockMenu/StockBGraph/10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/10" to="StockMenu/StockBGraph/10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/11" to="StockMenu/StockBGraph/11" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/11" to="StockMenu/StockBGraph/11" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/12" to="StockMenu/StockBGraph/12" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/12" to="StockMenu/StockBGraph/12" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/13" to="StockMenu/StockBGraph/13" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/13" to="StockMenu/StockBGraph/13" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockBGraph/14" to="StockMenu/StockBGraph/14" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockBGraph/14" to="StockMenu/StockBGraph/14" method="_on_mouse_exited"]
+[connection signal="pressed" from="StockMenu/StockAText/Description" to="StockMenu/StockAText/Description" method="_on_pressed"]
+[connection signal="pressed" from="StockMenu/StockBText/Description" to="StockMenu/StockBText/Description" method="_on_pressed"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/1" to="StockMenu/StockAGraph/1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/1" to="StockMenu/StockAGraph/1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/2" to="StockMenu/StockAGraph/2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/2" to="StockMenu/StockAGraph/2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/3" to="StockMenu/StockAGraph/3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/3" to="StockMenu/StockAGraph/3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/4" to="StockMenu/StockAGraph/4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/4" to="StockMenu/StockAGraph/4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/5" to="StockMenu/StockAGraph/5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/5" to="StockMenu/StockAGraph/5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/6" to="StockMenu/StockAGraph/6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/6" to="StockMenu/StockAGraph/6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/7" to="StockMenu/StockAGraph/7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/7" to="StockMenu/StockAGraph/7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/8" to="StockMenu/StockAGraph/8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/8" to="StockMenu/StockAGraph/8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/9" to="StockMenu/StockAGraph/9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/9" to="StockMenu/StockAGraph/9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/10" to="StockMenu/StockAGraph/10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/10" to="StockMenu/StockAGraph/10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/11" to="StockMenu/StockAGraph/11" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/11" to="StockMenu/StockAGraph/11" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/12" to="StockMenu/StockAGraph/12" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/12" to="StockMenu/StockAGraph/12" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/13" to="StockMenu/StockAGraph/13" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/13" to="StockMenu/StockAGraph/13" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StockMenu/StockAGraph/14" to="StockMenu/StockAGraph/14" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StockMenu/StockAGraph/14" to="StockMenu/StockAGraph/14" method="_on_mouse_exited"]
+[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/1" to="StockMenu" method="makeStockScreen"]
+[connection signal="pressed" from="StockMenu/IndustrySelector/IndustryTabs/1" to="StockMenu/IndustrySelector/IndustryTabs/1" method="_on_pressed"]
+[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/2" to="." method="makeStockScreen"]
+[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/2" to="StockMenu" method="makeStockScreen"]
+[connection signal="pressed" from="StockMenu/IndustrySelector/IndustryTabs/2" to="StockMenu/IndustrySelector/IndustryTabs/2" method="_on_pressed"]
+[connection signal="drawStockMenu" from="StockMenu/IndustrySelector/IndustryTabs/3" to="StockMenu" method="makeStockScreen"]
+[connection signal="pressed" from="StockMenu/IndustrySelector/IndustryTabs/3" to="StockMenu/IndustrySelector/IndustryTabs/3" method="_on_pressed"]
+[connection signal="pressed" from="StockMenu/IndustrySelector/IndustryForward" to="StockMenu/IndustrySelector" method="forward"]
+[connection signal="pressed" from="StockMenu/IndustrySelector/IndustryBack" to="StockMenu/IndustrySelector" method="backwards"]
+[connection signal="pressed" from="StockDescriptionScreen/StockDescriptionScreenCloser" to="StockDescriptionScreen/StockDescriptionScreenCloser" method="_on_pressed"]

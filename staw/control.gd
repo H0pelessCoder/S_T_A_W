@@ -6,6 +6,8 @@ static var day := 0
 static var currentIndustry := "Shipping"
 static var Industries : Dictionary
 static var News : Dictionary
+static var availableEvents : Dictionary 
+
 func _on_button_pressed():
 	get_tree().quit() # Replace with function body.
 func _ready():
@@ -24,9 +26,13 @@ func instantiateIndustries():
 	var Ijson = preload("res://src/stocks.json")
 	for Industry in Ijson.data:
 		Industries.set(Industry, Ijson.data[Industry])
+		
 func instantiateNews():
 	var Njson = preload("res://src/news.json")
 	News = Njson.data
+	for event in News["Events"]:
+		if News["Events"][event]["Prev"].size() == 0:
+			availableEvents.set(event, News["Events"][event])
 
 static func findMinimum(stockA,stockB):
 	var smallestB = stockB["timeFrame"][0]
