@@ -11,8 +11,7 @@ static var availableEvents : Dictionary
 func _on_button_pressed():
 	get_tree().quit() # Replace with function body.
 func _ready():
-	print("HI")
-
+	pass
 
 func _on_start_game_pressed() -> void:
 	get_node("MainMenu").visible = false
@@ -33,7 +32,7 @@ func instantiateNews():
 	for event in News["Events"]:
 		if News["Events"][event]["Prev"].size() == 0:
 			availableEvents.set(event, News["Events"][event])
-
+	availableEvents = eventController.sortEvents(availableEvents)
 static func findMinimum(stockA,stockB):
 	var smallestB = stockB["timeFrame"][0]
 	var smallestA = stockA["timeFrame"][0]
