@@ -39,11 +39,13 @@ func determineTodaysNews():
 	var eventsToProcess = global.availableEvents
 	chooseEvents(pendingEvents)
 	chooseEvents(eventsToProcess)
-	print("Day: " + str(global.day))
-	print("HappeningEvents:")
-	print(happeningEvents)
-	print("\n")
-	testNextDay()
+	loadNewsScreen()
+	#Testing new day
+	#print("Day: " + str(global.day))
+	#print("HappeningEvents:")
+	#print(happeningEvents)
+	#print("\n")
+	#testNextDay()
 	
 			#pick a random event from the dict
 			
@@ -82,7 +84,38 @@ func isEventAllowed(event):
 static func getEvent(event):
 	return global.News["Events"][event]
 
+func loadNewsScreen():
+	var Events = global.News["Events"]
+	for type in happeningEvents.keys():
+		for event in happeningEvents[type]:
+			var eventNode = $"EventList/Horiz/EventBase".duplicate()
+			$"EventList/Horiz".add_child(eventNode)
+			eventNode.visible = true
+			var header = get_node(str(eventNode.get_path()) + "/EventHeader")
+			header.text = Events[event]["NewsTitle"]
+			
+			var body = get_node(str(eventNode.get_path()) + "/EventBody")
+			body.text = Events[event]["NewsFull"]
+			if type == "Super":
+				pass
+				#I dont have any images yet
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 #ill have to add this in as a stretch. Too much work for now.
 func randomNextEvent():

@@ -164,22 +164,6 @@ offset_bottom = 240.0
 text = "					PNN
 PAXTORIA NEWS NETWORK"
 
-[node name="MinorEventTextA" type="RichTextLabel" parent="NewsMenu" unique_id=1921124857]
-layout_mode = 0
-offset_left = 276.0
-offset_top = 319.0
-offset_right = 495.0
-offset_bottom = 416.0
-text = "Something A"
-
-[node name="MinorEventTextB" type="RichTextLabel" parent="NewsMenu" unique_id=1231000588]
-layout_mode = 0
-offset_left = 745.0
-offset_top = 316.0
-offset_right = 964.0
-offset_bottom = 413.0
-text = "Something B"
-
 [node name="SettingsIcon" type="Button" parent="NewsMenu" unique_id=1692128919]
 layout_mode = 0
 offset_left = 25.0
@@ -216,6 +200,45 @@ offset_right = 1143.0
 offset_bottom = 49.0
 text = "STOCK SCREEN"
 script = ExtResource("8_6a6wx")
+
+[node name="EventList" type="ScrollContainer" parent="NewsMenu" unique_id=1153789604]
+clip_contents = false
+layout_mode = 0
+offset_right = 552.31635
+offset_bottom = 368.02722
+scale = Vector2(2.1112318, 1)
+
+[node name="Horiz" type="BoxContainer" parent="NewsMenu/EventList" unique_id=1934314436]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+vertical = true
+
+[node name="EventBase" type="Control" parent="NewsMenu/EventList/Horiz" unique_id=1065191739]
+custom_minimum_size = Vector2(200, 225)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="EventImage" type="TextureRect" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=2084341262]
+visible = false
+layout_mode = 0
+offset_left = 4.3096504
+offset_top = 1.2875687
+offset_right = 100.96895
+offset_bottom = 97.94687
+
+[node name="EventBody" type="Label" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=876308461]
+layout_mode = 0
+offset_left = 14.775939
+offset_top = 88.84222
+offset_right = 199.47519
+offset_bottom = 207.2985
+
+[node name="EventHeader" type="Label" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=769691296]
+layout_mode = 0
+offset_left = 99.12192
+offset_top = 11.588115
+offset_right = 188.39322
+offset_bottom = 80.47303
 
 [node name="StockMenu" type="Control" parent="." unique_id=201495546]
 visible = false
