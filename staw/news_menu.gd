@@ -11,25 +11,16 @@ static var happeningEvents := eventFormat()
 var pendingEvents := eventFormat()
 
 func testNextDay():
-	pendingEvents = eventFormat()
 	global.day += 1
 	for type in happeningEvents.keys():
 		for event in happeningEvents.get(type):
 			event = getEvent(event)
 			event["Done"] = true
 			randomize()
-			if event["Next"].size() !=0 :
-				var allowedEvents = []
-				for next in event["Next"]:
-					if isEventAllowed(next) == true:
-						allowedEvents.append(next)
-				if allowedEvents.size() == 0:
-					continue
-				var nextEvent = randi_range(0, allowedEvents.size()-1)
-				var nextEventName = allowedEvents[nextEvent]
-				nextEvent = getEvent(nextEventName)
-				pendingEvents.get(nextEvent["Type"]).append(nextEvent["Title"])
-
+			for next in event["Next"]:
+				if isEventAllowed(next) == true:
+					next = getEvent(next)
+					pendingEvents[next["Type"]].append(next["Title"])
 	happeningEvents = eventFormat()
 	if global.day == 1:
 		determineTodaysNews()

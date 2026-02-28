@@ -22,8 +22,15 @@ colors = PackedColorArray(1, 1, 1, 1, 0.9111111, 0.9111111, 0.9111111, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_qtu10"]
 gradient = SubResource("Gradient_62e2m")
 
+[sub_resource type="LabelSettings" id="LabelSettings_knq72"]
+font_size = 32
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kbped"]
 load_path = "res://.godot/imported/settings_icon.png-2aec0f18b1e0fd16c56ba34ef69ef014.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_xvdhi"]
 
 [node name="Control" type="Control" unique_id=2053659831]
 layout_mode = 3
@@ -155,7 +162,8 @@ offset_bottom = 123.0
 scale = Vector2(1.6242623, 1.5533156)
 script = ExtResource("6_knq72")
 
-[node name="NewsHeader" type="RichTextLabel" parent="NewsMenu" unique_id=367163225]
+[node name="NewsHeader" type="Label" parent="NewsMenu" unique_id=361585977]
+z_index = 1
 layout_mode = 0
 offset_left = 467.0
 offset_top = 143.0
@@ -163,8 +171,10 @@ offset_right = 686.0
 offset_bottom = 240.0
 text = "					PNN
 PAXTORIA NEWS NETWORK"
+label_settings = SubResource("LabelSettings_knq72")
 
 [node name="SettingsIcon" type="Button" parent="NewsMenu" unique_id=1692128919]
+z_index = 1
 layout_mode = 0
 offset_left = 25.0
 offset_top = 570.4375
@@ -175,6 +185,7 @@ expand_icon = true
 script = ExtResource("2_62e2m")
 
 [node name="ReturnMenuButton" type="Button" parent="NewsMenu" unique_id=2070657731]
+z_index = 1
 layout_mode = 0
 offset_left = 91.0
 offset_top = 570.0
@@ -185,6 +196,7 @@ expand_icon = true
 script = ExtResource("6_fj5cn")
 
 [node name="NewsScreenMover" type="Button" parent="NewsMenu" unique_id=449558072]
+z_index = 1
 layout_mode = 0
 offset_left = 20.0
 offset_right = 138.0
@@ -194,6 +206,7 @@ flat = true
 script = ExtResource("7_iy58a")
 
 [node name="StockScreenMover" type="Button" parent="NewsMenu" unique_id=74585702]
+z_index = 1
 layout_mode = 0
 offset_left = 1020.0
 offset_right = 1143.0
@@ -204,8 +217,10 @@ script = ExtResource("8_6a6wx")
 [node name="EventList" type="ScrollContainer" parent="NewsMenu" unique_id=1153789604]
 clip_contents = false
 layout_mode = 0
-offset_right = 552.31635
-offset_bottom = 368.02722
+offset_left = -5.540977
+offset_top = 195.71039
+offset_right = 546.7754
+offset_bottom = 563.7376
 scale = Vector2(2.1112318, 1)
 
 [node name="Horiz" type="BoxContainer" parent="NewsMenu/EventList" unique_id=1934314436]
@@ -214,8 +229,11 @@ size_flags_stretch_ratio = 0.0
 vertical = true
 
 [node name="EventBase" type="Control" parent="NewsMenu/EventList/Horiz" unique_id=1065191739]
-custom_minimum_size = Vector2(200, 225)
+visible = false
+custom_minimum_size = Vector2(500, 225)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 
 [node name="EventImage" type="TextureRect" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=2084341262]
@@ -227,18 +245,47 @@ offset_right = 100.96895
 offset_bottom = 97.94687
 
 [node name="EventBody" type="Label" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=876308461]
-layout_mode = 0
-offset_left = 14.775939
-offset_top = 88.84222
-offset_right = 199.47519
-offset_bottom = 207.2985
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_xvdhi")
+autowrap_mode = 3
 
 [node name="EventHeader" type="Label" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=769691296]
-layout_mode = 0
-offset_left = 99.12192
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
 offset_top = 11.588115
-offset_right = 188.39322
+offset_right = 100.0
 offset_bottom = 80.47303
+autowrap_mode = 3
+
+[node name="Red" type="ColorRect" parent="NewsMenu" unique_id=585695221]
+layout_mode = 0
+offset_left = -12.9289465
+offset_top = -17.382172
+offset_right = 1180.2281
+offset_bottom = 238.20013
+color = Color(1, 0, 0, 1)
+
+[node name="White" type="ColorRect" parent="NewsMenu" unique_id=1353321542]
+visible = false
+show_behind_parent = true
+clip_children = 2
+z_index = -2
+z_as_relative = false
+clip_contents = true
+layout_mode = 0
+offset_left = -12.9289465
+offset_top = 234.33743
+offset_right = 1180.2281
+offset_bottom = 675.3296
+focus_behavior_recursive = 1
+mouse_filter = 1
 
 [node name="StockMenu" type="Control" parent="." unique_id=201495546]
 visible = false
