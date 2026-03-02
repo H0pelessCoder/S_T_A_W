@@ -8,6 +8,10 @@ static var Industries : Dictionary
 static var News : Dictionary
 static var availableEvents : Dictionary 
 
+#Purely for debugging so my eyes dont die o n me
+var darkModePercentage = 0.5
+
+
 func _on_button_pressed():
 	get_tree().quit() # Replace with function body.
 func _ready():
@@ -20,7 +24,8 @@ func _on_start_game_pressed() -> void:
 	instantiateNews()
 	emit_signal("drawStockMenu")
 	emit_signal("determineNews")
-
+	#$NewsMenu/White.colo
+		
 func instantiateIndustries():
 	var Ijson = preload("res://src/stocks.json")
 	for Industry in Ijson.data:

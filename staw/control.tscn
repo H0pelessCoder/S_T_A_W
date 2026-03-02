@@ -30,8 +30,6 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kbped"]
 load_path = "res://.godot/imported/settings_icon.png-2aec0f18b1e0fd16c56ba34ef69ef014.ctex"
 
-[sub_resource type="LabelSettings" id="LabelSettings_xvdhi"]
-
 [node name="Control" type="Control" unique_id=2053659831]
 layout_mode = 3
 anchors_preset = 15
@@ -165,11 +163,11 @@ script = ExtResource("6_knq72")
 [node name="NewsHeader" type="Label" parent="NewsMenu" unique_id=361585977]
 z_index = 1
 layout_mode = 0
-offset_left = 467.0
-offset_top = 143.0
-offset_right = 686.0
-offset_bottom = 240.0
-text = "					PNN
+offset_left = 354.6225
+offset_top = 62.44706
+offset_right = 774.6225
+offset_bottom = 159.44705
+text = "                     PNN
 PAXTORIA NEWS NETWORK"
 label_settings = SubResource("LabelSettings_knq72")
 
@@ -215,18 +213,21 @@ text = "STOCK SCREEN"
 script = ExtResource("8_6a6wx")
 
 [node name="EventList" type="ScrollContainer" parent="NewsMenu" unique_id=1153789604]
+top_level = true
+z_index = 1
 clip_contents = false
 layout_mode = 0
-offset_left = -5.540977
-offset_top = 195.71039
-offset_right = 546.7754
-offset_bottom = 563.7376
-scale = Vector2(2.1112318, 1)
+offset_left = -743.0
+offset_top = -137.0
+offset_right = 757.0
+offset_bottom = 231.02701
 
-[node name="Horiz" type="BoxContainer" parent="NewsMenu/EventList" unique_id=1934314436]
+[node name="Horiz" type="BoxContainer" parent="NewsMenu/EventList" unique_id=326525427]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
-vertical = true
+alignment = 1
 
 [node name="EventBase" type="Control" parent="NewsMenu/EventList/Horiz" unique_id=1065191739]
 visible = false
@@ -244,7 +245,21 @@ offset_top = 1.2875687
 offset_right = 100.96895
 offset_bottom = 97.94687
 
-[node name="EventBody" type="Label" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=876308461]
+[node name="EventHeader" type="Label" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=769691296]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+offset_top = 11.588115
+offset_right = 100.0
+offset_bottom = 80.47303
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 3
+
+[node name="EventBody" type="Label" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=1732700599]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
@@ -252,40 +267,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-label_settings = SubResource("LabelSettings_xvdhi")
-autowrap_mode = 3
-
-[node name="EventHeader" type="Label" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=769691296]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-offset_top = 11.588115
-offset_right = 100.0
-offset_bottom = 80.47303
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
 autowrap_mode = 3
 
 [node name="Red" type="ColorRect" parent="NewsMenu" unique_id=585695221]
 layout_mode = 0
-offset_left = -12.9289465
-offset_top = -17.382172
-offset_right = 1180.2281
-offset_bottom = 238.20013
+offset_left = -21.548244
+offset_top = -45.708675
+offset_right = 1171.6089
+offset_bottom = 209.87363
+mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
 [node name="White" type="ColorRect" parent="NewsMenu" unique_id=1353321542]
-visible = false
 show_behind_parent = true
 clip_children = 2
 z_index = -2
 z_as_relative = false
 clip_contents = true
 layout_mode = 0
-offset_left = -12.9289465
-offset_top = 234.33743
-offset_right = 1180.2281
-offset_bottom = 675.3296
+offset_left = -14.1602745
+offset_top = 209.87363
+offset_right = 1178.9968
+offset_bottom = 684.3425
 focus_behavior_recursive = 1
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="StockMenu" type="Control" parent="." unique_id=201495546]
 visible = false
@@ -879,10 +887,10 @@ text = "0/0"
 visible = false
 z_index = 1
 anchors_preset = 0
-offset_left = 304.1381
-offset_top = 142.92007
-offset_right = 1232.1381
-offset_bottom = 800.92004
+offset_left = 144.06538
+offset_top = 3.2189102
+offset_right = 1072.0654
+offset_bottom = 661.21893
 
 [node name="StockTitle" type="RichTextLabel" parent="StockMenu/StockDescriptionScreen" unique_id=522833551]
 z_index = 1
