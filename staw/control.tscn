@@ -137,6 +137,7 @@ text = "X"
 script = ExtResource("4_ee4bf")
 
 [node name="NewsMenu" type="Control" parent="." unique_id=2121891766]
+visible = false
 anchors_preset = 0
 offset_left = -947.0
 offset_top = -518.0
@@ -268,7 +269,7 @@ offset_top = -45.708675
 offset_right = 1171.6089
 offset_bottom = 209.87363
 mouse_filter = 2
-color = Color(0.27429485, 0.198854, 0.55307287, 1)
+color = Color(0.635709, 0.60123616, 0.93039465, 1)
 
 [node name="White" type="ColorRect" parent="NewsMenu" unique_id=1353321542]
 show_behind_parent = true
@@ -283,7 +284,6 @@ offset_right = 1178.9968
 offset_bottom = 684.3425
 focus_behavior_recursive = 1
 mouse_filter = 2
-color = Color(0.5370987, 0.5370987, 0.5370987, 1)
 
 [node name="StockMenu" type="Control" parent="." unique_id=201495546]
 visible = false
@@ -877,10 +877,11 @@ text = "0/0"
 visible = false
 z_index = 1
 anchors_preset = 0
-offset_left = 144.06538
-offset_top = 3.2189102
-offset_right = 1072.0654
-offset_bottom = 661.21893
+offset_left = 205.01613
+offset_top = 66.95354
+offset_right = 1133.0162
+offset_bottom = 724.95355
+scale = Vector2(0.75373435, 0.75373435)
 
 [node name="StockTitle" type="RichTextLabel" parent="StockMenu/StockDescriptionScreen" unique_id=522833551]
 z_index = 1
