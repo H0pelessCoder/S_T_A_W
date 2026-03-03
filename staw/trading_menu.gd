@@ -1,7 +1,7 @@
 extends Control
 signal drawStockSelectors 
 
-#THIS IS THE STOCK MENU
+#THIS IS THE TRADING MENU
 
 
 
@@ -25,6 +25,7 @@ func makeStockScreen():
 	$RangeIndicators/Top.text = str(int(maximum))
 	$StockAText/PercentChange.text = str(snapped(pchangeA,0.01)) + "%"
 	$StockBText/PercentChange.text = str(snapped(pchangeB,0.01)) + "%"
+	
 	for x in range(StockA["timeFrame"].size()):
 		
 		var bar = get_node("StockAGraph/" + str(x+1))
@@ -51,3 +52,7 @@ func makeStockScreen():
 		else:
 			bar.color = get_node("StockBGraph/" + str(x)).color		
 		emit_signal("drawStockSelectors")
+
+
+func _on_sub_timer_timeout() -> void:
+	pass

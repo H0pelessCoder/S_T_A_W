@@ -60,3 +60,11 @@ static func calculateStockChange(Stock):
 	var change = Stock["timeFrame"][13] - Stock["timeFrame"][0]
 	var pchange = change / Stock["timeFrame"][0]
 	return pchange * 100
+	
+## Controlling the Trading Menu ##
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.
+
+func _on_start_day() -> void:
+	pass # Replace with function body.

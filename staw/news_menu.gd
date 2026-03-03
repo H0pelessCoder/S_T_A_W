@@ -31,11 +31,11 @@ func determineTodaysNews():
 	chooseEvents(eventsToProcess)
 	loadNewsScreen()
 	#Testing new day
-	print("Day: " + str(global.day))
-	print("HappeningEvents:")
-	print(happeningEvents)
-	print("\n")
-	testNextDay()
+	#print("Day: " + str(global.day))
+	#print("HappeningEvents:")
+	#print(happeningEvents)
+	#print("\n")
+	#testNextDay()
 	
 			#pick a random event from the dict
 			

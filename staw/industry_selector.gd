@@ -10,6 +10,7 @@ func drawIndustrySelectors():
 	var Industries = global.Industries
 	var x = 0
 	$IndustryIndicator.text = str(currentIndustryPosition +3) + "/" + str(Industries.size())
+
 	for selector in get_node("IndustryTabs").get_children():
 		
 		var industry = Industries[Industries.keys()[currentIndustryPosition + x]]
@@ -17,6 +18,28 @@ func drawIndustrySelectors():
 		var industryShort = industry["industryShort"]
 		selector.text = industryShort + "\n" + str(snapped(pchange,0.1)) + "%"
 		x+=1
+	var globalpchange = globalPercentChange()
+	$DowNumber.text = str(snapped(globalpchange,0.1)) + "%"
+	if globalpchange > 0:
+		$DowColor.color = Color("darkgreen")
+	else:
+		$DowColor.color = Color("darkred")
+		
+func globalPercentChange():
+	var first = 0
+	var last = 0
+	var x = 0
+	for industry in global.Industries.keys():
+		industry = global.Industries[industry]
+		#Stock A
+		first += industry["Stocks"][0]["timeFrame"][0]	
+		last += industry["Stocks"][0]["timeFrame"][13]	
+		#Stock B
+		first += industry["Stocks"][1]["timeFrame"][0]	
+		last += industry["Stocks"][1]["timeFrame"][13]
+	var change = last - first
+	var pchange = (change / first) * 100
+	return pchange	
 	
 func percentChange(industry):
 		var stockAfirst = industry["Stocks"][0]["timeFrame"][0]	

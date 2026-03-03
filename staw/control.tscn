@@ -13,8 +13,10 @@
 [ext_resource type="Script" uid="uid://b7iu4tsfe51uv" path="res://stockBar.gd" id="9_pxugv"]
 [ext_resource type="Script" uid="uid://d276l67lust3j" path="res://descriptionOpener.gd" id="9_sky72"]
 [ext_resource type="Script" uid="uid://bl2bl40b43v2b" path="res://stock_description_screen_closer.gd" id="10_0ytqx"]
+[ext_resource type="Script" uid="uid://cvd561bvcshkx" path="res://begin_day_button.gd" id="10_xvdhi"]
 [ext_resource type="Script" uid="uid://0dxvbkfdxlxa" path="res://industry_selector.gd" id="11_eh0v1"]
 [ext_resource type="Script" uid="uid://ckt5mujchmblv" path="res://selectIndustry.gd" id="12_am1vj"]
+[ext_resource type="Script" uid="uid://5r4fex7aa8ji" path="res://trading_menu.gd" id="17_oq4si"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_knq72"]
 font_size = 32
@@ -284,6 +286,15 @@ offset_right = 1178.9968
 offset_bottom = 684.3425
 focus_behavior_recursive = 1
 mouse_filter = 2
+
+[node name="BeginDayButton" type="Button" parent="NewsMenu" unique_id=436614942]
+layout_mode = 0
+offset_left = 986.2939
+offset_top = 596.1441
+offset_right = 1101.294
+offset_bottom = 627.1441
+text = "Begin Day"
+script = ExtResource("10_xvdhi")
 
 [node name="StockMenu" type="Control" parent="." unique_id=201495546]
 visible = false
@@ -873,6 +884,33 @@ offset_right = 378.0177
 offset_bottom = 70.81625
 text = "0/0"
 
+[node name="DowText" type="Label" parent="StockMenu/IndustrySelector" unique_id=1832194428]
+layout_mode = 0
+offset_left = 381.09607
+offset_top = 9.656763
+offset_right = 496.09607
+offset_bottom = 32.65676
+text = "PAX AVERAGE"
+
+[node name="DowNumber" type="Label" parent="StockMenu/IndustrySelector" unique_id=1467760692]
+layout_mode = 0
+offset_left = 380.4804
+offset_top = 35.408134
+offset_right = 495.4804
+offset_bottom = 58.408134
+text = "-0%"
+horizontal_alignment = 1
+
+[node name="DowColor" type="ColorRect" parent="StockMenu/IndustrySelector" unique_id=1016562778]
+z_index = -1
+layout_mode = 0
+offset_left = 371.24548
+offset_top = -3.8627052
+offset_right = 411.24548
+offset_bottom = 36.137295
+scale = Vector2(3.0850189, 2.842298)
+color = Color(5.715527e-07, 0.360331, 4.3317675e-07, 1)
+
 [node name="StockDescriptionScreen" type="Control" parent="StockMenu" unique_id=1323499153]
 visible = false
 z_index = 1
@@ -914,6 +952,15 @@ offset_bottom = 51.0
 text = "X"
 script = ExtResource("10_0ytqx")
 
+[node name="BeginDayButton" type="Button" parent="StockMenu" unique_id=1839727072]
+layout_mode = 0
+offset_left = 986.2939
+offset_top = 596.1441
+offset_right = 1101.294
+offset_bottom = 627.1441
+text = "Begin Day"
+script = ExtResource("10_xvdhi")
+
 [node name="Background" type="ColorRect" parent="." unique_id=1624381102]
 visible = false
 z_index = -10
@@ -923,6 +970,577 @@ offset_top = -668.0
 offset_right = 1275.0
 offset_bottom = 568.0
 mouse_filter = 2
+
+[node name="TradingMenu" type="Control" parent="." unique_id=694765132]
+visible = false
+anchors_preset = 0
+offset_left = -943.0
+offset_top = -518.0
+offset_right = 215.0
+offset_bottom = 132.0
+scale = Vector2(1.6242623, 1.5533156)
+script = ExtResource("17_oq4si")
+
+[node name="IndustryTabs" type="HBoxContainer" parent="TradingMenu" unique_id=1260612230]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 552.0
+offset_right = 999.0
+offset_bottom = 619.0
+
+[node name="StockBGraph" type="Control" parent="TradingMenu" unique_id=188157413]
+anchors_preset = 0
+offset_left = 592.26886
+offset_top = 130.68819
+offset_right = 1163.2689
+offset_bottom = 396.68817
+scale = Vector2(1, 1.4377737)
+metadata/stock = 1
+
+[node name="1" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=132449918]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 266.0
+offset_right = 76.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="2" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=1938174564]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 266.0
+offset_right = 117.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="3" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=1192210375]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 266.0
+offset_right = 158.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="4" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=1654027235]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 266.0
+offset_right = 199.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="5" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=1546453999]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 266.0
+offset_right = 240.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="6" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=1673652311]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 266.0
+offset_right = 281.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="7" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=380739474]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 266.0
+offset_right = 322.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="8" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=1926715128]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 266.0
+offset_right = 363.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="9" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=1229640484]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 266.0
+offset_right = 404.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="10" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=518674728]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 266.0
+offset_right = 445.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="11" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=1661318521]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 266.0
+offset_right = 486.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="12" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=1169814041]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 266.0
+offset_right = 527.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="13" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=2066353541]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 266.0
+offset_right = 568.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="14" type="ColorRect" parent="TradingMenu/StockBGraph" unique_id=431578397]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 266.0
+offset_right = 610.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="StockIndicator" type="RichTextLabel" parent="TradingMenu/StockBGraph" unique_id=1870015348]
+visible = false
+layout_mode = 0
+offset_right = 56.025436
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 16
+
+[node name="StockAText" type="Control" parent="TradingMenu" unique_id=924124585]
+anchors_preset = 0
+offset_left = 32.01452
+offset_top = 8.0
+offset_right = 226.01453
+offset_bottom = 89.0
+
+[node name="Title" type="RichTextLabel" parent="TradingMenu/StockAText" unique_id=714694523]
+layout_mode = 0
+offset_left = -4.777957
+offset_top = -2.8497202
+offset_right = 73.222046
+offset_bottom = 37.15028
+theme_override_font_sizes/normal_font_size = 29
+text = "RFK"
+
+[node name="TitleShort" type="RichTextLabel" parent="TradingMenu/StockAText" unique_id=2035654031]
+layout_mode = 0
+offset_left = -4.162299
+offset_top = 33.202206
+offset_right = 166.8377
+offset_bottom = 73.20221
+text = "Rich Big King"
+
+[node name="PercentChange" type="RichTextLabel" parent="TradingMenu/StockAText" unique_id=514662167]
+layout_mode = 0
+offset_left = 64.79207
+offset_top = -6.0686493
+offset_right = 150.34758
+offset_bottom = 33.93135
+text = "-0"
+
+[node name="StockBText" type="Control" parent="TradingMenu" unique_id=1452260882]
+anchors_preset = 0
+offset_left = 1153.1389
+offset_top = -3.0
+offset_right = 1347.1389
+offset_bottom = 78.0
+
+[node name="Title" type="RichTextLabel" parent="TradingMenu/StockBText" unique_id=1578260574]
+layout_mode = 0
+offset_left = -162.03351
+offset_top = 2.356214
+offset_right = -75.03351
+offset_bottom = 42.356213
+theme_override_font_sizes/normal_font_size = 29
+text = "RFK"
+
+[node name="TitleShort" type="RichTextLabel" parent="TradingMenu/StockBText" unique_id=1787220650]
+layout_mode = 0
+offset_left = -164.49617
+offset_top = 46.133568
+offset_right = 40.50383
+offset_bottom = 86.13357
+theme_override_font_sizes/normal_font_size = 16
+text = "Rich Big King"
+
+[node name="PercentChange" type="RichTextLabel" parent="TradingMenu/StockBText" unique_id=586546520]
+layout_mode = 0
+offset_left = -81.997185
+offset_top = 1.7124367
+offset_right = -0.1356659
+offset_bottom = 41.712437
+text = "-0"
+
+[node name="RangeIndicators" type="Control" parent="TradingMenu" unique_id=517639120]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bottom" type="RichTextLabel" parent="TradingMenu/RangeIndicators" unique_id=672396017]
+z_index = 1
+layout_mode = 0
+offset_left = 556.56036
+offset_top = 500.2203
+offset_right = 600.2725
+offset_bottom = 523.22034
+text = "0"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Top" type="RichTextLabel" parent="TradingMenu/RangeIndicators" unique_id=612719054]
+z_index = 1
+layout_mode = 0
+offset_left = 555.94464
+offset_top = 112.662224
+offset_right = 600.8881
+offset_bottom = 135.66223
+text = "0"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dividers" type="Control" parent="TradingMenu" unique_id=712821558]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Divider" type="ColorRect" parent="TradingMenu/Dividers" unique_id=1843750809]
+z_index = -1
+layout_mode = 0
+offset_left = 1170.3774
+offset_top = 515.02734
+offset_right = 1177.611
+offset_bottom = 1691.1643
+rotation = 1.5707964
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Divider2" type="ColorRect" parent="TradingMenu/Dividers" unique_id=1127388613]
+z_index = -1
+layout_mode = 0
+offset_left = 582.41833
+offset_top = 521.6905
+offset_right = 589.65186
+offset_bottom = 1056.4381
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="StockAGraph" type="Control" parent="TradingMenu" unique_id=842761222]
+anchors_preset = 0
+offset_left = -4.3096414
+offset_top = 133.2633
+offset_right = 566.69037
+offset_bottom = 399.2633
+scale = Vector2(1, 1.4265008)
+metadata/stock = 0
+
+[node name="1" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=1467450882]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 266.0
+offset_right = 76.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="2" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=383015709]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 266.0
+offset_right = 117.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="3" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=981897216]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 266.0
+offset_right = 158.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="4" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=2062696847]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 266.0
+offset_right = 199.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="5" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=1820295278]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 266.0
+offset_right = 240.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="6" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=1061280001]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 266.0
+offset_right = 281.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="7" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=1778703071]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 266.0
+offset_right = 322.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="8" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=1973116632]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 266.0
+offset_right = 363.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="9" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=1619045993]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 266.0
+offset_right = 404.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="10" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=965755657]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 266.0
+offset_right = 445.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="11" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=1866820436]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 266.0
+offset_right = 486.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="12" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=1938867585]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 266.0
+offset_right = 527.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="13" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=225958015]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 266.0
+offset_right = 568.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="14" type="ColorRect" parent="TradingMenu/StockAGraph" unique_id=1819753841]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 266.0
+offset_right = 610.0
+offset_bottom = 532.0
+rotation = 3.1415927
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_pxugv")
+
+[node name="StockIndicator" type="RichTextLabel" parent="TradingMenu/StockAGraph" unique_id=988013184]
+visible = false
+layout_mode = 0
+offset_right = 56.025436
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 16
+
+[node name="IndustrySelector" type="Control" parent="TradingMenu" unique_id=413753004]
+anchors_preset = 0
+offset_left = 16.007263
+offset_top = 543.3538
+offset_right = 411.26364
+offset_bottom = 652.1533
+script = ExtResource("11_eh0v1")
+
+[node name="IndustryTabs" type="HBoxContainer" parent="TradingMenu/IndustrySelector" unique_id=981584702]
+layout_mode = 0
+offset_right = 297.98148
+offset_bottom = 110.172485
+
+[node name="1" type="Button" parent="TradingMenu/IndustrySelector/IndustryTabs" unique_id=1903204104]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("12_am1vj")
+
+[node name="2" type="Button" parent="TradingMenu/IndustrySelector/IndustryTabs" unique_id=332825931]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("12_am1vj")
+
+[node name="3" type="Button" parent="TradingMenu/IndustrySelector/IndustryTabs" unique_id=2025835562]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("12_am1vj")
+
+[node name="IndustryForward" type="Button" parent="TradingMenu/IndustrySelector" unique_id=1949478792]
+layout_mode = 0
+offset_left = 442.6625
+offset_top = 13.519466
+offset_right = 476.52405
+offset_bottom = 44.519466
+text = "->"
+
+[node name="IndustryBack" type="Button" parent="TradingMenu/IndustrySelector" unique_id=580219366]
+layout_mode = 0
+offset_left = 443.27817
+offset_top = 74.03518
+offset_right = 477.1397
+offset_bottom = 105.03519
+text = "<-"
+
+[node name="IndustryIndicator" type="RichTextLabel" parent="TradingMenu/IndustrySelector" unique_id=114422933]
+layout_mode = 0
+offset_left = 443.8938
+offset_top = 46.99625
+offset_right = 498.68787
+offset_bottom = 70.81625
+text = "0/0"
+
+[node name="DowText" type="Label" parent="TradingMenu/IndustrySelector" unique_id=926374108]
+layout_mode = 0
+offset_left = 312.75735
+offset_top = 28.970287
+offset_right = 427.75735
+offset_bottom = 51.970287
+text = "PAX AVERAGE"
+
+[node name="DowNumber" type="Label" parent="TradingMenu/IndustrySelector" unique_id=553480106]
+layout_mode = 0
+offset_left = 312.1417
+offset_top = 54.721657
+offset_right = 427.1417
+offset_bottom = 77.72166
+text = "-0%"
+horizontal_alignment = 1
+
+[node name="DowColor" type="ColorRect" parent="TradingMenu/IndustrySelector" unique_id=804237343]
+z_index = -1
+layout_mode = 0
+offset_left = 306.60074
+offset_top = -3.218921
+offset_right = 346.60074
+offset_bottom = 36.78108
+scale = Vector2(3.0850189, 2.842298)
+color = Color(5.715527e-07, 0.360331, 4.3317675e-07, 1)
+
+[node name="Timer" type="Timer" parent="TradingMenu" unique_id=1430493728]
+wait_time = 120.0
+
+[node name="TimerText" type="Label" parent="TradingMenu" unique_id=1328699779]
+layout_mode = 0
+offset_left = 463.59503
+offset_top = -1.287569
+offset_right = 691.3907
+offset_bottom = 73.3914
+theme_override_font_sizes/font_size = 32
+
+[node name="subTimer" type="Timer" parent="TradingMenu" unique_id=1503555301]
+wait_time = 8.0
 
 [connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]
 [connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
@@ -936,6 +1554,7 @@ mouse_filter = 2
 [connection signal="pressed" from="NewsMenu/NewsScreenMover" to="NewsMenu/NewsScreenMover" method="_on_pressed"]
 [connection signal="drawStockMenu" from="NewsMenu/StockScreenMover" to="StockMenu" method="makeStockScreen"]
 [connection signal="pressed" from="NewsMenu/StockScreenMover" to="NewsMenu/StockScreenMover" method="_on_pressed"]
+[connection signal="pressed" from="NewsMenu/BeginDayButton" to="NewsMenu/BeginDayButton" method="_on_pressed"]
 [connection signal="drawStockSelectors" from="StockMenu" to="StockMenu/IndustrySelector" method="drawIndustrySelectors"]
 [connection signal="pressed" from="StockMenu/SettingsIcon" to="StockMenu/SettingsIcon" method="_on_pressed"]
 [connection signal="pressed" from="StockMenu/ReturnMenuButton" to="StockMenu/ReturnMenuButton" method="_on_pressed"]
@@ -1009,3 +1628,72 @@ mouse_filter = 2
 [connection signal="pressed" from="StockMenu/IndustrySelector/IndustryForward" to="StockMenu/IndustrySelector" method="forward"]
 [connection signal="pressed" from="StockMenu/IndustrySelector/IndustryBack" to="StockMenu/IndustrySelector" method="backwards"]
 [connection signal="pressed" from="StockMenu/StockDescriptionScreen/StockDescriptionScreenCloser" to="StockMenu/StockDescriptionScreen/StockDescriptionScreenCloser" method="_on_pressed"]
+[connection signal="pressed" from="StockMenu/BeginDayButton" to="StockMenu/BeginDayButton" method="_on_pressed"]
+[connection signal="startDay" from="StockMenu/BeginDayButton" to="." method="_on_start_day"]
+[connection signal="drawStockSelectors" from="TradingMenu" to="TradingMenu/IndustrySelector" method="drawIndustrySelectors"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/1" to="TradingMenu/StockBGraph/1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/1" to="TradingMenu/StockBGraph/1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/2" to="TradingMenu/StockBGraph/2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/2" to="TradingMenu/StockBGraph/2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/3" to="TradingMenu/StockBGraph/3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/3" to="TradingMenu/StockBGraph/3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/4" to="TradingMenu/StockBGraph/4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/4" to="TradingMenu/StockBGraph/4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/5" to="TradingMenu/StockBGraph/5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/5" to="TradingMenu/StockBGraph/5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/6" to="TradingMenu/StockBGraph/6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/6" to="TradingMenu/StockBGraph/6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/7" to="TradingMenu/StockBGraph/7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/7" to="TradingMenu/StockBGraph/7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/8" to="TradingMenu/StockBGraph/8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/8" to="TradingMenu/StockBGraph/8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/9" to="TradingMenu/StockBGraph/9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/9" to="TradingMenu/StockBGraph/9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/10" to="TradingMenu/StockBGraph/10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/10" to="TradingMenu/StockBGraph/10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/11" to="TradingMenu/StockBGraph/11" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/11" to="TradingMenu/StockBGraph/11" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/12" to="TradingMenu/StockBGraph/12" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/12" to="TradingMenu/StockBGraph/12" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/13" to="TradingMenu/StockBGraph/13" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/13" to="TradingMenu/StockBGraph/13" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockBGraph/14" to="TradingMenu/StockBGraph/14" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockBGraph/14" to="TradingMenu/StockBGraph/14" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/1" to="TradingMenu/StockAGraph/1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/1" to="TradingMenu/StockAGraph/1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/2" to="TradingMenu/StockAGraph/2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/2" to="TradingMenu/StockAGraph/2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/3" to="TradingMenu/StockAGraph/3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/3" to="TradingMenu/StockAGraph/3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/4" to="TradingMenu/StockAGraph/4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/4" to="TradingMenu/StockAGraph/4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/5" to="TradingMenu/StockAGraph/5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/5" to="TradingMenu/StockAGraph/5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/6" to="TradingMenu/StockAGraph/6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/6" to="TradingMenu/StockAGraph/6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/7" to="TradingMenu/StockAGraph/7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/7" to="TradingMenu/StockAGraph/7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/8" to="TradingMenu/StockAGraph/8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/8" to="TradingMenu/StockAGraph/8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/9" to="TradingMenu/StockAGraph/9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/9" to="TradingMenu/StockAGraph/9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/10" to="TradingMenu/StockAGraph/10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/10" to="TradingMenu/StockAGraph/10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/11" to="TradingMenu/StockAGraph/11" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/11" to="TradingMenu/StockAGraph/11" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/12" to="TradingMenu/StockAGraph/12" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/12" to="TradingMenu/StockAGraph/12" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/13" to="TradingMenu/StockAGraph/13" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/13" to="TradingMenu/StockAGraph/13" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TradingMenu/StockAGraph/14" to="TradingMenu/StockAGraph/14" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TradingMenu/StockAGraph/14" to="TradingMenu/StockAGraph/14" method="_on_mouse_exited"]
+[connection signal="drawStockMenu" from="TradingMenu/IndustrySelector/IndustryTabs/1" to="TradingMenu" method="makeStockScreen"]
+[connection signal="pressed" from="TradingMenu/IndustrySelector/IndustryTabs/1" to="TradingMenu/IndustrySelector/IndustryTabs/1" method="_on_pressed"]
+[connection signal="drawStockMenu" from="TradingMenu/IndustrySelector/IndustryTabs/2" to="TradingMenu" method="makeStockScreen"]
+[connection signal="pressed" from="TradingMenu/IndustrySelector/IndustryTabs/2" to="TradingMenu/IndustrySelector/IndustryTabs/2" method="_on_pressed"]
+[connection signal="drawStockMenu" from="TradingMenu/IndustrySelector/IndustryTabs/3" to="TradingMenu" method="makeStockScreen"]
+[connection signal="pressed" from="TradingMenu/IndustrySelector/IndustryTabs/3" to="TradingMenu/IndustrySelector/IndustryTabs/3" method="_on_pressed"]
+[connection signal="pressed" from="TradingMenu/IndustrySelector/IndustryForward" to="TradingMenu/IndustrySelector" method="forward"]
+[connection signal="pressed" from="TradingMenu/IndustrySelector/IndustryBack" to="TradingMenu/IndustrySelector" method="backwards"]
+[connection signal="timeout" from="TradingMenu/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TradingMenu/subTimer" to="TradingMenu" method="_on_sub_timer_timeout"]

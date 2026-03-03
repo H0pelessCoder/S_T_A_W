@@ -7,7 +7,8 @@
 				"companyName" : "Mercatoria Shipping",
 				"stockShort" : "MSP",
 				"stockDescription" : "A naval shipping company which specializes in smuggling. Key ties in Xiadia and Drastara.",
-				"timeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
+				"timeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
 			{
 				"firstStockPoint" : 954,
@@ -15,7 +16,8 @@
 				"companyName" : "Flaeton Shipping",
 				"stockShort" : "FLS",
 				"stockDescription" : "A large distrubutor based out of Flaeton.",
-				"timeFrame" : [954, 952, 951, 947, 948, 942, 941, 978, 976, 972, 929, 921, 925, 920]
+				"timeFrame" : [954, 952, 951, 947, 948, 942, 941, 978, 976, 972, 929, 921, 925, 920],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
 		],
 		"industryName" : "Shipping",
@@ -30,7 +32,8 @@
 				"companyName" : "Firm Fuel",
 				"stockShort" : "FFL",
 				"stockDescription" : "A power firm based on non-rewnable energy, supplies most power everywhere.",
-				"timeFrame" : [654, 651, 660, 668, 679, 669, 690, 681, 704, 712, 733, 726, 733, 741]
+				"timeFrame" : [654, 651, 660, 668, 679, 669, 690, 681, 704, 712, 733, 726, 733, 741],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
 			{
 				"firstStockPoint" : 404,
@@ -38,7 +41,8 @@
 				"companyName" : "Natural Energy",
 				"stockShort" : "NTE",
 				"stockDescription" : "A clean energy company based out of central Kaddia. Has ties to the mafia, Xiadia, and many criminal syndicates.",
-				"timeFrame" : [404, 395, 388, 404, 412, 419, 407, 426, 409, 417, 429, 432, 441, 438]
+				"timeFrame" : [404, 395, 388, 404, 412, 419, 407, 426, 409, 417, 429, 432, 441, 438],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
 		],
 		"industryName" : "Electricity",
@@ -52,7 +56,8 @@
 				"companyName" : "Beef Brothers",
 				"stockShort" : "BBS",
 				"stockDescription" : "A cattle industry based out of central Kaddia, acts as a distributed network of local ranches.",
-				"timeFrame" :  [212, 215, 208, 213, 207, 211, 221, 213, 212, 219, 208, 202, 198, 201]
+				"timeFrame" :  [212, 215, 208, 213, 207, 211, 221, 213, 212, 219, 208, 202, 198, 201],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
 			{
 				"firstStockPoint" : 404,
@@ -60,7 +65,8 @@
 				"companyName" : "Keddles'",
 				"stockShort" : "KDL",
 				"stockDescription" : "Food behemoth founded in 1821. Controls much of the market.",
-				"timeFrame" : [711, 709, 717, 694, 718, 700, 726, 720, 716, 727, 733, 726, 737, 741]
+				"timeFrame" : [711, 709, 717, 694, 718, 700, 726, 720, 716, 727, 733, 726, 737, 741],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
 		],
 		"industryName" : "Food",
@@ -74,7 +80,8 @@
 				"companyName" : "Diatide",
 				"stockShort" : "DTD",
 				"stockDescription" : "A former small time tech startup founded by co-owners Sean Weiss and Cyllin Ameus. Some stock investors and whistleblowers have noted that some of the company's large investments in microchips have been funneled to suspicious outlets in the Theocraatic nation state of Patreus.",
-				"timeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 720]
+				"timeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 720],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
 			{
 				"firstStockPoint" : 954,
@@ -82,7 +89,8 @@
 				"companyName" : "Evion",
 				"stockShort" : "EVN",
 				"stockDescription" : "One of the few truly new competitors in the scene, Evion has grown from surveillance state apparatus to proper tech behemoth.",
-				"timeFrame" : [954, 952, 951, 947, 948, 942, 941, 978, 976, 972, 929, 921, 925, 900]
+				"timeFrame" : [954, 952, 951, 947, 948, 942, 941, 978, 976, 972, 929, 921, 925, 900],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
 		],
 		"industryName" : "Tech",
@@ -97,7 +105,8 @@
 				"companyName" : "SFAS",
 				"stockShort" : "AVD",
 				"stockDescription" : "A power firm based on non-rewnable energy, supplies most power everywhere.",
-				"timeFrame" : [654, 651, 660, 668, 679, 669, 690, 681, 704, 712, 733, 726, 733, 791]
+				"timeFrame" : [654, 651, 660, 668, 679, 669, 690, 681, 704, 712, 733, 726, 733, 791],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
 			{
 				"firstStockPoint" : 404,
@@ -105,7 +114,8 @@
 				"companyName" : "DVSSvy",
 				"stockShort" : "adv",
 				"stockDescription" : "A clean energy company based out of central Kaddia. Has ties to the mafia, Xiadia, and many criminal syndicates.",
-				"timeFrame" : [404, 395, 388, 404, 412, 419, 407, 426, 409, 417, 429, 432, 441, 358]
+				"timeFrame" : [404, 395, 388, 404, 412, 419, 407, 426, 409, 417, 429, 432, 441, 358],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
 		],
 		"industryName" : "Electricity",
@@ -119,7 +129,8 @@
 				"companyName" : "vsa",
 				"stockShort" : "aff",
 				"stockDescription" : "A cattle industry based out of central Kaddia, acts as a distributed network of local ranches.",
-				"timeFrame" :  [212, 215, 208, 213, 207, 211, 221, 213, 212, 219, 208, 202, 198, 251]
+				"timeFrame" :  [212, 215, 208, 213, 207, 211, 221, 213, 212, 219, 208, 202, 198, 251],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
 			{
 				"firstStockPoint" : 404,
@@ -127,7 +138,8 @@
 				"companyName" : "FDAS'",
 				"stockShort" : "SFA",
 				"stockDescription" : "Food behemoth founded in 1821. Controls much of the market.",
-				"timeFrame" : [711, 709, 717, 694, 718, 700, 726, 720, 716, 727, 733, 726, 737, 641]
+				"timeFrame" : [711, 709, 717, 694, 718, 700, 726, 720, 716, 727, 733, 726, 737, 641],
+				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
 		],
 		"industryName" : "Food",
