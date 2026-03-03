@@ -18,9 +18,8 @@ func testNextDay():
 			event["Done"] = true
 			randomize()
 			for next in event["Next"]:
-				if isEventAllowed(next) == true:
-					next = getEvent(next)
-					pendingEvents[next["Type"]].append(next["Title"])
+				next = getEvent(next)
+				pendingEvents[next["Type"]].append(next["Title"])
 	happeningEvents = eventFormat()
 	if global.day == 1:
 		determineTodaysNews()
@@ -32,11 +31,11 @@ func determineTodaysNews():
 	chooseEvents(eventsToProcess)
 	loadNewsScreen()
 	#Testing new day
-	#print("Day: " + str(global.day))
-	#print("HappeningEvents:")
-	#print(happeningEvents)
-	#print("\n")
-	#testNextDay()
+	print("Day: " + str(global.day))
+	print("HappeningEvents:")
+	print(happeningEvents)
+	print("\n")
+	testNextDay()
 	
 			#pick a random event from the dict
 			
@@ -49,9 +48,13 @@ func chooseEvents(Events):
 			var typeSize = Events[type].size()
 			var randomIndex = randi_range(0, typeSize-1)
 			var event = Events[type][randomIndex]
-			happeningEvents.get(type).append(event)
-			Events.get(type).pop_at(randomIndex)
-
+			if isEventAllowed(event):
+				happeningEvents.get(type).append(event)
+				Events.get(type).pop_at(randomIndex)
+			else:
+				if !pendingEvents.has(event):
+					pendingEvents[type].append(event)
+				N-=1
 static func sortEvents(Events):
 	var sortedEvents = eventFormat()
 	for event in Events.keys():

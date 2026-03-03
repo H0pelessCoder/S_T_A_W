@@ -16,12 +16,6 @@
 [ext_resource type="Script" uid="uid://0dxvbkfdxlxa" path="res://industry_selector.gd" id="11_eh0v1"]
 [ext_resource type="Script" uid="uid://ckt5mujchmblv" path="res://selectIndustry.gd" id="12_am1vj"]
 
-[sub_resource type="Gradient" id="Gradient_62e2m"]
-colors = PackedColorArray(1, 1, 1, 1, 0.9111111, 0.9111111, 0.9111111, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_qtu10"]
-gradient = SubResource("Gradient_62e2m")
-
 [sub_resource type="LabelSettings" id="LabelSettings_knq72"]
 font_size = 32
 outline_size = 5
@@ -88,14 +82,6 @@ offset_bottom = 450.0
 text = "Settings"
 script = ExtResource("2_62e2m")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1092133334]
-visible = false
-z_index = -2
-z_as_relative = false
-position = Vector2(-4, -4.999998)
-scale = Vector2(4.5, 649)
-texture = SubResource("GradientTexture1D_qtu10")
-
 [node name="Settings" type="Control" parent="." unique_id=598453037]
 visible = false
 anchors_preset = 0
@@ -151,7 +137,6 @@ text = "X"
 script = ExtResource("4_ee4bf")
 
 [node name="NewsMenu" type="Control" parent="." unique_id=2121891766]
-visible = false
 anchors_preset = 0
 offset_left = -947.0
 offset_top = -518.0
@@ -230,7 +215,6 @@ size_flags_stretch_ratio = 0.0
 alignment = 1
 
 [node name="EventBase" type="Control" parent="NewsMenu/EventList/Horiz" unique_id=1065191739]
-visible = false
 custom_minimum_size = Vector2(500, 225)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -250,27 +234,32 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.5
 offset_top = 11.588115
-offset_right = 100.0
+offset_right = 214.0
 offset_bottom = 80.47303
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="EventBody" type="Label" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=1732700599]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 100.0
+offset_right = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 16
+horizontal_alignment = 3
 autowrap_mode = 3
+justification_flags = 98
 
 [node name="Red" type="ColorRect" parent="NewsMenu" unique_id=585695221]
 layout_mode = 0
@@ -279,7 +268,7 @@ offset_top = -45.708675
 offset_right = 1171.6089
 offset_bottom = 209.87363
 mouse_filter = 2
-color = Color(1, 0, 0, 1)
+color = Color(0.27429485, 0.198854, 0.55307287, 1)
 
 [node name="White" type="ColorRect" parent="NewsMenu" unique_id=1353321542]
 show_behind_parent = true
@@ -294,6 +283,7 @@ offset_right = 1178.9968
 offset_bottom = 684.3425
 focus_behavior_recursive = 1
 mouse_filter = 2
+color = Color(0.5370987, 0.5370987, 0.5370987, 1)
 
 [node name="StockMenu" type="Control" parent="." unique_id=201495546]
 visible = false
@@ -922,6 +912,16 @@ offset_right = 918.0
 offset_bottom = 51.0
 text = "X"
 script = ExtResource("10_0ytqx")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1624381102]
+visible = false
+z_index = -10
+layout_mode = 0
+offset_left = -1004.0
+offset_top = -668.0
+offset_right = 1275.0
+offset_bottom = 568.0
+mouse_filter = 2
 
 [connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]
 [connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
