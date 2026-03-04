@@ -17,6 +17,8 @@
 [ext_resource type="Script" uid="uid://0dxvbkfdxlxa" path="res://industry_selector.gd" id="11_eh0v1"]
 [ext_resource type="Script" uid="uid://ckt5mujchmblv" path="res://selectIndustry.gd" id="12_am1vj"]
 [ext_resource type="Script" uid="uid://5r4fex7aa8ji" path="res://trading_menu.gd" id="17_oq4si"]
+[ext_resource type="Script" uid="uid://c4pyj6kvejgrj" path="res://timer_text.gd" id="18_m4egf"]
+[ext_resource type="Script" uid="uid://dpg5ox7knjge5" path="res://buy_button.gd" id="18_pi4e7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_knq72"]
 font_size = 32
@@ -39,6 +41,7 @@ script = ExtResource("1_0fbet")
 position = Vector2(-2, -4)
 
 [node name="MainMenu" type="Control" parent="." unique_id=962578855]
+visible = false
 layout_mode = 1
 anchors_preset = 0
 offset_left = -947.0
@@ -218,6 +221,7 @@ size_flags_stretch_ratio = 0.0
 alignment = 1
 
 [node name="EventBase" type="Control" parent="NewsMenu/EventList/Horiz" unique_id=1065191739]
+visible = false
 custom_minimum_size = Vector2(500, 225)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -972,7 +976,6 @@ offset_bottom = 568.0
 mouse_filter = 2
 
 [node name="TradingMenu" type="Control" parent="." unique_id=694765132]
-visible = false
 anchors_preset = 0
 offset_left = -943.0
 offset_top = -518.0
@@ -1189,6 +1192,16 @@ offset_top = -6.0686493
 offset_right = 150.34758
 offset_bottom = 33.93135
 text = "-0"
+
+[node name="BuyButton" type="Button" parent="TradingMenu/StockAText" unique_id=305499793]
+layout_mode = 0
+offset_left = 91.118286
+offset_top = -2.2059345
+offset_right = 131.11829
+offset_bottom = 28.794065
+text = "BUY"
+script = ExtResource("18_pi4e7")
+metadata/Stock = 0
 
 [node name="StockBText" type="Control" parent="TradingMenu" unique_id=1452260882]
 anchors_preset = 0
@@ -1530,6 +1543,7 @@ color = Color(5.715527e-07, 0.360331, 4.3317675e-07, 1)
 
 [node name="Timer" type="Timer" parent="TradingMenu" unique_id=1430493728]
 wait_time = 120.0
+one_shot = true
 
 [node name="TimerText" type="Label" parent="TradingMenu" unique_id=1328699779]
 layout_mode = 0
@@ -1538,12 +1552,14 @@ offset_top = -1.287569
 offset_right = 691.3907
 offset_bottom = 73.3914
 theme_override_font_sizes/font_size = 32
+script = ExtResource("18_m4egf")
 
 [node name="subTimer" type="Timer" parent="TradingMenu" unique_id=1503555301]
 wait_time = 8.0
 
 [connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]
 [connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
+[connection signal="drawTradingMenu" from="." to="TradingMenu" method="makeStockScreen"]
 [connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MainMenu/SettingsOpener" to="MainMenu/SettingsOpener" method="_on_pressed"]
@@ -1555,6 +1571,7 @@ wait_time = 8.0
 [connection signal="drawStockMenu" from="NewsMenu/StockScreenMover" to="StockMenu" method="makeStockScreen"]
 [connection signal="pressed" from="NewsMenu/StockScreenMover" to="NewsMenu/StockScreenMover" method="_on_pressed"]
 [connection signal="pressed" from="NewsMenu/BeginDayButton" to="NewsMenu/BeginDayButton" method="_on_pressed"]
+[connection signal="startDay" from="NewsMenu/BeginDayButton" to="." method="_on_start_day"]
 [connection signal="drawStockSelectors" from="StockMenu" to="StockMenu/IndustrySelector" method="drawIndustrySelectors"]
 [connection signal="pressed" from="StockMenu/SettingsIcon" to="StockMenu/SettingsIcon" method="_on_pressed"]
 [connection signal="pressed" from="StockMenu/ReturnMenuButton" to="StockMenu/ReturnMenuButton" method="_on_pressed"]
@@ -1659,6 +1676,7 @@ wait_time = 8.0
 [connection signal="mouse_exited" from="TradingMenu/StockBGraph/13" to="TradingMenu/StockBGraph/13" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="TradingMenu/StockBGraph/14" to="TradingMenu/StockBGraph/14" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TradingMenu/StockBGraph/14" to="TradingMenu/StockBGraph/14" method="_on_mouse_exited"]
+[connection signal="pressed" from="TradingMenu/StockAText/BuyButton" to="TradingMenu/StockAText/BuyButton" method="_on_pressed"]
 [connection signal="mouse_entered" from="TradingMenu/StockAGraph/1" to="TradingMenu/StockAGraph/1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TradingMenu/StockAGraph/1" to="TradingMenu/StockAGraph/1" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="TradingMenu/StockAGraph/2" to="TradingMenu/StockAGraph/2" method="_on_mouse_entered"]

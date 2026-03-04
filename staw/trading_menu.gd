@@ -34,13 +34,10 @@ func makeStockScreen():
 			bar.color = Color("darkred")	
 		elif(StockA["timeFrame"][x-1] < StockA["timeFrame"][x]):
 			bar.color = Color("darkgreen")	
-		else:
-			bar.color = get_node("StockAGraph/" + str(x)).color
 		
 		
 	for x in range(StockB["timeFrame"].size()):
 		#sizing
-		
 		var bar = get_node("StockBGraph/" + str(x+1))
 		bar.set_size(Vector2(35, (StockB["timeFrame"][x] - minimum) / scaleFactor ) ) 
 		
@@ -49,10 +46,33 @@ func makeStockScreen():
 			bar.color = Color("darkred")	
 		elif(StockB["timeFrame"][x-1] < StockB["timeFrame"][x]):
 			bar.color = Color("darkgreen")	
-		else:
-			bar.color = get_node("StockBGraph/" + str(x)).color		
+
 		emit_signal("drawStockSelectors")
 
 
 func _on_sub_timer_timeout() -> void:
-	pass
+	print("SubTImerout!!!!")
+	global.currTime += 1
+	if global.currTime > 13:
+		$subTimer.stop()
+		return
+	for industry in global.Industries.keys():
+		industry = global.Industries[industry]
+		var Stock = industry["Stocks"][0]
+		var x = 0
+		for time in Stock["timeFrame"]:
+			if x == 13:
+				Stock["timeFrame"][x] = Stock["newTimeFrame"][global.currTime]
+			else:
+				Stock["timeFrame"][x] = Stock["timeFrame"][x+1]
+			x+=1
+		Stock = industry["Stocks"][1]
+		x = 0
+		for time in Stock["timeFrame"]:
+			if x == 13:
+				Stock["timeFrame"][x] = Stock["newTimeFrame"][global.currTime]
+			else:
+				Stock["timeFrame"][x] = Stock["timeFrame"][x+1]			
+			x+=1
+	makeStockScreen()
+	$subTimer.start()

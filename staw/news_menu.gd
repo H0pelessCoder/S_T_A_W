@@ -10,8 +10,13 @@ static func eventFormat() -> Dictionary:
 static var happeningEvents := eventFormat()
 var pendingEvents := eventFormat()
 
-func testNextDay():
+func determineTodaysNews():
 	global.day += 1
+	var Events = global.News["Events"]
+	var eventsToProcess = global.availableEvents
+	chooseEvents(pendingEvents)
+	chooseEvents(eventsToProcess)
+	loadNewsScreen()
 	for type in happeningEvents.keys():
 		for event in happeningEvents.get(type):
 			event = getEvent(event)
@@ -21,23 +26,6 @@ func testNextDay():
 				next = getEvent(next)
 				pendingEvents[next["Type"]].append(next["Title"])
 	happeningEvents = eventFormat()
-	if global.day == 1:
-		determineTodaysNews()
-	
-func determineTodaysNews():
-	var Events = global.News["Events"]
-	var eventsToProcess = global.availableEvents
-	chooseEvents(pendingEvents)
-	chooseEvents(eventsToProcess)
-	loadNewsScreen()
-	#Testing new day
-	#print("Day: " + str(global.day))
-	#print("HappeningEvents:")
-	#print(happeningEvents)
-	#print("\n")
-	#testNextDay()
-	
-			#pick a random event from the dict
 			
 func chooseEvents(Events):
 	var nEvents = global.News["dailyEvents"][str(global.day)]
@@ -79,6 +67,9 @@ static func getEvent(event):
 	return global.News["Events"][event]
 
 func loadNewsScreen():
+	for child in $EventList/Horiz.get_children():
+		if child.visible == true:
+			child.free()
 	var Events = global.News["Events"]
 	for type in happeningEvents.keys():
 		for event in happeningEvents[type]:

@@ -3,7 +3,7 @@
 		"Stocks" : [ 
 			{
 				"firstStockPoint" : 745,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "Mercatoria Shipping",
 				"stockShort" : "MSP",
 				"stockDescription" : "A naval shipping company which specializes in smuggling. Key ties in Xiadia and Drastara.",
@@ -12,7 +12,7 @@
 			}, 
 			{
 				"firstStockPoint" : 954,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "Flaeton Shipping",
 				"stockShort" : "FLS",
 				"stockDescription" : "A large distrubutor based out of Flaeton.",
@@ -28,7 +28,7 @@
 		"Stocks" : [ 
 			{
 				"firstStockPoint" : 654,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "Firm Fuel",
 				"stockShort" : "FFL",
 				"stockDescription" : "A power firm based on non-rewnable energy, supplies most power everywhere.",
@@ -37,7 +37,7 @@
 			}, 
 			{
 				"firstStockPoint" : 404,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "Natural Energy",
 				"stockShort" : "NTE",
 				"stockDescription" : "A clean energy company based out of central Kaddia. Has ties to the mafia, Xiadia, and many criminal syndicates.",
@@ -52,7 +52,7 @@
 		"Stocks" : [ 
 			{
 				"firstStockPoint" : 212,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "Beef Brothers",
 				"stockShort" : "BBS",
 				"stockDescription" : "A cattle industry based out of central Kaddia, acts as a distributed network of local ranches.",
@@ -61,7 +61,7 @@
 			}, 
 			{
 				"firstStockPoint" : 404,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "Keddles'",
 				"stockShort" : "KDL",
 				"stockDescription" : "Food behemoth founded in 1821. Controls much of the market.",
@@ -76,7 +76,7 @@
 		"Stocks" : [ 
 			{
 				"firstStockPoint" : 745,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "Diatide",
 				"stockShort" : "DTD",
 				"stockDescription" : "A former small time tech startup founded by co-owners Sean Weiss and Cyllin Ameus. Some stock investors and whistleblowers have noted that some of the company's large investments in microchips have been funneled to suspicious outlets in the Theocraatic nation state of Patreus.",
@@ -85,7 +85,7 @@
 			}, 
 			{
 				"firstStockPoint" : 954,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "Evion",
 				"stockShort" : "EVN",
 				"stockDescription" : "One of the few truly new competitors in the scene, Evion has grown from surveillance state apparatus to proper tech behemoth.",
@@ -101,7 +101,7 @@
 		"Stocks" : [ 
 			{
 				"firstStockPoint" : 654,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "SFAS",
 				"stockShort" : "AVD",
 				"stockDescription" : "A power firm based on non-rewnable energy, supplies most power everywhere.",
@@ -110,7 +110,7 @@
 			}, 
 			{
 				"firstStockPoint" : 404,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "DVSSvy",
 				"stockShort" : "adv",
 				"stockDescription" : "A clean energy company based out of central Kaddia. Has ties to the mafia, Xiadia, and many criminal syndicates.",
@@ -125,7 +125,7 @@
 		"Stocks" : [ 
 			{
 				"firstStockPoint" : 212,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "vsa",
 				"stockShort" : "aff",
 				"stockDescription" : "A cattle industry based out of central Kaddia, acts as a distributed network of local ranches.",
@@ -134,7 +134,7 @@
 			}, 
 			{
 				"firstStockPoint" : 404,
-				"savedStockPoint" : 0,
+				"savedStockPoint" :-1,
 				"companyName" : "FDAS'",
 				"stockShort" : "SFA",
 				"stockDescription" : "Food behemoth founded in 1821. Controls much of the market.",

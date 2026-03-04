@@ -2,12 +2,13 @@ extends Control
 class_name global
 signal determineNews
 signal drawStockMenu
-static var day := 0
+signal drawTradingMenu
+static var day := -1
 static var currentIndustry := "Shipping"
 static var Industries : Dictionary
 static var News : Dictionary
 static var availableEvents : Dictionary 
-
+static var currTime := -1
 
 func _on_button_pressed():
 	get_tree().quit() # Replace with function body.
@@ -34,6 +35,7 @@ func instantiateNews():
 		if News["Events"][event]["Prev"].size() == 0:
 			availableEvents.set(event, News["Events"][event])
 	availableEvents = eventController.sortEvents(availableEvents)
+	
 static func findMinimum(stockA,stockB):
 	var smallestB = stockB["timeFrame"][0]
 	var smallestA = stockA["timeFrame"][0]
@@ -64,7 +66,59 @@ static func calculateStockChange(Stock):
 ## Controlling the Trading Menu ##
 
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
-
+	
+	 # Replace with function body.
+	print("TIMEOUT!!!!!")
+	#self.visible = true
+	$NewsMenu.visible = true
+	$TradingMenu.visible = false
+	emit_signal("determineNews")
+	emit_signal("drawStockMenu")
+	#This will lead to profit screen and stuff
+			
 func _on_start_day() -> void:
-	pass # Replace with function body.
+	print("NewDay")
+	#TODO: USE NEWS EVENTS
+	for industry in Industries.keys():
+		industry = Industries[industry]
+		#Stock A
+		var Stock = industry["Stocks"][0]
+		var variance = 4
+		var maxVariance = 30
+		var first = Stock["timeFrame"][13]
+		var last = findVelocity(Stock) + first
+		var newTimeframe = generateStockTimeframe(first, last, variance, 14, maxVariance)
+		Stock["newTimeFrame"] = newTimeframe
+		Stock["firstStockPoint"] = first
+		#Stock B
+		Stock = industry["Stocks"][1]
+		variance = 4
+		maxVariance = 30
+		first = Stock["timeFrame"][13]
+		last = findVelocity(Stock) + first
+		newTimeframe = generateStockTimeframe(first, last, variance, 14, maxVariance)
+		Stock["newTimeFrame"] = newTimeframe
+		Stock["firstStockPoint"] = first
+	$TradingMenu/Timer.start()
+	$TradingMenu/subTimer.start()
+	emit_signal("drawTradingMenu")
+		
+			
+#TODO USE NEWS EVENTS
+func findVelocity(stock):
+	return randi_range(-50,50)
+
+func generateStockTimeframe(first, last, variance, amount, maxVariance):
+	var timeframe = [first]
+	var increments = (last - first) / (amount-2)
+	for x in range(amount-2):
+		var variant = randf_range(-variance, variance)
+		var change = increments * variant
+		var next = (timeframe[x-1] + change)
+		var whereItShouldBe = (increments * x) + first
+		if next > whereItShouldBe + maxVariance or next < whereItShouldBe - maxVariance:
+			next = whereItShouldBe
+		timeframe.append(int(next))
+	timeframe.append(last)
+	return timeframe
+	 
