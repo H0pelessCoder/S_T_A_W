@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://5r4fex7aa8ji" path="res://trading_menu.gd" id="17_oq4si"]
 [ext_resource type="Script" uid="uid://c4pyj6kvejgrj" path="res://timer_text.gd" id="18_m4egf"]
 [ext_resource type="Script" uid="uid://dpg5ox7knjge5" path="res://buy_button.gd" id="18_pi4e7"]
+[ext_resource type="FontFile" uid="uid://bq712651mp56e" path="res://src/fonts/jejakrupa-regular.otf" id="20_kuuv8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_knq72"]
 font_size = 32
@@ -976,6 +977,7 @@ offset_bottom = 568.0
 mouse_filter = 2
 
 [node name="TradingMenu" type="Control" parent="." unique_id=694765132]
+visible = false
 anchors_preset = 0
 offset_left = -943.0
 offset_top = -518.0
@@ -1195,13 +1197,25 @@ text = "-0"
 
 [node name="BuyButton" type="Button" parent="TradingMenu/StockAText" unique_id=305499793]
 layout_mode = 0
-offset_left = 91.118286
-offset_top = -2.2059345
-offset_right = 131.11829
-offset_bottom = 28.794065
-text = "BUY"
+offset_left = -11.697622
+offset_top = 64.10384
+offset_right = 28.302378
+offset_bottom = 95.10384
+text = "LONG"
 script = ExtResource("18_pi4e7")
 metadata/Stock = 0
+metadata/typeOfInvestment = "Long"
+
+[node name="SellButton" type="Button" parent="TradingMenu/StockAText" unique_id=825685588]
+layout_mode = 0
+offset_left = 58.488083
+offset_top = 64.10383
+offset_right = 119.48808
+offset_bottom = 95.10383
+text = "SHORT"
+script = ExtResource("18_pi4e7")
+metadata/Stock = 0
+metadata/typeOfInvestment = "Short"
 
 [node name="StockBText" type="Control" parent="TradingMenu" unique_id=1452260882]
 anchors_preset = 0
@@ -1235,6 +1249,28 @@ offset_top = 1.7124367
 offset_right = -0.1356659
 offset_bottom = 41.712437
 text = "-0"
+
+[node name="BuyButton" type="Button" parent="TradingMenu/StockBText" unique_id=673374388]
+layout_mode = 0
+offset_left = -171.77037
+offset_top = 77.67899
+offset_right = -117.77037
+offset_bottom = 108.67899
+text = "LONG"
+script = ExtResource("18_pi4e7")
+metadata/Stock = 1
+metadata/typeOfInvestment = "Long"
+
+[node name="SellButton" type="Button" parent="TradingMenu/StockBText" unique_id=848806351]
+layout_mode = 0
+offset_left = -101.58467
+offset_top = 77.67898
+offset_right = -40.58467
+offset_bottom = 108.67898
+text = "SHORT"
+script = ExtResource("18_pi4e7")
+metadata/Stock = 1
+metadata/typeOfInvestment = "Short"
 
 [node name="RangeIndicators" type="Control" parent="TradingMenu" unique_id=517639120]
 anchors_preset = 0
@@ -1557,6 +1593,140 @@ script = ExtResource("18_m4egf")
 [node name="subTimer" type="Timer" parent="TradingMenu" unique_id=1503555301]
 wait_time = 8.0
 
+[node name="ProfitScreen" type="Control" parent="." unique_id=1415367012]
+anchors_preset = 0
+offset_left = -971.0
+offset_top = -547.0
+offset_right = 959.0
+offset_bottom = 540.0
+scale = Vector2(1.0012183, 0.968487)
+
+[node name="Paper" type="ColorRect" parent="ProfitScreen" unique_id=947615838]
+layout_mode = 0
+offset_left = 531.0
+offset_right = 1269.0
+offset_bottom = 1114.1089
+
+[node name="ProfitHeader" type="Label" parent="ProfitScreen" unique_id=787350738]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 19.0
+offset_right = 1068.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+text = "PROFIT"
+
+[node name="Legalese" type="Label" parent="ProfitScreen" unique_id=1628269636]
+layout_mode = 0
+offset_left = 573.3015
+offset_top = 1039.7661
+offset_right = 1233.4973
+offset_bottom = 1072.7661
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 6
+text = "This payslip is issued by Pax Trading(\"the Company\") for the purpoe of summarizing compensation, witholdings, deductions, and related adjustments applicable to the employee recieving this document (\"the Employee\"). By accepting, reviewing, or otherwise retaining this payslip, the Employee acknowledges that the amounts described herein represent the company's good-faith accounting of wages reimbursments, and other compensatable items. By using this payslip as valid currency, the Employee surrenders rights to sue for defamation,  loss of life, or loss of limb or any other injuries sustained during work or as a result of company refinancing descisions. "
+autowrap_mode = 3
+
+[node name="ProfitLossContainer" type="VBoxContainer" parent="ProfitScreen" unique_id=1351403315]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 187.92197
+offset_right = 1228.0
+offset_bottom = 791.9569
+
+[node name="ProfitContainer" type="ScrollContainer" parent="ProfitScreen/ProfitLossContainer" unique_id=1326707627]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProfitText" type="Label" parent="ProfitScreen/ProfitLossContainer/ProfitContainer" unique_id=654083968]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0.47648424, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 29
+text = "PROFIT +0"
+horizontal_alignment = 2
+
+[node name="LossContainer" type="ScrollContainer" parent="ProfitScreen/ProfitLossContainer" unique_id=1442276472]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LossText" type="Label" parent="ProfitScreen/ProfitLossContainer/LossContainer" unique_id=268995485]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+text = "LOSS -0"
+horizontal_alignment = 2
+
+[node name="SigningBox" type="Control" parent="ProfitScreen" unique_id=368098095]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SigningLine" type="ColorRect" parent="ProfitScreen/SigningBox" unique_id=1170683378]
+layout_mode = 0
+offset_left = 617.24805
+offset_top = 963.35834
+offset_right = 846.96814
+offset_bottom = 967.2195
+color = Color(0, 0, 0, 1)
+
+[node name="SigningDirections" type="Label" parent="ProfitScreen/SigningBox" unique_id=341082748]
+layout_mode = 0
+offset_left = 694.1543
+offset_top = 975.7488
+offset_right = 768.1543
+offset_bottom = 998.74884
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sign Here"
+
+[node name="Signature" type="Label" parent="ProfitScreen/SigningBox" unique_id=566596639]
+layout_mode = 0
+offset_left = 608.2589
+offset_top = 839.4537
+offset_right = 817.2589
+offset_bottom = 962.4537
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("20_kuuv8")
+theme_override_font_sizes/font_size = 100
+text = "Employee"
+
+[node name="TotalBox" type="Control" parent="ProfitScreen" unique_id=1059778854]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TotalSpace" type="ColorRect" parent="ProfitScreen/TotalBox" unique_id=663061139]
+layout_mode = 0
+offset_left = 1051.7188
+offset_top = 899.34094
+offset_right = 1182.5592
+offset_bottom = 902.43854
+color = Color(0, 0, 0, 1)
+
+[node name="EqualSign" type="Label" parent="ProfitScreen/TotalBox" unique_id=1787508364]
+layout_mode = 0
+offset_left = 1018.75885
+offset_top = 853.9093
+offset_right = 1037.7358
+offset_bottom = 898.9093
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "="
+
+[node name="TotalText" type="Label" parent="ProfitScreen/TotalBox" unique_id=530787992]
+layout_mode = 0
+offset_left = 1186.5543
+offset_top = 866.29974
+offset_right = 1264.5543
+offset_bottom = 911.29974
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Total"
+
 [connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]
 [connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
 [connection signal="drawTradingMenu" from="." to="TradingMenu" method="makeStockScreen"]
@@ -1677,6 +1847,9 @@ wait_time = 8.0
 [connection signal="mouse_entered" from="TradingMenu/StockBGraph/14" to="TradingMenu/StockBGraph/14" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TradingMenu/StockBGraph/14" to="TradingMenu/StockBGraph/14" method="_on_mouse_exited"]
 [connection signal="pressed" from="TradingMenu/StockAText/BuyButton" to="TradingMenu/StockAText/BuyButton" method="_on_pressed"]
+[connection signal="pressed" from="TradingMenu/StockAText/SellButton" to="TradingMenu/StockAText/SellButton" method="_on_pressed"]
+[connection signal="pressed" from="TradingMenu/StockBText/BuyButton" to="TradingMenu/StockBText/BuyButton" method="_on_pressed"]
+[connection signal="pressed" from="TradingMenu/StockBText/SellButton" to="TradingMenu/StockBText/SellButton" method="_on_pressed"]
 [connection signal="mouse_entered" from="TradingMenu/StockAGraph/1" to="TradingMenu/StockAGraph/1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TradingMenu/StockAGraph/1" to="TradingMenu/StockAGraph/1" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="TradingMenu/StockAGraph/2" to="TradingMenu/StockAGraph/2" method="_on_mouse_entered"]

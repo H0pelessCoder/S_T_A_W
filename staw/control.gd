@@ -65,6 +65,7 @@ static func calculateStockChange(Stock):
 	
 ## Controlling the Trading Menu ##
 
+	## ONCE THE TRADING SECTION IS OVER ##
 func _on_timer_timeout() -> void:
 	
 	 # Replace with function body.
@@ -74,8 +75,9 @@ func _on_timer_timeout() -> void:
 	$TradingMenu.visible = false
 	emit_signal("determineNews")
 	emit_signal("drawStockMenu")
+	
 	#This will lead to profit screen and stuff
-			
+	## INITS THE TRADING SECTION ##		
 func _on_start_day() -> void:
 	print("NewDay")
 	#TODO: USE NEWS EVENTS
@@ -83,6 +85,7 @@ func _on_start_day() -> void:
 		industry = Industries[industry]
 		#Stock A
 		var Stock = industry["Stocks"][0]
+		Stock["savedStockPoint"] = -1
 		var variance = 4
 		var maxVariance = 30
 		var first = Stock["timeFrame"][13]
@@ -92,6 +95,7 @@ func _on_start_day() -> void:
 		Stock["firstStockPoint"] = first
 		#Stock B
 		Stock = industry["Stocks"][1]
+		Stock["savedStockPoint"] = -1
 		variance = 4
 		maxVariance = 30
 		first = Stock["timeFrame"][13]
