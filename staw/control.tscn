@@ -19,7 +19,9 @@
 [ext_resource type="Script" uid="uid://5r4fex7aa8ji" path="res://trading_menu.gd" id="17_oq4si"]
 [ext_resource type="Script" uid="uid://c4pyj6kvejgrj" path="res://timer_text.gd" id="18_m4egf"]
 [ext_resource type="Script" uid="uid://dpg5ox7knjge5" path="res://buy_button.gd" id="18_pi4e7"]
+[ext_resource type="Script" uid="uid://baeqi3mntw288" path="res://profit_screen.gd" id="20_3fl80"]
 [ext_resource type="FontFile" uid="uid://bq712651mp56e" path="res://src/fonts/jejakrupa-regular.otf" id="20_kuuv8"]
+[ext_resource type="Script" uid="uid://bhm2h4w7lchke" path="res://signing_activator.gd" id="21_ou021"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_knq72"]
 font_size = 32
@@ -1600,6 +1602,7 @@ offset_top = -547.0
 offset_right = 959.0
 offset_bottom = 540.0
 scale = Vector2(1.0012183, 0.968487)
+script = ExtResource("20_3fl80")
 
 [node name="Paper" type="ColorRect" parent="ProfitScreen" unique_id=947615838]
 layout_mode = 0
@@ -1693,6 +1696,17 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("20_kuuv8")
 theme_override_font_sizes/font_size = 100
 text = "Employee"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SigningActivator" type="Button" parent="ProfitScreen/SigningBox" unique_id=1110474116]
+layout_mode = 0
+offset_left = 617.248
+offset_top = 881.7877
+offset_right = 849.9645
+offset_bottom = 964.39075
+flat = true
+script = ExtResource("21_ou021")
 
 [node name="TotalBox" type="Control" parent="ProfitScreen" unique_id=1059778854]
 anchors_preset = 0
@@ -1726,6 +1740,18 @@ offset_bottom = 911.29974
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Total"
+
+[node name="ReturnMenuButton" type="Button" parent="ProfitScreen" unique_id=2119771278]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 559.3186
+offset_top = 20.650757
+offset_right = 608.3186
+offset_bottom = 71.92297
+text = "X"
+expand_icon = true
+script = ExtResource("6_fj5cn")
 
 [connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]
 [connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
@@ -1888,3 +1914,5 @@ text = "Total"
 [connection signal="pressed" from="TradingMenu/IndustrySelector/IndustryBack" to="TradingMenu/IndustrySelector" method="backwards"]
 [connection signal="timeout" from="TradingMenu/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TradingMenu/subTimer" to="TradingMenu" method="_on_sub_timer_timeout"]
+[connection signal="pressed" from="ProfitScreen/SigningBox/SigningActivator" to="ProfitScreen/SigningBox/SigningActivator" method="_on_pressed"]
+[connection signal="pressed" from="ProfitScreen/ReturnMenuButton" to="ProfitScreen/ReturnMenuButton" method="_on_pressed"]
