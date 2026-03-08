@@ -3,6 +3,7 @@ class_name global
 signal determineNews
 signal drawStockMenu
 signal drawTradingMenu
+signal drawProfitScreen
 static var day := -1
 static var currentIndustry := "Shipping"
 static var Industries : Dictionary
@@ -27,7 +28,7 @@ func instantiateIndustries():
 	var Ijson = preload("res://src/stocks.json")
 	for Industry in Ijson.data:
 		Industries.set(Industry, Ijson.data[Industry])
-		
+
 func instantiateNews():
 	var Njson = preload("res://src/news.json")
 	News = Njson.data
@@ -71,10 +72,11 @@ func _on_timer_timeout() -> void:
 	 # Replace with function body.
 	print("TIMEOUT!!!!!")
 	#self.visible = true
-	$NewsMenu.visible = true
-	$TradingMenu.visible = false
 	emit_signal("determineNews")
 	emit_signal("drawStockMenu")
+	emit_signal("drawProfitScreen")
+	$ProfitScreen.visible = true
+	$TradingMenu.visible = false
 	
 	#This will lead to profit screen and stuff
 	## INITS THE TRADING SECTION ##		
@@ -83,26 +85,16 @@ func _on_start_day() -> void:
 	#TODO: USE NEWS EVENTS
 	for industry in Industries.keys():
 		industry = Industries[industry]
-		#Stock A
-		var Stock = industry["Stocks"][0]
-		Stock["savedStockPoint"] = -1
-		var variance = 4
-		var maxVariance = 30
-		var first = Stock["timeFrame"][13]
-		var last = findVelocity(Stock) + first
-		var newTimeframe = generateStockTimeframe(first, last, variance, 14, maxVariance)
-		Stock["newTimeFrame"] = newTimeframe
-		Stock["firstStockPoint"] = first
-		#Stock B
-		Stock = industry["Stocks"][1]
-		Stock["savedStockPoint"] = -1
-		variance = 4
-		maxVariance = 30
-		first = Stock["timeFrame"][13]
-		last = findVelocity(Stock) + first
-		newTimeframe = generateStockTimeframe(first, last, variance, 14, maxVariance)
-		Stock["newTimeFrame"] = newTimeframe
-		Stock["firstStockPoint"] = first
+		for Stock in industry["Stocks"]:
+			Stock["savedStockPoint"] = 0
+			var variance = 4
+			var maxVariance = 30
+			var first = Stock["timeFrame"][13]
+			var last = findVelocity(Stock) + first
+			var newTimeframe = generateStockTimeframe(first, last, variance, 14, maxVariance)
+			Stock["newTimeFrame"] = newTimeframe
+			Stock["firstStockPoint"] = first
+
 	$TradingMenu/Timer.start()
 	$TradingMenu/subTimer.start()
 	emit_signal("drawTradingMenu")

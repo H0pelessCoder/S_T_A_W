@@ -44,7 +44,6 @@ script = ExtResource("1_0fbet")
 position = Vector2(-2, -4)
 
 [node name="MainMenu" type="Control" parent="." unique_id=962578855]
-visible = false
 layout_mode = 1
 anchors_preset = 0
 offset_left = -947.0
@@ -1219,6 +1218,14 @@ script = ExtResource("18_pi4e7")
 metadata/Stock = 0
 metadata/typeOfInvestment = "Short"
 
+[node name="Blocker" type="ColorRect" parent="TradingMenu/StockAText" unique_id=722049110]
+layout_mode = 0
+offset_left = -12.313263
+offset_top = 64.103836
+offset_right = 118.82318
+offset_bottom = 95.734634
+color = Color(1, 0, 0, 0.1764706)
+
 [node name="StockBText" type="Control" parent="TradingMenu" unique_id=1452260882]
 anchors_preset = 0
 offset_left = 1153.1389
@@ -1273,6 +1280,14 @@ text = "SHORT"
 script = ExtResource("18_pi4e7")
 metadata/Stock = 1
 metadata/typeOfInvestment = "Short"
+
+[node name="Blocker" type="ColorRect" parent="TradingMenu/StockBText" unique_id=811910729]
+layout_mode = 0
+offset_left = -172.38602
+offset_top = 78.32277
+offset_right = -41.249573
+offset_bottom = 109.95357
+color = Color(1, 0, 0, 0.1764706)
 
 [node name="RangeIndicators" type="Control" parent="TradingMenu" unique_id=517639120]
 anchors_preset = 0
@@ -1580,7 +1595,7 @@ scale = Vector2(3.0850189, 2.842298)
 color = Color(5.715527e-07, 0.360331, 4.3317675e-07, 1)
 
 [node name="Timer" type="Timer" parent="TradingMenu" unique_id=1430493728]
-wait_time = 120.0
+wait_time = 15.0
 one_shot = true
 
 [node name="TimerText" type="Label" parent="TradingMenu" unique_id=1328699779]
@@ -1593,9 +1608,9 @@ theme_override_font_sizes/font_size = 32
 script = ExtResource("18_m4egf")
 
 [node name="subTimer" type="Timer" parent="TradingMenu" unique_id=1503555301]
-wait_time = 8.0
 
 [node name="ProfitScreen" type="Control" parent="." unique_id=1415367012]
+visible = false
 anchors_preset = 0
 offset_left = -971.0
 offset_top = -547.0
@@ -1638,27 +1653,37 @@ offset_top = 187.92197
 offset_right = 1228.0
 offset_bottom = 791.9569
 
-[node name="ProfitContainer" type="ScrollContainer" parent="ProfitScreen/ProfitLossContainer" unique_id=1326707627]
+[node name="ScrollerProfit" type="ScrollContainer" parent="ProfitScreen/ProfitLossContainer" unique_id=1326707627]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ProfitText" type="Label" parent="ProfitScreen/ProfitLossContainer/ProfitContainer" unique_id=654083968]
+[node name="ProfitContainer" type="VBoxContainer" parent="ProfitScreen/ProfitLossContainer/ScrollerProfit" unique_id=730822517]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="ProfitText" type="Label" parent="ProfitScreen/ProfitLossContainer/ScrollerProfit/ProfitContainer" unique_id=654083968]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0.47648424, 3.85046e-07, 1)
 theme_override_font_sizes/font_size = 29
 text = "PROFIT +0"
 horizontal_alignment = 2
 
-[node name="LossContainer" type="ScrollContainer" parent="ProfitScreen/ProfitLossContainer" unique_id=1442276472]
+[node name="ScrollerLoss" type="ScrollContainer" parent="ProfitScreen/ProfitLossContainer" unique_id=1442276472]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="LossText" type="Label" parent="ProfitScreen/ProfitLossContainer/LossContainer" unique_id=268995485]
+[node name="LossContainer" type="VBoxContainer" parent="ProfitScreen/ProfitLossContainer/ScrollerLoss" unique_id=1874661794]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="LossText" type="Label" parent="ProfitScreen/ProfitLossContainer/ScrollerLoss/LossContainer" unique_id=268995485]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 29
 text = "LOSS -0"
@@ -1741,6 +1766,16 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Total"
 
+[node name="TotalAmount" type="Label" parent="ProfitScreen/TotalBox" unique_id=106114738]
+layout_mode = 0
+offset_left = 1049.7211
+offset_top = 857.00684
+offset_right = 1195.7211
+offset_bottom = 965.42334
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 3
+
 [node name="ReturnMenuButton" type="Button" parent="ProfitScreen" unique_id=2119771278]
 visible = false
 z_index = 1
@@ -1754,6 +1789,7 @@ expand_icon = true
 script = ExtResource("6_fj5cn")
 
 [connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]
+[connection signal="drawProfitScreen" from="." to="ProfitScreen" method="_draw_profit_screen"]
 [connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
 [connection signal="drawTradingMenu" from="." to="TradingMenu" method="makeStockScreen"]
 [connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
@@ -1914,5 +1950,7 @@ script = ExtResource("6_fj5cn")
 [connection signal="pressed" from="TradingMenu/IndustrySelector/IndustryBack" to="TradingMenu/IndustrySelector" method="backwards"]
 [connection signal="timeout" from="TradingMenu/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TradingMenu/subTimer" to="TradingMenu" method="_on_sub_timer_timeout"]
+[connection signal="mouse_entered" from="ProfitScreen/SigningBox/SigningActivator" to="ProfitScreen/SigningBox/SigningActivator" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ProfitScreen/SigningBox/SigningActivator" to="ProfitScreen/SigningBox/SigningActivator" method="_on_mouse_exited"]
 [connection signal="pressed" from="ProfitScreen/SigningBox/SigningActivator" to="ProfitScreen/SigningBox/SigningActivator" method="_on_pressed"]
 [connection signal="pressed" from="ProfitScreen/ReturnMenuButton" to="ProfitScreen/ReturnMenuButton" method="_on_pressed"]

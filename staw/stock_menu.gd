@@ -28,6 +28,8 @@ func makeStockScreen():
 	for x in range(StockA["timeFrame"].size()):
 		
 		var bar = get_node("StockAGraph/" + str(x+1))
+		if bar == null:
+			break
 		bar.set_size(Vector2(35, (StockA["timeFrame"][x] - minimum) / scaleFactor ) ) 
 		if(StockA["timeFrame"][x-1] > StockA["timeFrame"][x]):
 			bar.color = Color("darkred")	

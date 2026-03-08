@@ -46,7 +46,15 @@ func makeStockScreen():
 			bar.color = Color("darkred")	
 		elif(StockB["timeFrame"][x-1] < StockB["timeFrame"][x]):
 			bar.color = Color("darkgreen")	
-
+		
+		print(StockA["savedStockPoint"])
+		if(StockA["savedStockPoint"] != 0 || StockB["savedStockPoint"] != 0):
+			$StockAText/Blocker.visible = true
+			$StockBText/Blocker.visible = true
+		else:
+			$StockAText/Blocker.visible = false
+			$StockBText/Blocker.visible = false
+			
 		emit_signal("drawStockSelectors")
 
 
