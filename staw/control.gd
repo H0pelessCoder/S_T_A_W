@@ -7,6 +7,7 @@ signal drawProfitScreen
 static var day := -1
 static var currentIndustry := "Shipping"
 static var Industries : Dictionary
+var gameStarted = false
 static var News : Dictionary
 static var availableEvents : Dictionary 
 static var currTime := -1
@@ -17,13 +18,19 @@ func _ready():
 	pass
 
 func _on_start_game_pressed() -> void:
-	get_node("MainMenu").visible = false
-	get_node("NewsMenu").visible = true
-	instantiateIndustries()
-	instantiateNews()
-	emit_signal("drawStockMenu")
-	emit_signal("determineNews")
-
+	if gameStarted == false:
+		get_node("MainMenu").visible = false
+		get_node("NewsMenu").visible = true
+		instantiateIndustries()
+		instantiateNews()
+		emit_signal("drawStockMenu")
+		emit_signal("determineNews")
+		gameStarted = true
+	if gameStarted == true:
+		get_node("MainMenu").visible = false
+		get_node("NewsMenu").visible = true		
+		emit_signal("drawStockMenu")
+		
 func instantiateIndustries():
 	var Ijson = preload("res://src/stocks.json")
 	for Industry in Ijson.data:

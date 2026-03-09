@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://baeqi3mntw288" path="res://profit_screen.gd" id="20_3fl80"]
 [ext_resource type="FontFile" uid="uid://bq712651mp56e" path="res://src/fonts/jejakrupa-regular.otf" id="20_kuuv8"]
 [ext_resource type="Script" uid="uid://bhm2h4w7lchke" path="res://signing_activator.gd" id="21_ou021"]
+[ext_resource type="Script" uid="uid://bkl7s2mb6h5mo" path="res://button.gd" id="23_8jbwv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_knq72"]
 font_size = 32
@@ -1788,6 +1789,60 @@ text = "X"
 expand_icon = true
 script = ExtResource("6_fj5cn")
 
+[node name="SaveScreen" type="Control" parent="." unique_id=1426739676]
+visible = false
+anchors_preset = 0
+offset_left = -965.0
+offset_top = -551.0
+offset_right = 963.0
+offset_bottom = 545.0
+
+[node name="Background" type="ColorRect" parent="SaveScreen" unique_id=1610142652]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 148.0
+offset_right = 1457.0
+offset_bottom = 835.0
+color = Color(0.6498956, 0.643498, 0.65301603, 1)
+
+[node name="SaveSlots" type="VBoxContainer" parent="SaveScreen/Background" unique_id=820863345]
+layout_mode = 0
+offset_left = 17.0
+offset_right = 880.0
+offset_bottom = 685.0
+
+[node name="Name" type="Label" parent="SaveScreen/Background/SaveSlots" unique_id=1199769355]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "JOHN TRADESMAN"
+
+[node name="Day" type="Label" parent="SaveScreen/Background/SaveSlots/Name" unique_id=1104517928]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 899.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "DAY 0"
+horizontal_alignment = 2
+
+[node name="Money" type="Label" parent="SaveScreen/Background/SaveSlots/Name" unique_id=803100479]
+layout_mode = 0
+offset_left = 21.0
+offset_right = 927.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "$50"
+horizontal_alignment = 1
+
+[node name="Selector" type="Button" parent="SaveScreen/Background/SaveSlots/Name" unique_id=1911372165]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 2.0
+offset_right = 927.0
+offset_bottom = 65.0
+flat = true
+script = ExtResource("23_8jbwv")
+
 [connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]
 [connection signal="drawProfitScreen" from="." to="ProfitScreen" method="_draw_profit_screen"]
 [connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
@@ -1954,3 +2009,4 @@ script = ExtResource("6_fj5cn")
 [connection signal="mouse_exited" from="ProfitScreen/SigningBox/SigningActivator" to="ProfitScreen/SigningBox/SigningActivator" method="_on_mouse_exited"]
 [connection signal="pressed" from="ProfitScreen/SigningBox/SigningActivator" to="ProfitScreen/SigningBox/SigningActivator" method="_on_pressed"]
 [connection signal="pressed" from="ProfitScreen/ReturnMenuButton" to="ProfitScreen/ReturnMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="SaveScreen/Background/SaveSlots/Name/Selector" to="SaveScreen/Background/SaveSlots/Name/Selector" method="_on_pressed"]
