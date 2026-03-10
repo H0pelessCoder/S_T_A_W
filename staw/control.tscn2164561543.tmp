@@ -75,10 +75,10 @@ vertical_alignment = 1
 
 [node name="StartGame" type="Button" parent="MainMenu" unique_id=2067489760]
 layout_mode = 0
-offset_left = 720.9426
-offset_top = 16.738388
-offset_right = 1119.9426
-offset_bottom = 110.73839
+offset_left = 387.0
+offset_top = 198.0
+offset_right = 786.0
+offset_bottom = 292.0
 text = "Play"
 
 [node name="SettingsOpener" type="Button" parent="MainMenu" unique_id=1252875900]
@@ -87,74 +87,8 @@ offset_left = 387.0
 offset_top = 356.0
 offset_right = 786.0
 offset_bottom = 450.0
-theme_override_font_sizes/font_size = 32
 text = "Settings"
 script = ExtResource("2_62e2m")
-
-[node name="LoadGame" type="Button" parent="MainMenu" unique_id=1126592424]
-layout_mode = 0
-offset_left = 602.73517
-offset_top = 201.50444
-offset_right = 796.719
-offset_bottom = 295.50446
-theme_override_font_sizes/font_size = 32
-text = "Load Game"
-
-[node name="NewGame" type="Button" parent="MainMenu" unique_id=618598046]
-layout_mode = 0
-offset_left = 383.55872
-offset_top = 201.50444
-offset_right = 577.54254
-offset_bottom = 295.50446
-theme_override_font_sizes/font_size = 32
-text = "New Game"
-
-[node name="TextEdit" type="TextEdit" parent="MainMenu" unique_id=267738072]
-layout_mode = 0
-offset_left = 462.97937
-offset_top = 529.83435
-offset_right = 694.4691
-offset_bottom = 583.91223
-theme_override_fonts/font = ExtResource("20_kuuv8")
-theme_override_font_sizes/font_size = 40
-placeholder_text = "Your Name.."
-
-[node name="SigningBox" type="Control" parent="MainMenu" unique_id=2041608935]
-anchors_preset = 0
-offset_left = -153.30038
-offset_top = -379.18887
-offset_right = -113.300385
-offset_bottom = -339.18887
-
-[node name="SigningLine" type="ColorRect" parent="MainMenu/SigningBox" unique_id=1220419328]
-layout_mode = 0
-offset_left = 617.24805
-offset_top = 963.35834
-offset_right = 846.96814
-offset_bottom = 967.2195
-color = Color(0, 0, 0, 1)
-
-[node name="SigningDirections" type="Label" parent="MainMenu/SigningBox" unique_id=411679279]
-layout_mode = 0
-offset_left = 694.1543
-offset_top = 975.7488
-offset_right = 768.1543
-offset_bottom = 998.74884
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Sign Here"
-
-[node name="Signature" type="Label" parent="MainMenu/SigningBox" unique_id=605173543]
-layout_mode = 0
-offset_left = 608.2589
-offset_top = 839.4537
-offset_right = 817.2589
-offset_bottom = 962.4537
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("20_kuuv8")
-theme_override_font_sizes/font_size = 100
-text = "Employee"
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Settings" type="Control" parent="." unique_id=598453037]
 visible = false

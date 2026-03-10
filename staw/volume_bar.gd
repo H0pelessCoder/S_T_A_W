@@ -1,6 +1,11 @@
 extends Control
-var volume = 0
+
 
 func _on_h_scroll_bar_value_changed(value):
-	volume = int(value)
-	$VolumeReader.text = str(volume)
+	config.volume = int(value)
+	$VolumeReader.text = str(config.volume)
+
+
+func _on_settings_config_ready() -> void:
+	_on_h_scroll_bar_value_changed(config.volume)
+	$VolumeSlider.value = config.volume
