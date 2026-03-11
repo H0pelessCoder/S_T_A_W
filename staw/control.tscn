@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://g8n6s1ggvuwy" path="res://control.gd" id="1_0fbet"]
 [ext_resource type="Script" uid="uid://dca4vvbq07xvn" path="res://settings_opener.gd" id="2_62e2m"]
+[ext_resource type="Script" uid="uid://o4ftncxt3y6b" path="res://new_game.gd" id="3_dgp6r"]
 [ext_resource type="Script" uid="uid://d2dcaog7gtwym" path="res://settings.gd" id="3_kbped"]
 [ext_resource type="Script" uid="uid://mkjjs8awu8go" path="res://volume_bar.gd" id="3_qtu10"]
 [ext_resource type="Script" uid="uid://dx2vt5sywsjui" path="res://exit_settings.gd" id="4_ee4bf"]
@@ -23,6 +24,7 @@
 [ext_resource type="FontFile" uid="uid://bq712651mp56e" path="res://src/fonts/jejakrupa-regular.otf" id="20_kuuv8"]
 [ext_resource type="Script" uid="uid://bhm2h4w7lchke" path="res://signing_activator.gd" id="21_ou021"]
 [ext_resource type="Script" uid="uid://bkl7s2mb6h5mo" path="res://button.gd" id="23_8jbwv"]
+[ext_resource type="PackedScene" uid="uid://ffdqr6ameryy" path="res://tutorial.tscn" id="24_v61lp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_knq72"]
 font_size = 32
@@ -32,7 +34,7 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kbped"]
 load_path = "res://.godot/imported/settings_icon.png-2aec0f18b1e0fd16c56ba34ef69ef014.ctex"
 
-[node name="Control" type="Control" unique_id=2053659831]
+[node name="Main" type="Control" unique_id=2053659831]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -108,53 +110,7 @@ offset_right = 577.54254
 offset_bottom = 295.50446
 theme_override_font_sizes/font_size = 32
 text = "New Game"
-
-[node name="TextEdit" type="TextEdit" parent="MainMenu" unique_id=267738072]
-layout_mode = 0
-offset_left = 462.97937
-offset_top = 529.83435
-offset_right = 694.4691
-offset_bottom = 583.91223
-theme_override_fonts/font = ExtResource("20_kuuv8")
-theme_override_font_sizes/font_size = 40
-placeholder_text = "Your Name.."
-
-[node name="SigningBox" type="Control" parent="MainMenu" unique_id=2041608935]
-anchors_preset = 0
-offset_left = -153.30038
-offset_top = -379.18887
-offset_right = -113.300385
-offset_bottom = -339.18887
-
-[node name="SigningLine" type="ColorRect" parent="MainMenu/SigningBox" unique_id=1220419328]
-layout_mode = 0
-offset_left = 617.24805
-offset_top = 963.35834
-offset_right = 846.96814
-offset_bottom = 967.2195
-color = Color(0, 0, 0, 1)
-
-[node name="SigningDirections" type="Label" parent="MainMenu/SigningBox" unique_id=411679279]
-layout_mode = 0
-offset_left = 694.1543
-offset_top = 975.7488
-offset_right = 768.1543
-offset_bottom = 998.74884
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Sign Here"
-
-[node name="Signature" type="Label" parent="MainMenu/SigningBox" unique_id=605173543]
-layout_mode = 0
-offset_left = 608.2589
-offset_top = 839.4537
-offset_right = 817.2589
-offset_bottom = 962.4537
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("20_kuuv8")
-theme_override_font_sizes/font_size = 100
-text = "Employee"
-visible_characters = 0
-visible_ratio = 0.0
+script = ExtResource("3_dgp6r")
 
 [node name="Settings" type="Control" parent="." unique_id=598453037]
 visible = false
@@ -1958,6 +1914,10 @@ offset_bottom = 56.879135
 scale = Vector2(0.881076, 1.1565337)
 script = ExtResource("23_8jbwv")
 
+[node name="Tutorial" parent="." unique_id=1340638950 instance=ExtResource("24_v61lp")]
+visible = false
+layout_mode = 1
+
 [connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]
 [connection signal="drawProfitScreen" from="." to="ProfitScreen" method="_draw_profit_screen"]
 [connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
@@ -1965,6 +1925,7 @@ script = ExtResource("23_8jbwv")
 [connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MainMenu/SettingsOpener" to="MainMenu/SettingsOpener" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu/NewGame" to="MainMenu/NewGame" method="_on_pressed"]
 [connection signal="configReady" from="Settings" to="Settings/VolumeBar" method="_on_settings_config_ready"]
 [connection signal="value_changed" from="Settings/VolumeBar/VolumeSlider" to="Settings/VolumeBar" method="_on_h_scroll_bar_value_changed"]
 [connection signal="pressed" from="Settings/ExitSettings" to="Settings/ExitSettings" method="_on_pressed"]

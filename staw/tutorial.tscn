@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://ffdqr6ameryy"]
+
+[ext_resource type="Script" uid="uid://cicmt5g1vnulo" path="res://tutorial.gd" id="1_5mrt3"]
+[ext_resource type="FontFile" uid="uid://bq712651mp56e" path="res://src/fonts/jejakrupa-regular.otf" id="1_yb1ct"]
+[ext_resource type="Script" uid="uid://di3tdqeh5eul2" path="res://next.gd" id="3_ehuit"]
+
+[node name="Tutorial" type="Control" unique_id=1340638950]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5mrt3")
+
+[node name="NamePicker" type="Control" parent="." unique_id=19705131]
+anchors_preset = 0
+offset_left = -708.0
+offset_top = 426.0
+offset_right = -668.0
+offset_bottom = 466.0
+
+[node name="SigningBox" type="Control" parent="NamePicker" unique_id=844937883]
+anchors_preset = 0
+offset_left = 790.0
+offset_top = -413.0
+offset_right = 830.0
+offset_bottom = -373.0
+
+[node name="SigningLine" type="ColorRect" parent="NamePicker/SigningBox" unique_id=411222905]
+layout_mode = 0
+offset_left = -526.0
+offset_top = -46.0
+offset_right = 461.0
+offset_bottom = -18.138855
+color = Color(0, 0, 0, 1)
+
+[node name="SigningDirections" type="Label" parent="NamePicker/SigningBox" unique_id=1034959388]
+layout_mode = 0
+offset_left = -193.0
+offset_top = -11.0
+offset_right = 84.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Sign Here"
+
+[node name="NameInputer" type="TextEdit" parent="NamePicker/SigningBox" unique_id=1493171313]
+layout_mode = 0
+offset_left = -526.0
+offset_top = -252.0
+offset_right = 458.0
+offset_bottom = -52.92212
+theme_override_fonts/font = ExtResource("1_yb1ct")
+theme_override_font_sizes/font_size = 175
+placeholder_text = "Your Name"
+
+[node name="SigningDirections2" type="Label" parent="NamePicker/SigningBox" unique_id=1624956288]
+layout_mode = 0
+offset_left = -879.0
+offset_top = -442.0
+offset_right = 740.0
+offset_bottom = -375.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Name Must be less then 20 characters and contain no special symbols"
+
+[node name="returnToMainMenu" type="Button" parent="NamePicker" unique_id=1017304971]
+layout_mode = 0
+offset_left = -180.0
+offset_top = -14.0
+offset_right = -89.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="Next" type="Button" parent="NamePicker" unique_id=76144895]
+visible = false
+layout_mode = 0
+offset_left = 1321.0
+offset_top = -630.0
+offset_right = 1476.0
+offset_bottom = -476.0
+theme_override_font_sizes/font_size = 60
+text = "-->"
+script = ExtResource("3_ehuit")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1961915386]
+
+[connection signal="text_changed" from="NamePicker/SigningBox/NameInputer" to="NamePicker/Next" method="_on_name_inputer_text_changed"]
+[connection signal="pressed" from="NamePicker/returnToMainMenu" to="." method="returnToMenu"]
+[connection signal="pressed" from="NamePicker/Next" to="." method="_on_next_pressed"]
