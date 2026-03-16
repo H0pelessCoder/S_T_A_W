@@ -4,19 +4,32 @@ signal determineNews
 signal drawStockMenu
 signal drawTradingMenu
 signal drawProfitScreen
+static var money = 0
 static var day := -1
 static var currentIndustry := "Shipping"
 static var Industries : Dictionary
 var gameStarted = false
+static var profile : Dictionary
 static var News : Dictionary
-static var availableEvents : Dictionary 
 static var currTime := -1
 
 func _on_button_pressed():
 	get_tree().quit() # Replace with function body.
 func _ready():
 	pass
-
+	
+func save():
+	var dict = preload("res://src/saves.json").data
+	dict.set(profile["userName"], profile)
+	var saveFile = FileAccess.open("res://src/saves.json",FileAccess.WRITE_READ)
+	var newJson = JSON.stringify(dict)
+	saveFile.store_string(newJson)
+	saveFile.close()	
+	
+func loadSave(userName):
+	var saveFile = preload("res://src/saves.json")
+	profile = saveFile.data[userName]
+	
 func _on_start_game_pressed() -> void:
 	if gameStarted == false:
 		get_node("MainMenu").visible = false
@@ -41,8 +54,8 @@ func instantiateNews():
 	News = Njson.data
 	for event in News["Events"]:
 		if News["Events"][event]["Prev"].size() == 0:
-			availableEvents.set(event, News["Events"][event])
-	availableEvents = eventController.sortEvents(availableEvents)
+			eventController.availableEvents.set(event, News["Events"][event])
+	eventController.availableEvents = eventController.sortEvents(eventController.availableEvents)
 	
 static func findMinimum(stockA,stockB):
 	var smallestB = stockB["timeFrame"][0]
@@ -90,6 +103,9 @@ func _on_timer_timeout() -> void:
 func _on_start_day() -> void:
 	print("NewDay")
 	#TODO: USE NEWS EVENTS
+	var sectionLength = 60 / config.difficulty 
+	$TradingMenu/Timer.wait_time = sectionLength
+	$TradingMenu/subTimer.wait_time = sectionLength / 15
 	for industry in Industries.keys():
 		industry = Industries[industry]
 		for Stock in industry["Stocks"]:

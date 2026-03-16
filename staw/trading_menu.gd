@@ -47,7 +47,6 @@ func makeStockScreen():
 		elif(StockB["timeFrame"][x-1] < StockB["timeFrame"][x]):
 			bar.color = Color("darkgreen")	
 		
-		print(StockA["savedStockPoint"])
 		if(StockA["savedStockPoint"] != 0 || StockB["savedStockPoint"] != 0):
 			$StockAText/Blocker.visible = true
 			$StockBText/Blocker.visible = true
@@ -59,7 +58,6 @@ func makeStockScreen():
 
 
 func _on_sub_timer_timeout() -> void:
-	print("SubTImerout!!!!")
 	global.currTime += 1
 	if global.currTime > 13:
 		$subTimer.stop()

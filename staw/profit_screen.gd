@@ -35,7 +35,9 @@ func _draw_profit_screen():
 	get_node(LossContainer + "/LossText").text = "LOSS -" + str(lossTotal)
 	get_node(ProfitContainer + "/ProfitText").text = "PROFIT +" + str(profitTotal)
 	$"TotalBox/TotalAmount".text = str(profitTotal - lossTotal)
+	global.money += profitTotal - lossTotal
 	$ReturnMenuButton.visible = false
+	$SigningBox/Signature.text = global.profile["userName"]
 	$SigningBox/Signature.visible_characters = 0
 	
 func calculateProfit(stock):

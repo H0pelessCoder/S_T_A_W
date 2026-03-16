@@ -21,6 +21,7 @@ func makeStockScreen():
 	$StockAText/TitleShort.text = StockA["companyName"]
 	$StockBText/Title.text = StockB["stockShort"]
 	$StockBText/TitleShort.text = StockB["companyName"]
+	$StockDescriptionScreen.visible = false
 	$RangeIndicators/Bottom.text = str(int(minimum))	
 	$RangeIndicators/Top.text = str(int(maximum))
 	$StockAText/PercentChange.text = str(snapped(pchangeA,0.01)) + "%"

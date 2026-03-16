@@ -2,7 +2,7 @@ extends Control
 class_name config
 
 static var volume = 0
-static var difficulty = "easy"
+static var difficulty = 1
 signal configReady
 
 func _ready():
@@ -24,3 +24,6 @@ func saveUserPreferences():
 	var newJson = JSON.stringify(dict)
 	prefJson.store_string(newJson)
 	prefJson.close()
+
+func setDifficulty(newDifficulty):
+	difficulty = newDifficulty

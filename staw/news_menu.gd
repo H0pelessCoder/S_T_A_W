@@ -8,12 +8,12 @@ static func eventFormat() -> Dictionary:
 	"Minor" : []
 	}
 static var happeningEvents := eventFormat()
-var pendingEvents := eventFormat()
-
+static var pendingEvents := eventFormat()
+static var availableEvents : Dictionary 
 func determineTodaysNews():
 	global.day += 1
 	var Events = global.News["Events"]
-	var eventsToProcess = global.availableEvents
+	var eventsToProcess = availableEvents
 	chooseEvents(pendingEvents)
 	chooseEvents(eventsToProcess)
 	loadNewsScreen()
