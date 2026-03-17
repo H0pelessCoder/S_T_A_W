@@ -3,6 +3,7 @@ class_name global
 signal determineNews
 signal drawStockMenu
 signal drawTradingMenu
+signal drawSaveScreen
 signal drawProfitScreen
 static var money = 0
 static var day := -1
@@ -14,11 +15,14 @@ static var News : Dictionary
 static var currTime := -1
 
 func _on_button_pressed():
+	save()
 	get_tree().quit() # Replace with function body.
+	
 func _ready():
 	pass
 	
 func save():
+	print("Saving!")
 	var dict = preload("res://src/saves.json").data
 	dict.set(profile["userName"], profile)
 	var saveFile = FileAccess.open("res://src/saves.json",FileAccess.WRITE_READ)
@@ -43,7 +47,12 @@ func _on_start_game_pressed() -> void:
 		get_node("MainMenu").visible = false
 		get_node("NewsMenu").visible = true		
 		emit_signal("drawStockMenu")
-		
+
+func _on_load_game_pressed() -> void:
+	$MainMenu.visible = false
+	$SaveScreen.visible = true
+	emit_signal("drawSaveScreen")
+	
 func instantiateIndustries():
 	var Ijson = preload("res://src/stocks.json")
 	for Industry in Ijson.data:
@@ -97,7 +106,7 @@ func _on_timer_timeout() -> void:
 	emit_signal("drawProfitScreen")
 	$ProfitScreen.visible = true
 	$TradingMenu.visible = false
-	
+	save()
 	#This will lead to profit screen and stuff
 	## INITS THE TRADING SECTION ##		
 func _on_start_day() -> void:
