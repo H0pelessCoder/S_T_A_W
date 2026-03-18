@@ -5,16 +5,16 @@ var saveTemplate = $"SaveSlotTemplate"
 var saveSlots = $"SaveSlots"
 @onready
 var confirmationScreen = $"Confirmation"
-@onready
-var yesButton = $Confirmation/YesButton
-
-@onready
-var noButton = $Confirmation/NoButton
-
+signal buttonPressed 
 var currentSave = ""
+var yesPressed = false
+var noPressed = false
 # Called when the node enters the scene tree for the first time.
 func drawSaveScreen():
-	print("Hi!")
+	var yesPressed = false
+	var noPressed = false
+	for slot in saveSlots.get_children():
+		slot.free()
 	var saves = preload("res://src/saves.json")
 	var profileDict = saves.data
 	for profile in profileDict:
@@ -37,10 +37,9 @@ func selectSave(save):
 	currentSave = save
 	
 func deleteSave():
-	
 	var confirmationMessage = "You are about to delete the profile: " + currentSave
 	var confirmed = await confirm(confirmationMessage)
-	if !confirmed:
+	if confirmed == false:
 		confirmationScreen.visible = false
 		return
 	var dict = preload("res://src/saves.json").data
@@ -49,23 +48,40 @@ func deleteSave():
 	var newJson = JSON.stringify(dict)
 	saveFile.store_string(newJson)
 	saveFile.close()	
+	drawSaveScreen()
 	
 func loadSave():
-	pass
-	
-func saveOver():
-	pass
-	
+	var confirmationMessage = "You are about to load the profile: " + currentSave
+	var confirmed = await confirm(confirmationMessage)
+	if confirmed == false:
+		confirmationScreen.visible = false
+		return	
+	var saves = preload("res://src/saves.json").data
+	global.profile = saves[currentSave]
+	global.day = global.profile["day"]
+	global.money = global.profile["money"]
+	global.Industries = global.profile["stocks"]
+	eventController.availableEvents = global.profile["events"]
+	eventController.pendingEvents = global.profile["pendingEvents"]
+	eventController.happeningEvents = global.profile["happeningEvents"]
+	global.gameStarted = global.profile["gameStarted"]
+
 func confirm(confirmMessage):
 	confirmationScreen.visible = true
 	$"Confirmation/BodyText".text = confirmMessage
-	var isYesPressed = yesButton.pressed
-	var isNoPressed = noButton.pressed
-	await isYesPressed || isNoPressed
-	print("Holy SHit im a god")
-	if isYesPressed:
+	await buttonPressed
+	if yesPressed == true:
 		confirmationScreen.visible = false
 		return true
-	if isNoPressed: 
+	if noPressed == true: 
 		confirmationScreen.visible = false
 		return false
+	noPressed = false
+	yesPressed = false
+	
+func yesPress():
+	yesPressed = true
+	emit_signal("buttonPressed")
+func noPress():
+	noPressed = true
+	emit_signal("buttonPressed")

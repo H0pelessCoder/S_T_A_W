@@ -9,20 +9,22 @@ static var money = 0
 static var day := -1
 static var currentIndustry := "Shipping"
 static var Industries : Dictionary
-var gameStarted = false
+static var gameStarted = false
 static var profile : Dictionary
 static var News : Dictionary
 static var currTime := -1
 
 func _on_button_pressed():
-	save()
+	if is_instance_valid(global.profile):
+		save()
 	get_tree().quit() # Replace with function body.
 	
 func _ready():
-	pass
+	instantiateIndustries()
+	instantiateNews()
 	
-func save():
-	print("Saving!")
+static func save():
+	
 	var dict = preload("res://src/saves.json").data
 	dict.set(profile["userName"], profile)
 	var saveFile = FileAccess.open("res://src/saves.json",FileAccess.WRITE_READ)
@@ -30,23 +32,13 @@ func save():
 	saveFile.store_string(newJson)
 	saveFile.close()	
 	
-func loadSave(userName):
-	var saveFile = preload("res://src/saves.json")
-	profile = saveFile.data[userName]
 	
 func _on_start_game_pressed() -> void:
-	if gameStarted == false:
-		get_node("MainMenu").visible = false
-		get_node("NewsMenu").visible = true
-		instantiateIndustries()
-		instantiateNews()
-		emit_signal("drawStockMenu")
-		emit_signal("determineNews")
-		gameStarted = true
-	if gameStarted == true:
-		get_node("MainMenu").visible = false
-		get_node("NewsMenu").visible = true		
-		emit_signal("drawStockMenu")
+	get_node("MainMenu").visible = false
+	get_node("NewsMenu").visible = true
+	emit_signal("drawStockMenu")
+	emit_signal("determineNews")
+
 
 func _on_load_game_pressed() -> void:
 	$MainMenu.visible = false
@@ -101,11 +93,21 @@ func _on_timer_timeout() -> void:
 	 # Replace with function body.
 	print("TIMEOUT!!!!!")
 	#self.visible = true
-	emit_signal("determineNews")
 	emit_signal("drawStockMenu")
 	emit_signal("drawProfitScreen")
 	$ProfitScreen.visible = true
 	$TradingMenu.visible = false
+	global.profile = {
+		"userName" : profile["userName"],
+		"day" : day,
+		"money" : money,
+		"date" : profile["date"],
+		"stocks" : global.Industries,
+		"events" : eventController.availableEvents,
+		"pendingEvents" : eventController.pendingEvents,
+		"happeningEvents" : eventController.happeningEvents,
+		"gameStarted" : gameStarted
+	}
 	save()
 	#This will lead to profit screen and stuff
 	## INITS THE TRADING SECTION ##		

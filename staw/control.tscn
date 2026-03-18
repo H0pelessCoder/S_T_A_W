@@ -77,13 +77,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StartGame" type="Button" parent="MainMenu" unique_id=2067489760]
-visible = false
 layout_mode = 0
-offset_left = 720.9426
-offset_top = 16.738388
-offset_right = 1119.9426
-offset_bottom = 110.73839
-text = "Play"
+offset_left = 385.40567
+offset_top = 481.55054
+offset_right = 784.40564
+offset_bottom = 575.55054
+theme_override_font_sizes/font_size = 32
+text = "Start"
 
 [node name="SettingsOpener" type="Button" parent="MainMenu" unique_id=1252875900]
 layout_mode = 0
@@ -1874,6 +1874,7 @@ expand_icon = true
 script = ExtResource("6_fj5cn")
 
 [node name="SaveScreen" type="Control" parent="." unique_id=1426739676]
+visible = false
 anchors_preset = 0
 offset_left = -1416.0
 offset_top = -748.99994
@@ -1897,29 +1898,20 @@ offset_top = 149.0
 offset_right = 1456.0
 offset_bottom = 833.0
 
-[node name="SaveButton" type="Button" parent="SaveScreen" unique_id=1575387934]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 835.0
-offset_right = 750.0
-offset_bottom = 868.0
-theme_override_font_sizes/font_size = 32
-text = "SAVE"
-
 [node name="LoadButton" type="Button" parent="SaveScreen" unique_id=1488843956]
 layout_mode = 0
-offset_left = 753.4723
+offset_left = 525.6945
 offset_top = 836.8056
-offset_right = 975.4723
+offset_right = 747.6945
 offset_bottom = 889.8056
 theme_override_font_sizes/font_size = 32
 text = "LOAD"
 
 [node name="DeleteButton" type="Button" parent="SaveScreen" unique_id=1009315409]
 layout_mode = 0
-offset_left = 979.16675
+offset_left = 880.5557
 offset_top = 835.0
-offset_right = 1201.1667
+offset_right = 1102.5557
 offset_bottom = 888.0
 theme_override_font_sizes/font_size = 32
 text = "DELETE"
@@ -1979,6 +1971,7 @@ script = ExtResource("25_858bn")
 metadata/saveName = ""
 
 [node name="Confirmation" type="Control" parent="SaveScreen" unique_id=903682572]
+visible = false
 anchors_preset = 0
 offset_left = 75.00006
 offset_top = 2.083313
@@ -2235,7 +2228,11 @@ layout_mode = 1
 [connection signal="mouse_exited" from="ProfitScreen/SigningBox/SigningActivator" to="ProfitScreen/SigningBox/SigningActivator" method="_on_mouse_exited"]
 [connection signal="pressed" from="ProfitScreen/SigningBox/SigningActivator" to="ProfitScreen/SigningBox/SigningActivator" method="_on_pressed"]
 [connection signal="pressed" from="ProfitScreen/ReturnMenuButton" to="ProfitScreen/ReturnMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="SaveScreen/LoadButton" to="SaveScreen" method="loadSave"]
 [connection signal="pressed" from="SaveScreen/DeleteButton" to="SaveScreen" method="deleteSave"]
 [connection signal="pressed" from="SaveScreen/SaveSlotTemplate/Selector" to="SaveScreen/SaveSlotTemplate/Selector" method="_on_pressed"]
 [connection signal="selectSave" from="SaveScreen/SaveSlotTemplate/Selector" to="SaveScreen" method="selectSave"]
+[connection signal="pressed" from="SaveScreen/Confirmation/YesButton" to="SaveScreen" method="yesPress"]
+[connection signal="pressed" from="SaveScreen/Confirmation/NoButton" to="SaveScreen" method="noPress"]
 [connection signal="pressed" from="SaveScreen/ReturnMenuButton" to="SaveScreen/ReturnMenuButton" method="_on_pressed"]
+[connection signal="save" from="Tutorial" to="." method="save"]

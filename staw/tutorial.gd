@@ -1,5 +1,5 @@
 extends Control
-
+signal save 
 
 func _on_next_pressed():
 	var dateDict = Time.get_datetime_dict_from_system()
@@ -12,8 +12,10 @@ func _on_next_pressed():
 		"stocks" : global.Industries,
 		"events" : eventController.availableEvents,
 		"pendingEvents" : eventController.pendingEvents,
-		"happeningEvents" : eventController.happeningEvents
+		"happeningEvents" : eventController.happeningEvents,
+		"gameStarted" : false
 	}
+	emit_signal("save")
 	returnToMenu()
 	
 func returnToMenu():
