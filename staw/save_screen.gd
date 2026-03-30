@@ -5,6 +5,7 @@ var saveTemplate = $"SaveSlotTemplate"
 var saveSlots = $"SaveSlots"
 @onready
 var confirmationScreen = $"Confirmation"
+signal loadGame
 signal buttonPressed 
 var currentSave = ""
 var yesPressed = false
@@ -58,13 +59,8 @@ func loadSave():
 		return	
 	var saves = preload("res://src/saves.json").data
 	global.profile = saves[currentSave]
-	global.day = global.profile["day"]
-	global.money = global.profile["money"]
-	global.Industries = global.profile["stocks"]
-	eventController.availableEvents = global.profile["events"]
-	eventController.pendingEvents = global.profile["pendingEvents"]
-	eventController.happeningEvents = global.profile["happeningEvents"]
-	global.gameStarted = global.profile["gameStarted"]
+	emit_signal("loadGame")
+
 
 func confirm(confirmMessage):
 	confirmationScreen.visible = true

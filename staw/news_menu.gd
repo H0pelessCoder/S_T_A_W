@@ -51,6 +51,7 @@ static func sortEvents(Events):
 	
 func isEventAllowed(event):
 	event = getEvent(event)
+	print(event)
 	for exclusive in event["Mutually_Exclusive"]:
 		exclusive = getEvent(exclusive)
 		if exclusive["Done"] == true:

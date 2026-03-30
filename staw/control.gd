@@ -18,10 +18,11 @@ func _on_button_pressed():
 	if is_instance_valid(global.profile):
 		save()
 	get_tree().quit() # Replace with function body.
-	
+
 func _ready():
 	instantiateIndustries()
 	instantiateNews()
+
 	
 static func save():
 	
@@ -31,26 +32,40 @@ static func save():
 	var newJson = JSON.stringify(dict)
 	saveFile.store_string(newJson)
 	saveFile.close()	
+
+func newGame():
+	print(day)
+	loadGame()
+	emit_signal("determineNews")	
+	startGame()
+		
+func loadGame():
+	global.day = global.profile["day"]
+	global.money = global.profile["money"]
+	global.Industries = global.profile["stocks"]
+	eventController.availableEvents = global.profile["events"]
+	eventController.pendingEvents = global.profile["pendingEvents"]
+	eventController.happeningEvents = global.profile["happeningEvents"]
+	global.gameStarted = global.profile["gameStarted"]
+	startGame()
 	
-	
-func _on_start_game_pressed() -> void:
+func startGame():
 	get_node("MainMenu").visible = false
 	get_node("NewsMenu").visible = true
 	emit_signal("drawStockMenu")
-	emit_signal("determineNews")
-
-
+				
 func _on_load_game_pressed() -> void:
+
 	$MainMenu.visible = false
 	$SaveScreen.visible = true
 	emit_signal("drawSaveScreen")
 	
-func instantiateIndustries():
+static func instantiateIndustries():
 	var Ijson = preload("res://src/stocks.json")
 	for Industry in Ijson.data:
 		Industries.set(Industry, Ijson.data[Industry])
 
-func instantiateNews():
+static func instantiateNews():
 	var Njson = preload("res://src/news.json")
 	News = Njson.data
 	for event in News["Events"]:
