@@ -11,11 +11,13 @@ static var happeningEvents := eventFormat()
 static var pendingEvents := eventFormat()
 static var availableEvents : Dictionary 
 func determineTodaysNews():
+	happeningEvents = eventFormat()
 	global.day += 1
 	var Events = global.News["Events"]
 	var eventsToProcess = availableEvents
 	chooseEvents(pendingEvents)
 	chooseEvents(eventsToProcess)
+	global.save()
 	loadNewsScreen()
 	for type in happeningEvents.keys():
 		for event in happeningEvents.get(type):
@@ -26,7 +28,7 @@ func determineTodaysNews():
 				next = getEvent(next)
 				pendingEvents[next["Type"]].append(next["Title"])
 	happeningEvents = eventFormat()
-			
+#Takes list of strings
 func chooseEvents(Events):
 	var nEvents = global.News["dailyEvents"][str(global.day)]
 	for type in nEvents.keys():
@@ -43,15 +45,17 @@ func chooseEvents(Events):
 				if !pendingEvents.has(event):
 					pendingEvents[type].append(event)
 				N-=1
+				
+#Called from Instantiate News, Events must be unsorted
 static func sortEvents(Events):
 	var sortedEvents = eventFormat()
 	for event in Events.keys():
 		sortedEvents.get(Events.get(event)["Type"]).append(event)
 	return sortedEvents
-	
+
+#Takes String
 func isEventAllowed(event):
 	event = getEvent(event)
-	print(event)
 	for exclusive in event["Mutually_Exclusive"]:
 		exclusive = getEvent(exclusive)
 		if exclusive["Done"] == true:
@@ -73,6 +77,7 @@ func loadNewsScreen():
 			child.free()
 	var Events = global.News["Events"]
 	for type in happeningEvents.keys():
+
 		for event in happeningEvents[type]:
 			var eventNode = $"EventList/Horiz/EventBase".duplicate()
 			$"EventList/Horiz".add_child(eventNode)

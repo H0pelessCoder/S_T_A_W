@@ -28,7 +28,7 @@ func drawSaveScreen():
 		var newProfileSelector = newProfile.get_child(1)
 		newProfileSelector.set_meta("saveName", profile["userName"])
 		newProfileName.text = profile["userName"]
-		newProfileDay.text = str(profile["day"])
+		newProfileDay.text = str(profile["day"] + 1)
 		newProfileMoney.text = str(profile["money"])
 		newProfileDate.text = str(profile["date"])
 		saveSlots.add_child(newProfile)
@@ -58,6 +58,7 @@ func loadSave():
 		confirmationScreen.visible = false
 		return	
 	var saves = preload("res://src/saves.json").data
+	self.visible = false
 	global.profile = saves[currentSave]
 	emit_signal("loadGame")
 

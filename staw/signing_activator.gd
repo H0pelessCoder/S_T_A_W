@@ -4,7 +4,7 @@ extends Button
 var Signature = $"../Signature"
 
 @onready
-var Return = $"../../ReturnMenuButton"
+var Return = $"../../ReturnNewsButton"
 var animating = false
 
 func _on_pressed():

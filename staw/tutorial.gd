@@ -4,7 +4,9 @@ signal newGame
 func _on_next_pressed():
 	var dateDict = Time.get_datetime_dict_from_system()
 	var dateString = str(dateDict["month"]) + "/" + str(dateDict["day"]) + "/" + str(dateDict["year"])
-	eventController.availableEvents = {}
+	global.News = {}
+	global.Industries = {}
+	global.instantiateIndustries()
 	global.instantiateNews()
 	global.profile = {
 		"userName" : $"NamePicker/SigningBox/NameInputer".text,
@@ -12,12 +14,12 @@ func _on_next_pressed():
 		"money" : 0,
 		"date" : dateString,
 		"stocks" : global.Industries,
-		"events" : eventController.availableEvents,
+		"events" : global.News,
+		"availableEvents" : eventController.availableEvents,
 		"pendingEvents" : eventController.eventFormat(),
-		"happeningEvents" : eventController.eventFormat(),
-		"gameStarted" : false
+		"happeningEvents" : eventController.eventFormat()
 	}
-	emit_signal("save")
+	print(global.profile["userName"])
 	visible = false
 	emit_signal("newGame")
 	
