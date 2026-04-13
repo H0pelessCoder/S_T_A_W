@@ -49,7 +49,6 @@ script = ExtResource("1_0fbet")
 position = Vector2(-2, -4)
 
 [node name="MainMenu" type="Control" parent="." unique_id=962578855]
-visible = false
 anchors_preset = 0
 offset_left = -947.0
 offset_top = -526.0
@@ -67,40 +66,42 @@ text = "QUIT"
 
 [node name="PlayText" type="RichTextLabel" parent="MainMenu" unique_id=216645975]
 layout_mode = 0
-offset_right = 641.0
-offset_bottom = 92.0
-text = "Stock Trading in an Alternate World"
+offset_left = 253.03795
+offset_top = 92.704926
+offset_right = 894.03796
+offset_bottom = 184.70493
+theme_override_font_sizes/normal_font_size = 32
+text = "Stock Trading in an Another World"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StartGame" type="Button" parent="MainMenu" unique_id=2067489760]
-layout_mode = 0
-offset_right = 398.99997
-offset_bottom = 94.0
-theme_override_font_sizes/font_size = 32
-text = "Start"
-
 [node name="SettingsOpener" type="Button" parent="MainMenu" unique_id=1252875900]
 layout_mode = 0
-offset_right = 399.0
-offset_bottom = 94.0
+offset_left = 347.85025
+offset_top = 346.99966
+offset_right = 746.8502
+offset_bottom = 440.99966
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 script = ExtResource("2_62e2m")
 
 [node name="LoadGame" type="Button" parent="MainMenu" unique_id=1126592424]
 layout_mode = 0
-offset_right = 193.98383
-offset_bottom = 94.000015
+offset_left = 349.6972
+offset_top = 240.77527
+offset_right = 543.681
+offset_bottom = 334.7753
 theme_override_font_sizes/font_size = 32
 text = "Load Game"
 
 [node name="NewGame" type="Button" parent="MainMenu" unique_id=618598046]
 layout_mode = 0
-offset_right = 193.98383
-offset_bottom = 94.000015
+offset_left = 552.8664
+offset_top = 242.06284
+offset_right = 746.8502
+offset_bottom = 336.06284
 theme_override_font_sizes/font_size = 32
 text = "New Game"
 script = ExtResource("3_dgp6r")
@@ -379,6 +380,7 @@ text = "Begin Day"
 script = ExtResource("10_xvdhi")
 
 [node name="StockMenu" type="Control" parent="." unique_id=201495546]
+visible = false
 anchors_preset = 0
 offset_left = -943.0
 offset_top = -518.0
@@ -2051,7 +2053,6 @@ layout_mode = 1
 [connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
 [connection signal="drawTradingMenu" from="." to="TradingMenu" method="makeStockScreen"]
 [connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MainMenu/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MainMenu/SettingsOpener" to="MainMenu/SettingsOpener" method="_on_pressed"]
 [connection signal="pressed" from="MainMenu/LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="MainMenu/NewGame" to="MainMenu/NewGame" method="_on_pressed"]

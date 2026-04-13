@@ -24,7 +24,16 @@
 			"Mutually_Exclusive" : [],
 			"Type": "Major",
 			"Done" : false,
-			"Image" : ""
+			"Image" : "",
+			"Effects" : {
+				"Industries" : {
+					"SHP" : {
+						"Variance" : 2,
+						"Stocks" : [4, 0.5]
+					}
+				},
+				"Market" : 1.01
+			}
 		},
 		"BorderWar" : {
 			"Title" : "BorderWar",
@@ -40,7 +49,15 @@
 			"Type": "Super",
 			"Done" : false,
 			"Image" : "",
-			
+			"Effects" : {
+				"Industries" : {
+					"SHP" : {
+						"Variance" : 2,
+						"Stocks" : [4, 0.5]
+					}
+				},
+				"Market" : 1.01
+			}
 		},
 		"EmbassyBombed" : {
 			"Title" : "EmbassyBombed",
@@ -53,7 +70,11 @@
 			"Mutually_Exclusive" : ["Descalation"],
 			"Type": "Super",
 			"Done" : false,
-			"Image" : ""
+			"Image" : "",
+			"Effects" : {
+				"Industries" : {},
+				"Market" : 1
+			}
 		},
 		"TroopMovement" : {
 			"Title" : "TroopMovement",
@@ -64,7 +85,11 @@
 			"Mutually_Exclusive" : ["Descalation"],
 			"Type": "Super",
 			"Done" : false,
-			"Image" : ""
+			"Image" : "",
+			"Effects" : {
+				"Industries" : {},
+				"Market" : 1
+			}
 		},
 		"Descalation" : {
 			"Title" : "Descalation",
@@ -75,7 +100,11 @@
 			"Mutually_Exclusive" : ["TroopMovement", "EmbassyBombed"],
 			"Type": "Super",
 			"Done" : false,
-			"Image" : ""
+			"Image" : "",
+			"Effects" : {
+				"Industries" : {},
+				"Market" : 1
+			}
 		},
 		"CelebrityDeathA" : {
 			"Title" : "CelebrityDeathA",
@@ -86,7 +115,11 @@
 			"Mutually_Exclusive" : [],
 			"Type": "Minor",
 			"Done" : false,
-			"Image" : ""
+			"Image" : "",
+			"Effects" : {
+				"Industries" : {},
+				"Market" : 1
+			}
 		},
 		"Sphere" : {
 			"Title" : "Sphere",
@@ -97,7 +130,11 @@
 			"Mutually_Exclusive" : [],
 			"Type": "Minor",
 			"Done" : false,
-			"Image" : ""
+			"Image" : "",
+			"Effects" : {
+				"Industries" : {},
+				"Market" : 1
+			}
 		},
 		"Pirates" : {
 			"Title" : "Pirates",
@@ -108,7 +145,11 @@
 			"Mutually_Exclusive" : [],
 			"Type": "Major",
 			"Done" : false,
-			"Image" : ""
+			"Image" : "",
+			"Effects" : {
+				"Industries" : {},
+				"Market" : 1
+			}
 		}
 		}
 

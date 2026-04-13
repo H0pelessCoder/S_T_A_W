@@ -154,7 +154,7 @@ func _on_start_day() -> void:
 			
 #TODO USE NEWS EVENTS
 func findVelocity(stock):
-	return randi_range(-50,50)
+	var marketVariance = 1
 
 func generateStockTimeframe(first, last, variance, amount, maxVariance):
 	var timeframe = [first]

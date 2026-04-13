@@ -16,7 +16,7 @@ func drawSaveScreen():
 	var noPressed = false
 	for slot in saveSlots.get_children():
 		slot.free()
-	var saves = preload("res://src/saves.json")
+	var saves = load("res://src/saves.json")
 	var profileDict = saves.data
 	for profile in profileDict:
 		profile = profileDict[profile]
@@ -43,7 +43,7 @@ func deleteSave():
 	if confirmed == false:
 		confirmationScreen.visible = false
 		return
-	var dict = preload("res://src/saves.json").data
+	var dict = load("res://src/saves.json").data
 	dict.erase(currentSave)
 	var saveFile = FileAccess.open("res://src/saves.json",FileAccess.WRITE_READ)
 	var newJson = JSON.stringify(dict)
@@ -57,7 +57,7 @@ func loadSave():
 	if confirmed == false:
 		confirmationScreen.visible = false
 		return	
-	var saves = preload("res://src/saves.json").data
+	var saves = load("res://src/saves.json").data
 	self.visible = false
 	global.profile = saves[currentSave]
 	emit_signal("loadGame")

@@ -7,16 +7,25 @@ static func eventFormat() -> Dictionary:
 	"Major" : [],
 	"Minor" : []
 	}
+static func effectFormat() -> Dictionary:
+	return {
+	"Industries" : {},
+	"Market" : 1
+	}
 static var happeningEvents := eventFormat()
 static var pendingEvents := eventFormat()
 static var availableEvents : Dictionary 
+static var currEffects = effectFormat()
+
 func determineTodaysNews():
 	happeningEvents = eventFormat()
+	currEffects = effectFormat()
 	global.day += 1
 	var Events = global.News["Events"]
 	var eventsToProcess = availableEvents
 	chooseEvents(pendingEvents)
 	chooseEvents(eventsToProcess)
+	processEffects()
 	global.save()
 	loadNewsScreen()
 	for type in happeningEvents.keys():
@@ -29,6 +38,12 @@ func determineTodaysNews():
 				pendingEvents[next["Type"]].append(next["Title"])
 	happeningEvents = eventFormat()
 #Takes list of strings
+func processEffects():
+	var Events = global.News
+	for event in happeningEvents:
+		event = Events[event]
+		currEffects["Market"] += (event["Market"] - 1)
+			
 func chooseEvents(Events):
 	var nEvents = global.News["dailyEvents"][str(global.day)]
 	for type in nEvents.keys():
