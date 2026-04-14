@@ -26,13 +26,33 @@
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
-				"Industries" : {
-					"SHP" : {
-						"Variance" : 2,
-						"Stocks" : [4, 0.5]
-					}
+				"Market" : 	{
+					"Velocity" : 0,
+					"Variance" : 0
 				},
-				"Market" : 1.01
+				"Industries" : {
+					"Shipping" : {
+						
+						"Effects" : {
+							"Velocity" : 0,
+							"Variance" : 0
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 0,
+									"Variance" : 0
+								},
+								
+								{
+									"Velocity" : 0,
+									"Variance" : 0
+								}
+							
+						]
+					}
+				}
+
 			}
 		},
 		"BorderWar" : {
@@ -50,15 +70,37 @@
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
-				"Industries" : {
-					"SHP" : {
-						"Variance" : 2,
-						"Stocks" : [4, 0.5]
-					}
+				"Market" : 	{
+					"Velocity" : 0,
+					"Variance" : 0
 				},
-				"Market" : 1.01
+				"Industries" : {
+					"Shipping" : {
+						
+						"Effects" : {
+							"Velocity" : 0,
+							"Variance" : 0
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 0,
+									"Variance" : 0
+								},
+								
+								{
+									"Velocity" : 0,
+									"Variance" : 0
+								}
+							
+						]
+					}
+				}
+
 			}
+
 		},
+		
 		"EmbassyBombed" : {
 			"Title" : "EmbassyBombed",
 			"NewsTitle" : "The Ambernesian Embassy in Drastara bombed!",
@@ -72,8 +114,33 @@
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
-				"Industries" : {},
-				"Market" : 1
+				"Market" : 	{
+					"Velocity" : 0,
+					"Variance" : 0
+				},
+				"Industries" : {
+					"Shipping" : {
+						
+						"Effects" : {
+							"Velocity" : 0,
+							"Variance" : 0
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 0,
+									"Variance" : 0
+								},
+								
+								{
+									"Velocity" : 0,
+									"Variance" : 0
+								}
+							
+						]
+					}
+				}
+
 			}
 		},
 		"TroopMovement" : {
@@ -103,7 +170,10 @@
 			"Image" : "",
 			"Effects" : {
 				"Industries" : {},
-				"Market" : 1
+				"Market" : 	{
+					"Velocity" : 0,
+					"Variance" : 0
+				},
 			}
 		},
 		"CelebrityDeathA" : {
@@ -118,7 +188,10 @@
 			"Image" : "",
 			"Effects" : {
 				"Industries" : {},
-				"Market" : 1
+				"Market" : 	{
+						"Velocity" : 0,
+						"Variance" : 0
+				},
 			}
 		},
 		"Sphere" : {
@@ -133,7 +206,10 @@
 			"Image" : "",
 			"Effects" : {
 				"Industries" : {},
-				"Market" : 1
+				"Market" : 	{
+						"Velocity" : 0,
+						"Variance" : 0
+				},
 			}
 		},
 		"Pirates" : {
@@ -148,12 +224,11 @@
 			"Image" : "",
 			"Effects" : {
 				"Industries" : {},
-				"Market" : 1
+				"Market" : 	{
+						"Velocity" : 0,
+						"Variance" : 0
+				},
 			}
 		}
 		}
-
-
-
-
 }

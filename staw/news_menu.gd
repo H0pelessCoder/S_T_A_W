@@ -9,17 +9,18 @@ static func eventFormat() -> Dictionary:
 	}
 static func effectFormat() -> Dictionary:
 	return {
-	"Industries" : {},
-	"Market" : 1
+		"Velocity" : 0,
+		"Variance" : 0
 	}
+	
 static var happeningEvents := eventFormat()
 static var pendingEvents := eventFormat()
 static var availableEvents : Dictionary 
-static var currEffects = effectFormat()
+static var currEffects : Dictionary
 
 func determineTodaysNews():
 	happeningEvents = eventFormat()
-	currEffects = effectFormat()
+	currEffects = {}
 	global.day += 1
 	var Events = global.News["Events"]
 	var eventsToProcess = availableEvents
@@ -39,11 +40,32 @@ func determineTodaysNews():
 	happeningEvents = eventFormat()
 #Takes list of strings
 func processEffects():
-	var Events = global.News
-	for event in happeningEvents:
-		event = Events[event]
-		currEffects["Market"] += (event["Market"] - 1)
-			
+	var Events = global.News["Events"]
+	var Industries = global.Industries
+	for eventType in happeningEvents:
+		for event in happeningEvents[eventType]:
+			print(event)
+			event = Events[event]["Effects"]
+			var marketVelocity = event["Market"]["Velocity"]
+			var marketVariance = event["Market"]["Variance"]
+			var IndustryVelocity = 0
+			var IndustryVariance = 0
+			print(event)
+			for industry in event["Industries"]:
+				IndustryVelocity += event["Industries"][industry]["Effects"]["Velocity"]
+				IndustryVariance += event["Industries"][industry]["Effects"]["Variance"]
+				var x = 0
+				for stockEffect in event["Industries"][industry]["Stocks"]:
+					var stockVelocity = stockEffect["Velocity"]
+					var stockVariance = stockEffect["Variance"]
+					print(Industries)
+					var stock = Industries[industry]["Stocks"][x]
+					var stockName = stock["companyName"]
+					currEffects.set(stockName, effectFormat())
+					currEffects[stockName]["Velocity"] += marketVelocity + IndustryVelocity + stockVelocity
+					currEffects[stockName]["Variance"] += marketVariance + IndustryVariance + stockVariance				
+					x=1			
+	print(currEffects)
 func chooseEvents(Events):
 	var nEvents = global.News["dailyEvents"][str(global.day)]
 	for type in nEvents.keys():

@@ -138,15 +138,14 @@ func _on_start_day() -> void:
 	for industry in Industries.keys():
 		industry = Industries[industry]
 		for Stock in industry["Stocks"]:
-			Stock["savedStockPoint"] = 0
-			var variance = 4
-			var maxVariance = 30
 			var first = Stock["timeFrame"][13]
+			Stock["firstStockPoint"] = first
+			Stock["savedStockPoint"] = 0
+			var variance = Stock["firstStockPoint"]/100
+			var maxVariance = findVariance(Stock)
 			var last = findVelocity(Stock) + first
 			var newTimeframe = generateStockTimeframe(first, last, variance, 14, maxVariance)
 			Stock["newTimeFrame"] = newTimeframe
-			Stock["firstStockPoint"] = first
-
 	$TradingMenu/Timer.start()
 	$TradingMenu/subTimer.start()
 	emit_signal("drawTradingMenu")
@@ -154,8 +153,18 @@ func _on_start_day() -> void:
 			
 #TODO USE NEWS EVENTS
 func findVelocity(stock):
-	var marketVariance = 1
-
+	var minSwing = stock["firstStockPoint"]/20	
+	var velocity = randi_range(minSwing, minSwing * -1)
+	var stockName = stock["companyName"]
+	var effects = eventController.currEffects[stockName]
+	return velocity + effects["Velocity"]
+	
+func findVariance(stock):
+	var variance = 30
+	var stockName = stock["companyName"]
+	var effects = eventController.currEffects[stockName]
+	return variance + effects["Variance"]
+	
 func generateStockTimeframe(first, last, variance, amount, maxVariance):
 	var timeframe = [first]
 	var increments = (last - first) / (amount-2)
