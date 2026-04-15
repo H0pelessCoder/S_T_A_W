@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://cicmt5g1vnulo" path="res://tutorial.gd" id="1_5mrt3"]
 [ext_resource type="FontFile" uid="uid://bq712651mp56e" path="res://src/fonts/jejakrupa-regular.otf" id="1_yb1ct"]
 [ext_resource type="Script" uid="uid://di3tdqeh5eul2" path="res://next.gd" id="3_ehuit"]
+[ext_resource type="Script" uid="uid://8m3uvu7c8fke" path="res://next_page.gd" id="4_rwowx"]
+[ext_resource type="Script" uid="uid://bhm2h4w7lchke" path="res://signing_activator.gd" id="5_hu44a"]
 
 [node name="Tutorial" type="Control" unique_id=1340638950]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,6 +90,236 @@ script = ExtResource("3_ehuit")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1961915386]
 
+[node name="Contract" type="Control" parent="." unique_id=1029497658]
+visible = false
+anchors_preset = 0
+offset_left = -960.0
+offset_top = -534.0
+offset_right = 975.0
+offset_bottom = 550.0
+
+[node name="Label" type="Label" parent="Contract" unique_id=1827229286]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 4.0
+offset_right = 1273.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Employee Contract"
+horizontal_alignment = 1
+
+[node name="Paper" type="ColorRect" parent="Contract" unique_id=1635562750]
+z_index = -1
+layout_mode = 0
+offset_left = 531.0
+offset_right = 1269.0
+offset_bottom = 1114.1089
+
+[node name="Legalese1" type="Label" parent="Contract" unique_id=623705281]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 95.0
+offset_right = 1264.0
+offset_bottom = 1054.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "
+Barony of Flaeton
+Rev. 134FEC8
+EMPLOYMENT AGREEMENT
+This Employment Agreement (the \"Agreement\") is made as of this 01 day of March, 2035 (the \"Effective Date\") by and between THEEMPLOYEEREPLACETHIS (\"Employee\") and Paxtoria Trading Company (\"Employer\"), (each, a \"Party\" and collectively, the \"Parties\"). The Parties agree and covenant to be bound by the terms set forth in this Agreement as follows:
+1. Employment. Employer shall employ Employee as a Share Trader on a full time basis under this Agreement. In this capacity, Employee shall have the following duties and undertake the following responsibilities:
+- Analyzing and predicting trends in the market 
+-Devoting him/herself to the state of Paxtoria
+-Trading ethically for the good of the state of Paxtoria
+Employee shall perform such other duties as are customarily performed by other persons in similar positions, including other duties as may arise from time to time and as may be assigned.
+2. Performance of Duties. Employee shall perform assigned duties and responsibilities in a professional manner, in good faith, and to the best of Employee's skills, abilities, talents and experience.
+3. Term. Employee's employment under this Agreement shall begin on March 22, 2035 and be for an unspecified term on an \"at will\" basis.
+Employee's probation period shall be 7 Days, starting from the first day of Employee's employment. In the event that Employee fails to pass the probation period, Employer may terminate this Agreement immediately by giving notice to Employee.
+4. Compensation.
+A. Base Salary. As compensation for the services provided by Employee under this Agreement, Employer will pay Employee $40,000.00 per year. The amount will be paid to Employee once a month on the 1st of each month. Employer shall deduct or withhold any and all federal income and social security taxes and state or local taxes as required by law.
+B. Overtime. Employee shall not receive overtime compensation for services performed as a salaried or exempt employee.
+C. Additional Compensation. Employee shall be entitled to commission on the following basis: 1% of any profit made trading. Any additional compensation or bonuses paid to Employee shall be paid at the sole discretion of Employer.
+Employment Agreement (Rev. 134FEC8)
+< 1/4 >
+1/4"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Legalese2" type="Label" parent="Contract" unique_id=610343658]
+visible = false
+layout_mode = 0
+offset_left = 536.0
+offset_top = 95.0
+offset_right = 1270.0
+offset_bottom = 1236.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "
+5. Work Location. Employee will primarily perform their employment duties at 194th Ave NE, Flaeton, 66048 between the hours of 9AM to 6AM, Monday to Saturday.
+6. Employee Benefits. Both parties will comply with Employer policy regarding employee benefits or as required by law.
+(A) Paid Time Off. Employee shall be entitled to paid time off as required by state and local laws.
+7. Non-Compete. As a condition of employment, employee agrees to execute and be bound by a separate non-compete agreement.
+8. Confidentiality.
+A. Confidential and Proprietary Information. In the course of employment, Employee will be exposed to confidential and proprietary information of Employer. Confidential and proprietary information shall mean any data or information that is competitively sensitive material and not generally known to the public, including, but not limited to, information relating to development and plans, marketing strategies, finance, operations, systems, proprietary concepts, documentation, reports, data, specifications, computer software, source code, object code, flow charts, data, databases, inventions, know-how, trade secrets, customer lists, customer relationships, customer profiles, supplier lists, supplier relationships, supplier profiles, pricing, sales estimates, business plans and internal performance results relating to the past, present or future business activities, technical information, design, process, procedure, formula, or improvement, which Employer considers confidential and proprietary. Employee acknowledges and agrees that the confidential and proprietary information is valuable property of Employer, developed over a long period of time at substantial expense and that it is worthy of protection.
+B. Confidentiality Obligations. Except as otherwise expressly permitted in this Agreement, Employee shall not disclose or use in any manner, directly or indirectly, any confidential and proprietary information either during the term of this Agreement or at any time thereafter, except as required to perform their duties and responsibilities or with Employer's prior written consent.
+C. Rights in Confidential and Proprietary Information. All ideas, concepts, work product, information, written material or other confidential and proprietary information disclosed to Employee by Employer (i) are and shall remain the sole and exclusive property of Employer, and (ii) are disclosed or permitted to be acquired by Employee solely in reliance on Employee's agreement to maintain them in confidence and not to use or disclose them to any other person except in furtherance of Employer's business. Except as expressly provided herein, this Agreement does not confer any right, license, ownership or other interest or title in, to or under the confidential and proprietary information to Employee.
+D. Irreparable Harm. Employee acknowledges that use or disclosure of any confidential and proprietary information in a manner inconsistent with this Agreement will give rise to irreparable injury for which damages would not be an adequate remedy Accordingly, in addition to any other legal
+Employment Agreement (Rev. 134FEC8)
+< 2/4 >
+2/4"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Legalese3" type="Label" parent="Contract" unique_id=2033104122]
+visible = false
+layout_mode = 0
+offset_left = 536.0
+offset_top = 95.0
+offset_right = 1266.0
+offset_bottom = 1022.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "
+remedies which may be available at law or in equity, Employer shall be entitled to equitable or injunctive relief against the unauthorized use or disclosure of confidential and proprietary information. Employer shall be entitled to pursue any other legally permissible remedy available as a result of such breach, including but not limited to damages, both direct and consequential. In any action brought by Employer under this Section, Employer shall be entitled to recover its attorney's fees and costs from Employee.
+9. Ownership of Work Product. The Parties agree that all work product, information or other materials created and developed by Employee in connection with the performance of duties and responsibilities under this Agreement and any resulting intellectual property rights are the sole and exclusive property of Employer.
+10. Termination. This Agreement may be terminated immediately by Employer for cause or in the event Employee violates any provision of this Agreement. In addition, Employer may terminate this Agreement and Employee's employment at any time and for any reason in accordance with applicable local, state, and federal labor laws. Employee may terminate this Agreement and the employment at any time by giving thirty (30) days' notice in writing to Employer.
+During the notice period, Employee and Employer agree to continue diligently fulfilling their duties and obligations in good faith with best efforts. At the time of termination, Employee agrees to return all Employer property, including but not limited to computers, cell-phones, and any other electronic devices. Employee shall reimburse Employer for any Employer property lost or damaged in an amount equal to the market price of such property.
+The rights and obligations of the Parties set forth in Confidentiality, Ownership of Work Product, Termination and Miscellaneous are intended to survive termination, and will survive termination of this Agreement.
+11. Miscellaneous.
+A. Authority to Contract. Employee acknowledges and agrees that Employee does not have authority to enter into any binding contracts or commitments for or on behalf of Employer without first obtaining the prior written consent of Employer.
+B. Governing Law. The terms of this Agreement shall be governed exclusively by the laws of the Barony of Mathins  (not including its conflicts of law provisions). Any dispute arising from this Agreement shall be resolved in the courts of the Barony of Mathins.
+C. Attorneys' fees. If either Party brings legal action to enforce its rights under this Agreement, the prevailing party will be entitled to recover from the other Party its expenses (including reasonable attorneys' fees and costs) incurred in connection with the action and any appeal.
+D. Entire Agreement and Amendment. This Agreement constitutes the entire agreement between the Parties and supersedes all prior understandings of the Parties. No supplement, modification or amendment of this Agreement will be binding unless executed in writing by both of the Parties.
+Employment Agreement (Rev. 134FEC8)
+3/4"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Legalese4" type="Label" parent="Contract" unique_id=726618682]
+visible = false
+layout_mode = 0
+offset_left = 536.0
+offset_top = 95.0
+offset_right = 1266.0
+offset_bottom = 1022.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "
+E. Notices. Any notice or other communication given or made to either Party under this Agreement shall be in writing and delivered by hand, sent by overnight courier service or sent by certified or registered mail, return receipt requested, to the address stated above or to another address as that Party may subsequently designate by notice and shall be deemed given on the date of delivery.
+F. Waiver. Neither Party shall be deemed to have waived any provision of this Agreement or the exercise of any rights held under this Agreement unless such waiver is made expressly and in writing. Waiver by either Party of a breach or violation of any provision of this Agreement shall not constitute a waiver of any subsequent or other breach or violation.
+G. Further Assurances. At the request of one Party, the other Party shall execute and deliver such other documents and take such other actions as may be reasonably necessary to give effect the terms of this Agreement.
+H. Severability. If any provision of this Agreement is held to be invalid, illegal or unenforceable in whole or in part, the remaining provisions shall not be affected and shall continue to be valid, legal and enforceable as though the invalid, illegal or unenforceable parts had not been included in this Agreement.
+I. No Assignment. The interests of Employee are personal to Employee and cannot be assigned.
+IN WITNESS WHEREOF, this Agreement has been executed and delivered as of the date first written above.
+
+
+< 4/4 >
+Employment Agreement (Rev. 134FEC8)
+4/4"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="NextPage" type="Button" parent="Contract" unique_id=1632627191]
+layout_mode = 0
+offset_left = 914.0
+offset_top = 901.0
+offset_right = 1313.0
+offset_bottom = 1061.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Next Page "
+flat = true
+script = ExtResource("4_rwowx")
+
+[node name="SigningBox" type="Control" parent="Contract" unique_id=1077381097]
+visible = false
+anchors_preset = 0
+offset_left = 153.0
+offset_top = -17.0
+offset_right = 193.0
+offset_bottom = 23.0
+
+[node name="SigningLine" type="ColorRect" parent="Contract/SigningBox" unique_id=692019829]
+layout_mode = 0
+offset_left = 617.24805
+offset_top = 963.35834
+offset_right = 846.96814
+offset_bottom = 967.2195
+color = Color(0, 0, 0, 1)
+
+[node name="SigningDirections" type="Label" parent="Contract/SigningBox" unique_id=1679200402]
+layout_mode = 0
+offset_left = 694.1543
+offset_top = 975.7488
+offset_right = 768.1543
+offset_bottom = 998.74884
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sign Here"
+
+[node name="Signature" type="Label" parent="Contract/SigningBox" unique_id=340164480]
+layout_mode = 0
+offset_left = 608.2589
+offset_top = 839.4537
+offset_right = 817.2589
+offset_bottom = 962.4537
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yb1ct")
+theme_override_font_sizes/font_size = 100
+text = "Employee"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SigningActivator" type="Button" parent="Contract/SigningBox" unique_id=615064023]
+layout_mode = 0
+offset_left = 617.248
+offset_top = 881.7877
+offset_right = 849.9645
+offset_bottom = 964.39075
+flat = true
+script = ExtResource("5_hu44a")
+
+[node name="EmployerSignature" type="Control" parent="Contract" unique_id=1629297182]
+visible = false
+anchors_preset = 0
+offset_left = 145.0
+offset_top = -197.0
+offset_right = 185.0
+offset_bottom = -161.0
+
+[node name="SigningLine" type="ColorRect" parent="Contract/EmployerSignature" unique_id=469525718]
+layout_mode = 0
+offset_left = 617.24805
+offset_top = 963.35834
+offset_right = 846.96814
+offset_bottom = 967.2195
+color = Color(0, 0, 0, 1)
+
+[node name="SigningDirections" type="Label" parent="Contract/EmployerSignature" unique_id=702862852]
+layout_mode = 0
+offset_left = 638.0
+offset_top = 978.0
+offset_right = 833.0
+offset_bottom = 1001.00006
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Employer Representative"
+
+[node name="Signature" type="Label" parent="Contract/EmployerSignature" unique_id=1017059263]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 858.0
+offset_right = 866.0
+offset_bottom = 981.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yb1ct")
+theme_override_font_sizes/font_size = 100
+text = "Radmilo Sokol"
+
 [connection signal="text_changed" from="NamePicker/SigningBox/NameInputer" to="NamePicker/Next" method="_on_name_inputer_text_changed"]
 [connection signal="pressed" from="NamePicker/returnToMainMenu" to="." method="returnToMenu"]
-[connection signal="pressed" from="NamePicker/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="NamePicker/Next" to="." method="_to_contract"]
+[connection signal="pressed" from="Contract/NextPage" to="Contract/NextPage" method="_on_pressed"]
+[connection signal="mouse_entered" from="Contract/SigningBox/SigningActivator" to="Contract/SigningBox/SigningActivator" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Contract/SigningBox/SigningActivator" to="Contract/SigningBox/SigningActivator" method="_on_mouse_exited"]
+[connection signal="pressed" from="Contract/SigningBox/SigningActivator" to="Contract/SigningBox/SigningActivator" method="_on_pressed"]

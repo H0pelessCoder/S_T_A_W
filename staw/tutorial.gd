@@ -17,7 +17,8 @@ func _on_next_pressed():
 		"events" : global.News,
 		"availableEvents" : eventController.availableEvents,
 		"pendingEvents" : eventController.eventFormat(),
-		"happeningEvents" : eventController.eventFormat()
+		"happeningEvents" : eventController.eventFormat(),
+		"currEffects" : {}
 	}
 	print(global.profile["userName"])
 	visible = false
@@ -26,3 +27,12 @@ func _on_next_pressed():
 func returnToMenu():
 	$"../MainMenu".visible = true
 	visible = false
+
+
+func _on_next_page_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _to_contract() -> void:
+	$NamePicker.visible = false
+	$Contract.visible = true

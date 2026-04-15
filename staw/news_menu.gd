@@ -42,15 +42,16 @@ func determineTodaysNews():
 func processEffects():
 	var Events = global.News["Events"]
 	var Industries = global.Industries
+	for industry in Industries:
+		for stock in Industries[industry]["Stocks"]:
+			currEffects.set(stock["companyName"], effectFormat())
 	for eventType in happeningEvents:
 		for event in happeningEvents[eventType]:
-			print(event)
 			event = Events[event]["Effects"]
 			var marketVelocity = event["Market"]["Velocity"]
 			var marketVariance = event["Market"]["Variance"]
 			var IndustryVelocity = 0
 			var IndustryVariance = 0
-			print(event)
 			for industry in event["Industries"]:
 				IndustryVelocity += event["Industries"][industry]["Effects"]["Velocity"]
 				IndustryVariance += event["Industries"][industry]["Effects"]["Variance"]
@@ -58,14 +59,11 @@ func processEffects():
 				for stockEffect in event["Industries"][industry]["Stocks"]:
 					var stockVelocity = stockEffect["Velocity"]
 					var stockVariance = stockEffect["Variance"]
-					print(Industries)
 					var stock = Industries[industry]["Stocks"][x]
 					var stockName = stock["companyName"]
-					currEffects.set(stockName, effectFormat())
 					currEffects[stockName]["Velocity"] += marketVelocity + IndustryVelocity + stockVelocity
 					currEffects[stockName]["Variance"] += marketVariance + IndustryVariance + stockVariance				
 					x=1			
-	print(currEffects)
 func chooseEvents(Events):
 	var nEvents = global.News["dailyEvents"][str(global.day)]
 	for type in nEvents.keys():

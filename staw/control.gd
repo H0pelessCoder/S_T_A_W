@@ -35,6 +35,7 @@ static func save():
 	global.profile["availableEvents"] = eventController.availableEvents
 	global.profile["pendingEvents"] = eventController.pendingEvents
 	global.profile["happeningEvents"] = eventController.happeningEvents
+	global.profile["currEffects"] = eventController.currEffects
 	var dict = preload("res://src/saves.json").data
 	dict.set(global.profile["userName"], global.profile)
 	var saveFile = FileAccess.open("res://src/saves.json",FileAccess.WRITE_READ)
@@ -56,6 +57,7 @@ func loadGame():
 	eventController.availableEvents = global.profile["availableEvents"]
 	eventController.pendingEvents = global.profile["pendingEvents"]
 	eventController.happeningEvents = global.profile["happeningEvents"]
+	eventController.currEffects = global.profile["currEffects"]
 	emit_signal("drawNewsScreen")
 	startGame()
 	
@@ -132,6 +134,7 @@ func _on_timer_timeout() -> void:
 func _on_start_day() -> void:
 	print("NewDay")
 	#TODO: USE NEWS EVENTS
+	global.currTime = 0
 	var sectionLength = 60 / config.difficulty 
 	$TradingMenu/Timer.wait_time = sectionLength
 	$TradingMenu/subTimer.wait_time = sectionLength / 15

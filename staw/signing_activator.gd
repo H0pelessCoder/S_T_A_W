@@ -4,7 +4,6 @@ extends Button
 var Signature = $"../Signature"
 
 @onready
-var Return = $"../../ReturnNewsButton"
 var animating = false
 
 func _on_pressed():
@@ -16,7 +15,6 @@ func _on_pressed():
 		Signature.visible_characters = x
 		await get_tree().create_timer(0.2).timeout
 		x+=1
-	Return.visible = true
 
 
 func _on_mouse_entered():

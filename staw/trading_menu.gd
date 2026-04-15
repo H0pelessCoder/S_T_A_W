@@ -65,8 +65,10 @@ func _on_sub_timer_timeout() -> void:
 	for industry in global.Industries.keys():
 		industry = global.Industries[industry]
 		var Stock = industry["Stocks"][0]
-		var x = 0
+		var x = 0	
 		for time in Stock["timeFrame"]:
+			print(str(Stock["timeFrame"][x]) + " " + str(Stock["newTimeFrame"][global.currTime]))
+
 			if x == 13:
 				Stock["timeFrame"][x] = Stock["newTimeFrame"][global.currTime]
 			else:

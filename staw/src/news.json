@@ -71,7 +71,7 @@
 			"Image" : "",
 			"Effects" : {
 				"Market" : 	{
-					"Velocity" : 0,
+					"Velocity" : 2000,
 					"Variance" : 0
 				},
 				"Industries" : {
@@ -155,7 +155,10 @@
 			"Image" : "",
 			"Effects" : {
 				"Industries" : {},
-				"Market" : 1
+				"Market" : 	{
+					"Velocity" : 0,
+					"Variance" : 0
+				},
 			}
 		},
 		"Descalation" : {
