@@ -1,7 +1,8 @@
 extends Control
 signal save 
 signal newGame
-func _on_next_pressed():
+
+func beginGame():
 	var dateDict = Time.get_datetime_dict_from_system()
 	var dateString = str(dateDict["month"]) + "/" + str(dateDict["day"]) + "/" + str(dateDict["year"])
 	global.News = {}
@@ -36,3 +37,26 @@ func _on_next_page_pressed() -> void:
 func _to_contract() -> void:
 	$NamePicker.visible = false
 	$Contract.visible = true
+	var userName = $NamePicker/SigningBox/NameInputer.text
+	userName = userName.strip_edges()
+	var text = $Contract/Legalese1
+	text.text = text.text.replace("THEEMPLOYEEREPLACETHIS", userName)
+	$Contract/SigningBox/Signature.text = userName
+
+
+func _on_exit_pressed() -> void:
+	$Contract.visible = false
+	$EmailScreen.visible = true
+	pass # Replace with function body.
+
+
+func _on_email_exit_pressed() -> void:
+	$EmailScreen.visible = false
+	beginGame()
+
+
+func _on_mail_selector_pressed() -> void:
+	$EmailScreen/Email.visible = false
+	$EmailScreen/TextViewer.visible = true
+	$EmailScreen/EmailExit.visible = true
+	

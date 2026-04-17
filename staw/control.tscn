@@ -1809,6 +1809,7 @@ offset_right = 849.9645
 offset_bottom = 964.39075
 flat = true
 script = ExtResource("21_ou021")
+metadata/return = "../../ReturnNewsButton"
 
 [node name="TotalBox" type="Control" parent="ProfitScreen" unique_id=1059778854]
 anchors_preset = 0
@@ -2043,6 +2044,7 @@ expand_icon = true
 script = ExtResource("6_fj5cn")
 
 [node name="Tutorial" parent="." unique_id=1340638950 instance=ExtResource("24_v61lp")]
+visible = false
 layout_mode = 1
 
 [connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]

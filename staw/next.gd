@@ -7,6 +7,7 @@ func _on_name_inputer_text_changed():
 	var userName = textInput.text
 	visible = nameCheck(userName)
 	
+	
 func nameCheck(userName):
 	var correctLength = userName.length() <= 20
 	var noSpecialCharacters = true
