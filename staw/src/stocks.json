@@ -106,56 +106,56 @@
 		"industryShort" : "TEC"
 	 },
 	
-	"Manufacturing" : { 
+	"Luxury" : { 
 		"Stocks" : [ 
 			{
-				"firstStockPoint" : 654,
+				"firstStockPoint" : 105,
 				"savedStockPoint" : 0,
 				"typeOfInvestment" : "long",
-				"companyName" : "SFAS",
-				"stockShort" : "AVD",
-				"stockDescription" : "A power firm based on non-rewnable energy, supplies most power everywhere.",
-				"timeFrame" : [654, 651, 660, 668, 679, 669, 690, 681, 704, 712, 733, 726, 733, 791],
+				"companyName" : "Thurge",
+				"stockShort" : "THG",
+				"stockDescription" : "Luxury goods manufacturer based out of the continent south of Paxtoria. Bases much of their advertising by referencing back to the ancient glory days that the old Thurgian empire from their home continent experienced. Especially enjoyed by the Paxtorian elite and middle class.",
+				"timeFrame" : [105, 107, 101, 107, 104, 108, 102, 103, 99, 111, 92, 104, 118, 120],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
 			{
 				"firstStockPoint" : 404,
 				"typeOfInvestment" : "long",
-				"companyName" : "DVSSvy",
-				"stockShort" : "adv",
-				"stockDescription" : "A clean energy company based out of central Kaddia. Has ties to the mafia, Xiadia, and many criminal syndicates.",
-				"timeFrame" : [404, 395, 388, 404, 412, 419, 407, 426, 409, 417, 429, 432, 441, 358],
+				"companyName" : "Pelgratan Clean",
+				"stockShort" : "PGC",
+				"stockDescription" : "A classical fine goods manufacturer based out of border, a mountainous country that borders Xiadia. PGC utilizes a variety of 'old' techniques to manufacture antique furniture and antiques at scale to sell to a hungry Xiadian upper class. Their goods also enjoy some success in other countries, usually adorning the rich and powerful's many mansions and yachts.",
+				"timeFrame" : [189, 189, 187, 186, 186, 187, 185, 185, 188, 185, 191, 186, 191, 180],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
 		],
-		"industryName" : "Manufacturing",
-		"industryShort" : "MAN"
+		"industryName" : "Luxury",
+		"industryShort" : "LUX"
 	 },
-	"Fod" : { 
+	"Weapons" : { 
 		"Stocks" : [ 
 			{
-				"firstStockPoint" : 212,
+				"firstStockPoint" : 294,
 				"savedStockPoint" : 0,
 				"typeOfInvestment" : "long",
-				"companyName" : "vsa",
-				"stockShort" : "aff",
-				"stockDescription" : "A cattle industry based out of central Kaddia, acts as a distributed network of local ranches.",
-				"timeFrame" :  [212, 215, 208, 213, 207, 211, 221, 213, 212, 219, 208, 202, 198, 251],
+				"companyName" : "Mercatorian Mercanaries",
+				"stockShort" : "MCM",
+				"stockDescription" : "A powerful family in the small nation state of Mercatoria, their power and influence stretches far outside their gang-controlled districts and into the dense web of politics that engulfs many of the most rich and powerful people across the world. When assassinations occur, usually a hired goon from Mercatoria is involved.",
+				"timeFrame" :  [294, 291, 301, 285, 303, 278, 292, 274, 280, 273, 281, 267, 292, 301],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
 			{
 				"firstStockPoint" : 404,
 				"savedStockPoint" : 0,
 				"typeOfInvestment" : "long",
-				"companyName" : "FDAS'",
-				"stockShort" : "SFA",
-				"stockDescription" : "Food behemoth founded in 1821. Controls much of the market.",
-				"timeFrame" : [711, 709, 717, 694, 718, 700, 726, 720, 716, 727, 733, 726, 737, 641],
+				"companyName" : "Deadeye",
+				"stockShort" : "DDE",
+				"stockDescription" : "Deadeye was founded in Paxtoria in 1743, by two people who wanted their enemies dead. Since then, not much has changed, except now they make helicopters instead of muskets. Although the company's manufacturing capacity is huge, they suffer from internal strife and often struggle to secure contracts from either side of the great political game, Paxtoria or Xiadia.",
+				"timeFrame" : [381, 392, 386, 389, 380, 379, 375, 376, 373, 378, 381, 383, 368, 364],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
 		],
-		"industryName" : "Food",
-		"industryShort" : "FBD"
+		"industryName" : "Arms",
+		"industryShort" : "WEP"
 	 }
 	
 

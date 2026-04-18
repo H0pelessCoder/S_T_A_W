@@ -1011,15 +1011,6 @@ offset_right = 884.0
 offset_bottom = 135.0
 theme_override_font_sizes/normal_font_size = 48
 
-[node name="StockDescription" type="RichTextLabel" parent="StockMenu/StockDescriptionScreen" unique_id=414633076]
-z_index = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = 137.0
-offset_right = 865.0
-offset_bottom = 615.0
-theme_override_font_sizes/normal_font_size = 48
-
 [node name="ColorRect" type="ColorRect" parent="StockMenu/StockDescriptionScreen" unique_id=1710374063]
 layout_mode = 0
 offset_right = 928.0
@@ -1034,6 +1025,21 @@ offset_right = 918.0
 offset_bottom = 51.0
 text = "X"
 script = ExtResource("10_0ytqx")
+
+[node name="Scroller" type="ScrollContainer" parent="StockMenu/StockDescriptionScreen" unique_id=376780126]
+layout_mode = 0
+offset_left = 32.924988
+offset_top = 153.74272
+offset_right = 906.6684
+offset_bottom = 629.49097
+
+[node name="StockDescription" type="RichTextLabel" parent="StockMenu/StockDescriptionScreen/Scroller" unique_id=414633076]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 48
+scroll_following = true
 
 [node name="BeginDayButton" type="Button" parent="StockMenu" unique_id=1839727072]
 layout_mode = 0

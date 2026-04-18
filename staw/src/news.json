@@ -27,26 +27,46 @@
 			"Image" : "",
 			"Effects" : {
 				"Market" : 	{
-					"Velocity" : 0,
-					"Variance" : 0
+					"Velocity" : 0.99,
+					"Variance" : 0.975
 				},
 				"Industries" : {
 					"Shipping" : {
 						
 						"Effects" : {
-							"Velocity" : 0,
-							"Variance" : 0
+							"Velocity" : 0.95,
+							"Variance" : 0.99
 						},
 						
 						"Stocks" : [
 								{
-									"Velocity" : 0,
-									"Variance" : 0
+									"Velocity" : 0.98,
+									"Variance" : 1.02
 								},
 								
 								{
-									"Velocity" : 0,
-									"Variance" : 0
+									"Velocity" : 1.025,
+									"Variance" : 1.05
+								}
+							
+						]
+					},
+					"Electricity" : {
+						
+						"Effects" : {
+							"Velocity" : 0.98,
+							"Variance" : 1.02
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 0.95,
+									"Variance" : 0.99
+								},
+								
+								{
+									"Velocity" : 1.05,
+									"Variance" : 1.05
 								}
 							
 						]
@@ -71,26 +91,26 @@
 			"Image" : "",
 			"Effects" : {
 				"Market" : 	{
-					"Velocity" : 2000,
-					"Variance" : 0
+					"Velocity" : 1,
+					"Variance" : 1
 				},
 				"Industries" : {
 					"Shipping" : {
 						
 						"Effects" : {
-							"Velocity" : 0,
-							"Variance" : 0
+							"Velocity" : 1,
+							"Variance" : 1
 						},
 						
 						"Stocks" : [
 								{
-									"Velocity" : 0,
-									"Variance" : 0
+									"Velocity" : 1,
+									"Variance" : 1
 								},
 								
 								{
-									"Velocity" : 0,
-									"Variance" : 0
+									"Velocity" : 1,
+									"Variance" : 1
 								}
 							
 						]
@@ -115,26 +135,26 @@
 			"Image" : "",
 			"Effects" : {
 				"Market" : 	{
-					"Velocity" : 0,
-					"Variance" : 0
+					"Velocity" : 1,
+					"Variance" : 1
 				},
 				"Industries" : {
 					"Shipping" : {
 						
 						"Effects" : {
-							"Velocity" : 0,
-							"Variance" : 0
+							"Velocity" : 1,
+							"Variance" : 1
 						},
 						
 						"Stocks" : [
 								{
-									"Velocity" : 0,
-									"Variance" : 0
+									"Velocity" : 1,
+									"Variance" : 1
 								},
 								
 								{
-									"Velocity" : 0,
-									"Variance" : 0
+									"Velocity" : 1,
+									"Variance" : 1
 								}
 							
 						]
@@ -156,8 +176,8 @@
 			"Effects" : {
 				"Industries" : {},
 				"Market" : 	{
-					"Velocity" : 0,
-					"Variance" : 0
+					"Velocity" : 1,
+					"Variance" : 1
 				},
 			}
 		},
@@ -174,8 +194,8 @@
 			"Effects" : {
 				"Industries" : {},
 				"Market" : 	{
-					"Velocity" : 0,
-					"Variance" : 0
+					"Velocity" : 1,
+					"Variance" : 1
 				},
 			}
 		},
@@ -192,8 +212,8 @@
 			"Effects" : {
 				"Industries" : {},
 				"Market" : 	{
-						"Velocity" : 0,
-						"Variance" : 0
+						"Velocity" : 1,
+						"Variance" : 1
 				},
 			}
 		},
@@ -210,8 +230,8 @@
 			"Effects" : {
 				"Industries" : {},
 				"Market" : 	{
-						"Velocity" : 0,
-						"Variance" : 0
+						"Velocity" : 1,
+						"Variance" : 1
 				},
 			}
 		},
@@ -228,8 +248,8 @@
 			"Effects" : {
 				"Industries" : {},
 				"Market" : 	{
-						"Velocity" : 0,
-						"Variance" : 0
+						"Velocity" : 1,
+						"Variance" : 1
 				},
 			}
 		}

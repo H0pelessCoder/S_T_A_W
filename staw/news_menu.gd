@@ -9,8 +9,8 @@ static func eventFormat() -> Dictionary:
 	}
 static func effectFormat() -> Dictionary:
 	return {
-		"Velocity" : 0,
-		"Variance" : 0
+		"Velocity" : 1,
+		"Variance" : 1
 	}
 	
 static var happeningEvents := eventFormat()
@@ -48,21 +48,21 @@ func processEffects():
 	for eventType in happeningEvents:
 		for event in happeningEvents[eventType]:
 			event = Events[event]["Effects"]
-			var marketVelocity = event["Market"]["Velocity"]
-			var marketVariance = event["Market"]["Variance"]
+			var marketVelocity = event["Market"]["Velocity"] -1
+			var marketVariance = event["Market"]["Variance"] -1
 			var IndustryVelocity = 0
 			var IndustryVariance = 0
 			for industry in event["Industries"]:
-				IndustryVelocity += event["Industries"][industry]["Effects"]["Velocity"]
-				IndustryVariance += event["Industries"][industry]["Effects"]["Variance"]
+				IndustryVelocity += event["Industries"][industry]["Effects"]["Velocity"] -1
+				IndustryVariance += event["Industries"][industry]["Effects"]["Variance"] -1
 				var x = 0
 				for stockEffect in event["Industries"][industry]["Stocks"]:
-					var stockVelocity = stockEffect["Velocity"]
-					var stockVariance = stockEffect["Variance"]
+					var stockVelocity = stockEffect["Velocity"] -1
+					var stockVariance = stockEffect["Variance"] -1
 					var stock = Industries[industry]["Stocks"][x]
 					var stockName = stock["companyName"]
-					currEffects[stockName]["Velocity"] += marketVelocity + IndustryVelocity + stockVelocity
-					currEffects[stockName]["Variance"] += marketVariance + IndustryVariance + stockVariance				
+					currEffects[stockName]["Velocity"] += marketVelocity + IndustryVelocity + stockVelocity 
+					currEffects[stockName]["Variance"] += marketVariance + IndustryVariance + stockVariance			
 					x=1			
 func chooseEvents(Events):
 	var nEvents = global.News["dailyEvents"][str(global.day)]
