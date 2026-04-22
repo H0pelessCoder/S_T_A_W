@@ -8,7 +8,7 @@
 				"typeOfInvestment" : "long",
 				"companyName" : "Mercatoria Shipping",
 				"stockShort" : "MSP",
-				"stockDescription" : "A naval shipping company which specializes in smuggling. Key ties in Xiadia and Drastara.",
+				"stockDescription" : "Following Xiadia's defeat in the second intercontinental war, The Concordat's demands, that being primarily Praxtoria's demands, were for them to transition into a democracy. Relecutantly acquising, Xiadia privatized many of their state owned organizations, one of which being the merchant marine that had been nearly decimated during the war, and especially during the Concordat's invasion of the largest port in Xiadia, The Crescent Moon Port. A savvy Mercatorian gangster purchased the fleet and branded it as Mercatoria's official shipping company. Due to the lack of any central authority in the country, this has become fact, with the company's vast semi-militarized trade fleet operating across the world, and especially in its closest neighbor, Xiadia. ",
 				"timeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
@@ -18,7 +18,7 @@
 				"typeOfInvestment" : "long",
 				"companyName" : "Flaeton Shipping",
 				"stockShort" : "FLS",
-				"stockDescription" : "A large distrubutor based out of Flaeton.",
+				"stockDescription" : "Flaeton Shipping, founded in 1864 by a pair of brothers who fell in love with aviation from a young age, played a vital role over the latter years of Praxtoria's colonial phase during the Infinitum Imperium. Although Flaeton Shipping at the time was not large, they were the only distributor capable of delivering cross-contential packages and flights. During the age of the Colonial Defense League, after the Praxtorian civil war, Flaeton Shipping connected the vast former colonial holdings of Praxtoria via grand aerial and naval passages. Nowadays, their former prestige has allowed them to prosper as a state sponsored company, continuing their strong aerial traditions with a large fleet of commercial jets.",
 				"timeFrame" : [954, 952, 951, 947, 948, 942, 941, 978, 976, 972, 929, 921, 925, 920],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
@@ -35,7 +35,7 @@
 				"typeOfInvestment" : "long",
 				"companyName" : "Firm Fuel",
 				"stockShort" : "FFL",
-				"stockDescription" : "A power firm based on non-rewnable energy, supplies most power everywhere.",
+				"stockDescription" : "In the Jurgan planes west of Xiadia, where Juragi war caravns regularly raid ICA (Intercontinental Cooperative Association) oil wells and gas depots, a single corporation drives investment into the region. Firm Fuel, formerly Praxtorian Oil, through multiple deep contracts and multi-billion Pax lobbying efforts maintains a monopoly over the vast Juragi oil reserves. Recently they've even made forays into oil reserves in the even more hostile Central Continent, where religious and ethnic disputes between the Sassari locals and the Druidic population often breaks out into large scale conflict. ",
 				"timeFrame" : [654, 651, 660, 668, 679, 669, 690, 681, 704, 712, 733, 726, 733, 741],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
@@ -45,7 +45,7 @@
 				"typeOfInvestment" : "long",
 				"companyName" : "Natural Energy",
 				"stockShort" : "NTE",
-				"stockDescription" : "A clean energy company based out of central Kaddia. Has ties to the mafia, Xiadia, and many criminal syndicates.",
+				"stockDescription" : "Natural Energy, a subsidiary of Frontier Tech Global, went public on June 8th 2004. Their IPO, adjusted for inflation was around 12 Billion Pax, with a stable share price of 206. Despite blatant failures to meet performance goals, consistent lack of safety regulation, and multiple breaches in disclosure laws, the company's stock has only skyrocketed, with suspicious investments from Xiadia and the criminal underground of Mercatoria seemingly the driving force. Irregardless of suspicious stock activity, the company does provide a significant amount of the world's solar and wind energy based from their large central manufacturing plant in Xiadia.",
 				"timeFrame" : [404, 395, 388, 404, 412, 419, 407, 426, 409, 417, 429, 432, 441, 438],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
@@ -59,9 +59,9 @@
 				"firstStockPoint" : 212,
 				"savedStockPoint" : 0,
 				"typeOfInvestment" : "long",
-				"companyName" : "Beef Brothers",
-				"stockShort" : "BBS",
-				"stockDescription" : "A cattle industry based out of central Kaddia, acts as a distributed network of local ranches.",
+				"companyName" : "Wessen Brothers",
+				"stockShort" : "WBS",
+				"stockDescription" : "In the vast plains of Praxtoria's central region, Kaddia, Vast amber fields of grain and large pasture ranches stretch out further then one can see. If you ask any individual rancher or farmer who they worked for, they might not have an answer. But, ask them who they deliver to, and they will almost all say the Wessen Brothers. Holding a monopoly on the kind of free range, ethical food that many in the Praxtorian middle class are willing to pay a premium for, the Wessen Brothers have enjoyed consistent yearly revenue.",
 				"timeFrame" :  [212, 215, 208, 213, 207, 211, 221, 213, 212, 219, 208, 202, 198, 201],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
@@ -71,7 +71,7 @@
 				"typeOfInvestment" : "long",
 				"companyName" : "Keddles'",
 				"stockShort" : "KDL",
-				"stockDescription" : "Food behemoth founded in 1821. Controls much of the market.",
+				"stockDescription" : "Keddles' founding is of mysterious origin. Not much is known of the original company, Keddles' Pastries and Baked Goods, as they operated in Mercatoria where documentation laws are lacking to say the least. However, from the shadows Keddles has grown to own tens of the largest food companies in the world, from baked goods producers to factory farmed meat products.",
 				"timeFrame" : [711, 709, 717, 694, 718, 700, 726, 720, 716, 727, 733, 726, 737, 741],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
@@ -87,7 +87,7 @@
 				"typeOfInvestment" : "long",
 				"companyName" : "Diatide",
 				"stockShort" : "DTD",
-				"stockDescription" : "A former small time tech startup founded by co-owners Sean Weiss and Cyllin Ameus. Some stock investors and whistleblowers have noted that some of the company's large investments in microchips have been funneled to suspicious outlets in the Theocraatic nation state of Patreus.",
+				"stockDescription" : "Diatide was founded in the wild west of the early 80's by co-owners Sean Weiss and Cyllin Ameus. Enjoying explosive growth throughout the latter half of the century due to their revolutionary Operating System, one of the very first in the world at that, and their early adoption of the internet, Diatide has squandered much of their growth due to a stagnat work culture. Suspiciously, the company also appears to have secretly funneled billions of Pax into the Theocratic Nation State of Patrieus in the central continent, who while ostensibly being an ally of the ICA (Intercontinental Cooperative Association) in their endless war against local Sassari Insurgents still maintains a dense shroud of secrecy around their inner workings.",
 				"timeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 720],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 			}, 
@@ -97,7 +97,7 @@
 				"typeOfInvestment" : "long",
 				"companyName" : "Evion",
 				"stockShort" : "EVN",
-				"stockDescription" : "One of the few truly new competitors in the scene, Evion has grown from surveillance state apparatus to proper tech behemoth.",
+				"stockDescription" : "Founded in 2010, Evion has gone a long way from their IPO (initial public offering) where they were valued at 'only' half a billion Pax. The company has since then taken many shady deals from The ICA (Intercontinental Cooperative Association), Praxtoria, and Xiadia. Little is known of the exact terms of negotiation, but Evion has enjoyed explosive growth and immunity from many intercontinental laws, and global facial detection software seems to be able to track suspects inside of their homes.",
 				"timeFrame" : [954, 952, 951, 947, 948, 942, 941, 978, 976, 972, 929, 921, 925, 900],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
@@ -123,7 +123,7 @@
 				"typeOfInvestment" : "long",
 				"companyName" : "Pelgratan Clean",
 				"stockShort" : "PGC",
-				"stockDescription" : "A classical fine goods manufacturer based out of border, a mountainous country that borders Xiadia. PGC utilizes a variety of 'old' techniques to manufacture antique furniture and antiques at scale to sell to a hungry Xiadian upper class. Their goods also enjoy some success in other countries, usually adorning the rich and powerful's many mansions and yachts.",
+				"stockDescription" : "A classical fine goods manufacturer based out of Pelgrata, a mountainous country that borders Xiadia. PGC utilizes a variety of 'old' techniques to manufacture antique furniture and antiques at scale to sell to a hungry Xiadian upper class. Their goods also enjoy some success in other countries, usually adorning the rich and powerful's many mansions and yachts.",
 				"timeFrame" : [189, 189, 187, 186, 186, 187, 185, 185, 188, 185, 191, 186, 191, 180],
 				"newTimeFrame" : [745, 742, 741, 747, 751, 750, 746, 745, 746, 742, 741, 747, 747, 741]
 		 	} 
