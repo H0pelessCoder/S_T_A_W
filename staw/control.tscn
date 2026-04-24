@@ -233,10 +233,10 @@ script = ExtResource("6_knq72")
 [node name="NewsHeader" type="Label" parent="NewsMenu" unique_id=361585977]
 z_index = 1
 layout_mode = 0
-offset_left = 354.6225
-offset_top = 62.44706
-offset_right = 774.6225
-offset_bottom = 159.44705
+offset_left = 381.71173
+offset_top = -43.13354
+offset_right = 801.7118
+offset_bottom = 53.86646
 text = "                     PNN
 PAXTORIA NEWS NETWORK"
 label_settings = SubResource("LabelSettings_knq72")
@@ -288,9 +288,9 @@ z_index = 1
 clip_contents = false
 layout_mode = 0
 offset_left = -743.0
-offset_top = -137.0
+offset_top = -399.0
 offset_right = 757.0
-offset_bottom = 231.02701
+offset_bottom = 342.0
 
 [node name="Horiz" type="BoxContainer" parent="NewsMenu/EventList" unique_id=326525427]
 layout_mode = 2
@@ -338,8 +338,6 @@ anchor_bottom = 1.0
 offset_left = 9.0
 offset_top = 100.0
 offset_right = -9.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 16
@@ -351,8 +349,8 @@ justification_flags = 98
 layout_mode = 0
 offset_left = -21.548244
 offset_top = -45.708675
-offset_right = 1171.6089
-offset_bottom = 209.87363
+offset_right = 1191.9258
+offset_bottom = 68.24112
 mouse_filter = 2
 color = Color(0.635709, 0.60123616, 0.93039465, 1)
 
@@ -364,7 +362,7 @@ z_as_relative = false
 clip_contents = true
 layout_mode = 0
 offset_left = -14.1602745
-offset_top = 209.87363
+offset_top = 51.50271
 offset_right = 1178.9968
 offset_bottom = 684.3425
 focus_behavior_recursive = 1

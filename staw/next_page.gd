@@ -12,6 +12,9 @@ func _on_pressed() -> void:
 		signingBox.visible = true
 		employerSignature.visible = true
 		visible = false
+		
 	get_node("../Legalese" + str(pg)).visible = false
 	pg += 1
 	get_node("../Legalese" + str(pg)).visible = true
+	if pg==4:
+		pg = 1
