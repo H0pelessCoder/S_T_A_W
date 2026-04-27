@@ -78,7 +78,7 @@
 		"BorderWar" : {
 			"Title" : "BorderWar",
 			"NewsTitle" : "Ambernesia and Drastara engage at Minthol",
-			"NewsFull" : "The historic town of Minthol, split between Ambernesia and Drastara, became the focal point of a renewed border conflict between the states.",
+			"NewsFull" : "Minthol has become a renewed source of tension between the bickering states of Ambernesia and Drastara. During Ambernesian President Milos Bercha's first term, the city was a key issue presented as a potential 'threat to national security'. Now it seems that the politician, limping into his third term after a slump in approval ratings following the disastrous Graztek reconstruction efforts, which even now continue to soar above the proposed budget of $4 billion pax, seeks to use the symbolic city to renew the national vigor. ",
 			"Next" : {
 				"EmbassyBombed" : 0.25,
 				"TroopMovement" : 0.5,
@@ -91,26 +91,66 @@
 			"Image" : "",
 			"Effects" : {
 				"Market" : 	{
-					"Velocity" : 1,
-					"Variance" : 1
+					"Velocity" : 0.98,
+					"Variance" : 1.05
 				},
 				"Industries" : {
 					"Shipping" : {
 						
 						"Effects" : {
-							"Velocity" : 1,
+							"Velocity" : 0.99,
 							"Variance" : 1
 						},
 						
 						"Stocks" : [
 								{
-									"Velocity" : 1,
+									"Velocity" : 0.99,
 									"Variance" : 1
 								},
 								
 								{
-									"Velocity" : 1,
+									"Velocity" : 1.01,
 									"Variance" : 1
+								}
+							
+						] 
+					},
+					"Weapons" : {
+						
+						"Effects" : {
+							"Velocity" : 1.15,
+							"Variance" : 0.8
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 0.95,
+									"Variance" : 1.1
+								},
+								
+								{
+									"Velocity" : 1.05,
+									"Variance" : 0.9
+								}
+							
+						]
+					},
+					"Tech" : {
+						
+						"Effects" : {
+							"Velocity" : 1.05,
+							"Variance" : 1.05
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 1.05,
+									"Variance" : 0.9
+								},
+								
+								{
+									"Velocity" : 1.1,
+									"Variance" : 1.2
 								}
 							
 						]
@@ -124,7 +164,7 @@
 		"EmbassyBombed" : {
 			"Title" : "EmbassyBombed",
 			"NewsTitle" : "The Ambernesian Embassy in Drastara bombed!",
-			"NewsFull" : "Drastara has since the second Ambernesian-Drastaran war closed off most of the foreign influence of their northern brothers. However, in the heart of Drastara, one embassy remained, representing peace between Ambernesia and Drastara. Now that dream of unity might be forever dead.",
+			"NewsFull" : "",
 			"Next" : {
 				"TroopMovement" : 1.0
  			},
