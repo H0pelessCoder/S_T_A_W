@@ -49,6 +49,7 @@ script = ExtResource("1_0fbet")
 position = Vector2(-2, -4)
 
 [node name="MainMenu" type="Control" parent="." unique_id=962578855]
+visible = false
 anchors_preset = 0
 offset_left = -947.0
 offset_top = -526.0
@@ -221,7 +222,6 @@ mouse_filter = 2
 color = Color(0.7867422, 0.07991169, 0.2798978, 1)
 
 [node name="NewsMenu" type="Control" parent="." unique_id=2121891766]
-visible = false
 anchors_preset = 0
 offset_left = -947.0
 offset_top = -518.0
@@ -233,10 +233,10 @@ script = ExtResource("6_knq72")
 [node name="NewsHeader" type="Label" parent="NewsMenu" unique_id=361585977]
 z_index = 1
 layout_mode = 0
-offset_left = 381.71173
-offset_top = -43.13354
-offset_right = 801.7118
-offset_bottom = 53.86646
+offset_left = 383.55872
+offset_top = -18.025957
+offset_right = 803.5588
+offset_bottom = 78.974045
 text = "                     PNN
 PAXTORIA NEWS NETWORK"
 label_settings = SubResource("LabelSettings_knq72")
@@ -330,7 +330,7 @@ theme_override_font_sizes/font_size = 22
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="EventBody" type="Label" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=1732700599]
+[node name="EventBody" type="RichTextLabel" parent="NewsMenu/EventList/Horiz/EventBase" unique_id=366956139]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -338,10 +338,10 @@ anchor_bottom = 1.0
 offset_left = 9.0
 offset_top = 100.0
 offset_right = -9.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+fit_content = true
 horizontal_alignment = 3
-autowrap_mode = 3
 justification_flags = 98
 
 [node name="TopColor" type="ColorRect" parent="NewsMenu" unique_id=585695221]
@@ -349,7 +349,7 @@ layout_mode = 0
 offset_left = -21.548244
 offset_top = -45.708675
 offset_right = 1191.9258
-offset_bottom = 68.24112
+offset_bottom = 79.82924
 mouse_filter = 2
 color = Color(0.635709, 0.60123616, 0.93039465, 1)
 

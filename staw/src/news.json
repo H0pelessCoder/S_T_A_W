@@ -18,7 +18,7 @@
 		"Geese" : {
 			"Title" : "Geese",
 			"NewsTitle" : "Geese attack the Crescent Moon Port!",
-			"NewsFull" : "As climate change continues to push migratory geese populations further north, a symptom developing has been new flight path tending torwards human settlement. Now, we are beginning to see the consequences. A flock numbering nearly ten-thousand has swarmed over the Crescent Moon Port in Xiadia. The port, the central transit hub of trade to the continent had to be shut down for nearly a full hour as dock workers and passer-bys were harrassed by the aggressive species. Although the disruption was handled by animal control, the estimated cost of the incident is estimated around $450 million pax.",
+			"NewsFull" : "[i] As climate change [/i] continues to push migratory geese populations further north, a symptom developing has been new flight path tending torwards human settlement. Now, we are beginning to see the consequences. A flock numbering nearly ten-thousand has swarmed over the Crescent Moon Port in Xiadia. The port, the central transit hub of trade to the continent had to be shut down for nearly a full hour as dock workers and passer-bys were harrassed by the aggressive species. Although the disruption was handled by animal control, the estimated cost of the incident is estimated around $450 million pax.",
 			"Next" : {},
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
@@ -164,7 +164,7 @@
 		"EmbassyBombed" : {
 			"Title" : "EmbassyBombed",
 			"NewsTitle" : "The Ambernesian Embassy in Drastara bombed!",
-			"NewsFull" : "",
+			"NewsFull" : "Boris Kuznetsov, leader of the D.P.A, one of the largest paramilitary groups running Drastara, addressed the bombing of the sole Ambernesian embassy in Drastara. In his profanity laden speech, he declared \"\n\n\t[i] Today, Drastaran nationals, carrying the flag of the confederacy, heroically stormed the [explative] laden den of snakes in the glorious city of Zhelmov. They carried out their actions alone... [but] they have lit the spark to a fire that will not go out until all of [Ambernesia] lies in ruin.\"\n\n\t [b] \"Until all of [Ambernesia] lies in ruin\" [/b][/i]",
 			"Next" : {
 				"TroopMovement" : 1.0
  			},
@@ -206,7 +206,7 @@
 		"TroopMovement" : {
 			"Title" : "TroopMovement",
 			"NewsTitle" : "Mass Moblization in both Drastara and Ambernesia",
-			"NewsFull" : "Drastaran streets have seen endless columns of tanks and soldiers marching through them, initially Drastaran president Belcome offered reassurances that they were purely for peacekeeping purposes, now that Ambernesia has responded in kind it seems like thhe two countries are barrelling torwards war.",
+			"NewsFull" : "Throughout saturday night, i was kept awake in the news van by a low consistent thumping. Turning to my side, i closed my eyes desperately, attempting to shut out the noise with physical effort. [i] Thump. Thump. [/i] Quietly, i resigned myself, as the civillians of Minthol had, to a sleepless night. This artillery barrage makes up the soundscape around the historic, normally beautiful town of Minthol. Recently, as tensions between the countries have escalated, this pitter-patter of thumping has accelerated, troops now from both sides, numbering in the tens of thousands line up on opposite sides of the city. That morning, we awake to a tank brigade from Drastara making a daring charge across the grasslands on the eastern side of the city. [i] Brrrrrrrt. [/i] A helicopter swiftly dispactches the lead vehicle, missiles barrage the retreating brigade, now one down. The grass burns with an ominous red glare, as the fires of war consume Minthol, the hope of a diplomatic end to the war burn with it.",
 			"Next" : {},
 			"Prev" : ["BorderWar"],
 			"Mutually_Exclusive" : ["Descalation"],

@@ -17,14 +17,14 @@ static var happeningEvents := eventFormat()
 static var pendingEvents := eventFormat()
 static var availableEvents : Dictionary 
 static var currEffects : Dictionary
-static var eventsToTest = {"Super": ["BorderWar"], "Major": ["Geese"], "Minor": []}
+static var eventsToTest = {"Super": ["EmbassyBombed"], "Major": ["Geese"], "Minor": []}
 func determineTodaysNews():
 	happeningEvents = eventFormat()
 	currEffects = {}
 	global.day += 1
 	var Events = global.News["Events"]
 	if(global.profile["userName"] == "Admin"):
-		pendingEvents = eventsToTest
+		happeningEvents = eventsToTest
 	var eventsToProcess = availableEvents
 	chooseEvents(pendingEvents)
 	chooseEvents(eventsToProcess)

@@ -52,6 +52,8 @@ func _on_exit_pressed() -> void:
 
 func _on_email_exit_pressed() -> void:
 	$EmailScreen.visible = false
+	$EmailScreen/TextViewer.visible = false
+	$EmailScreen/Email.visible = true
 	$NamePicker.visible = true
 	$Contract/Legalese1.visible = true
 	$Contract/Legalese4.visible = false
@@ -60,6 +62,7 @@ func _on_email_exit_pressed() -> void:
 	$Contract/SigningBox/Signature.visible_ratio = 0
 	$Contract/NextPage.visible = true
 	$Contract/Exit.visible = false
+	$EmailScreen/EmailExit.visible = false
 	visible = false
 	beginGame()
 
