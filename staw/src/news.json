@@ -18,8 +18,8 @@
 		"Geese" : {
 			"Title" : "Geese",
 			"NewsTitle" : "Geese attack the Crescent Moon Port!",
-			"NewsFull" : "[i] As climate change [/i] continues to push migratory geese populations further north, a symptom developing has been new flight path tending torwards human settlement. Now, we are beginning to see the consequences. A flock numbering nearly ten-thousand has swarmed over the Crescent Moon Port in Xiadia. The port, the central transit hub of trade to the continent had to be shut down for nearly a full hour as dock workers and passer-bys were harrassed by the aggressive species. Although the disruption was handled by animal control, the estimated cost of the incident is estimated around $450 million pax.",
-			"Next" : {},
+			"NewsFull" : "\t[i]-By Astrid Raveana[/i]\nEarly saturday morning, a flock of endangered red tailed geese nearly ten thousand strong descended on the Crescent Moon Port in Xiadia. The port makes up 14% of all imports into Xiadia, and over 80% of imports for the industrial region of Delgana that the port resides in. In response to the crisis, Delgana governer Yugong Shei ordred the port closed until animal control could safely evacuate the endangered birds. animal and wildlife specialist Luon Yuok explained the situation \"What we're seing now is a response to aggressive habitat destruction in the Delgana region.\" She continued. \"When these native birds migrate back to the region after winter, they must create new nests, places like docks, that have alot of the same shade they'd look for in marshes and forests, naturally attract the aggressive species.\" Conservationsts are already starting the long legal battle with Xiadian courts and the ICA to get legal protections for the native homes of these animals. Critics, meanwhile, argue that the region's swift industrialization has lifted millions out of poverty and that these measures might harm the local economy and corporations. In an official statement, a spokesperson for Pelgratan Clean announced that the company would be scaling back operations in the region as a response to the environmental damage.",
+			"Next" : {}, 
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
 			"Type": "Major",
@@ -70,15 +70,32 @@
 								}
 							
 						]
+					},
+					"Luxury" : {
+						"Effects" : {
+							"Velocity" : 1,
+							"Variance" : 1
+						},
+						"Stocks" : [
+							{
+								"Velocity" : 1, 
+								"Variance" : 1
+							},
+							{
+								"Velocity" : 0.98,
+								"Variance" : 1.02
+							}
+						]
 					}
+					
 				}
 
 			}
 		},
 		"BorderWar" : {
 			"Title" : "BorderWar",
-			"NewsTitle" : "Ambernesia and Drastara engage at Minthol",
-			"NewsFull" : "Minthol has become a renewed source of tension between the bickering states of Ambernesia and Drastara. During Ambernesian President Milos Bercha's first term, the city was a key issue presented as a potential 'threat to national security'. Now it seems that the politician, limping into his third term after a slump in approval ratings following the disastrous Graztek reconstruction efforts, which even now continue to soar above the proposed budget of $4 billion pax, seeks to use the symbolic city to renew the national vigor. ",
+			"NewsTitle" : "Ambernesia and Drastara clash at Minthol",
+			"NewsFull" : "Members of the Rozbójnik Osin earlier today opened fires on the Ambernesian national guard near the city of Minthol. Although the city is technically owned by Drastara, it is unclear whether the Ambernesian patrol was infringing on Drastaran territory. Nontheless, the current president of Drastara, insitated only a month after the mysterious death of the last one, made no comment on the situation.",
 			"Next" : {
 				"EmbassyBombed" : 0.25,
 				"TroopMovement" : 0.5,
@@ -218,7 +235,7 @@
 				"Market" : 	{
 					"Velocity" : 1,
 					"Variance" : 1
-				},
+				}
 			}
 		},
 		"Descalation" : {
@@ -236,7 +253,7 @@
 				"Market" : 	{
 					"Velocity" : 1,
 					"Variance" : 1
-				},
+				}
 			}
 		},
 		"CelebrityDeathA" : {
@@ -254,7 +271,7 @@
 				"Market" : 	{
 						"Velocity" : 1,
 						"Variance" : 1
-				},
+				}
 			}
 		},
 		"Sphere" : {
@@ -272,7 +289,7 @@
 				"Market" : 	{
 						"Velocity" : 1,
 						"Variance" : 1
-				},
+				}
 			}
 		},
 		"Pirates" : {
