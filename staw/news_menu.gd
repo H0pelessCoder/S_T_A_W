@@ -93,6 +93,8 @@ static func sortEvents(Events):
 #Takes String
 func isEventAllowed(event):
 	event = getEvent(event)
+	if event["Day"] < global.day:
+		return false
 	for exclusive in event["Mutually_Exclusive"]:
 		exclusive = getEvent(exclusive)
 		if exclusive["Done"] == true:

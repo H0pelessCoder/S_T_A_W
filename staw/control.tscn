@@ -301,7 +301,7 @@ alignment = 1
 
 [node name="EventBase" type="Control" parent="NewsMenu/EventList/Horiz" unique_id=1065191739]
 visible = false
-custom_minimum_size = Vector2(500, 225)
+custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4

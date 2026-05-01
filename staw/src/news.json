@@ -18,11 +18,12 @@
 		"Geese" : {
 			"Title" : "Geese",
 			"NewsTitle" : "Geese attack the Crescent Moon Port!",
-			"NewsFull" : "\t[i]-By Astrid Raveana[/i]\nEarly saturday morning, a flock of endangered red tailed geese nearly ten thousand strong descended on the Crescent Moon Port in Xiadia. The port makes up 14% of all imports into Xiadia, and over 80% of imports for the industrial region of Delgana that the port resides in. In response to the crisis, Delgana governer Yugong Shei ordred the port closed until animal control could safely evacuate the endangered birds. animal and wildlife specialist Luon Yuok explained the situation \"What we're seing now is a response to aggressive habitat destruction in the Delgana region.\" She continued. \"When these native birds migrate back to the region after winter, they must create new nests, places like docks, that have alot of the same shade they'd look for in marshes and forests, naturally attract the aggressive species.\" Conservationsts are already starting the long legal battle with Xiadian courts and the ICA to get legal protections for the native homes of these animals. Critics, meanwhile, argue that the region's swift industrialization has lifted millions out of poverty and that these measures might harm the local economy and corporations. In an official statement, a spokesperson for Pelgratan Clean announced that the company would be scaling back operations in the region as a response to the environmental damage.",
+			"NewsFull" : "\t[i]-By Astrid Raveana\nBuisness Corespondant[/i]\n\n\tEarly saturday morning, a flock of endangered red tailed geese nearly ten thousand strong descended on the Crescent Moon Port in Xiadia. The port makes up 14% of all imports into Xiadia, and over 80% of imports for the industrial region of Delgana that the port resides in. In response to the crisis, Delgana governer Yugong Shei ordred the port closed until animal control could safely evacuate the endangered birds. animal and wildlife specialist Luon Yuok explained the situation \"What we're seing now is a response to aggressive habitat destruction in the Delgana region.\" She continued. \"When these native birds migrate back to the region after winter, they must create new nests, places like docks, that have alot of the same shade they'd look for in marshes and forests, naturally attract the aggressive species.\" Conservationsts are already starting the long legal battle with Xiadian courts and the ICA to get legal protections for the native homes of these animals. Critics, meanwhile, argue that the region's swift industrialization has lifted millions out of poverty and that these measures might harm the local economy and corporations. In an official statement, a spokesperson for Pelgratan Clean announced that the company would be scaling back operations in the region as a response to the environmental damage.",
 			"Next" : {}, 
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
 			"Type": "Major",
+			"Day": 0,
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
@@ -95,7 +96,7 @@
 		"BorderWar" : {
 			"Title" : "BorderWar",
 			"NewsTitle" : "Ambernesia and Drastara clash at Minthol",
-			"NewsFull" : "Members of the Rozbójnik Osin earlier today opened fires on the Ambernesian national guard near the city of Minthol. Although the city is technically owned by Drastara, it is unclear whether the Ambernesian patrol was infringing on Drastaran territory. Nontheless, the current president of Drastara, insitated only a month after the mysterious death of the last one, made no comment on the situation.",
+			"NewsFull" : "\t[i]-By Jorge Alejandro\nPolitics Correspondant[/i]\n\n\tMembers of the radical far right militia operating in the northeast of Drastara, Rozbójnik Osin, earlier today opened fires on the Ambernesian national guard near the city of Minthol. The city, the former capital of Drastara before the war of Ambernesian Independance, has become a source of renewed tensions in recent months after Ambenesian President Milos Bercha announced the 'liberation' of the city a chief concern in his reelection campaign. This is not the first time shots have been fired over the 450,000 population city. Following th eend of the second intercontinental war, Ambernesian forces, who sided with the Concordat to fight against the Southern Alliance which Drastara was a part of, refused to end their occupation of the city. In response, Drastaran terror campaigns for months drained Ambernesia's grip on the region until the state peacefully withdrew. After that, the battle for control over the city had raged in the halls of the ICA. Although the Ambernesian-Drastaran peace treaty drafted now almost a hundred years ago in 1928 did call for 'deoccupation' of the city by the occuping Ambernesian forces, the vaugeness of the exact terms left room for both states ot interpret the issue of ownership at will. Although since then ICA legislation has ruled against past Ambernesian ambition, as Drastara shifts further torwards Xiadia and against the ICA it remains to be seen whether the ICA's priorities will shift on the issue.",
 			"Next" : {
 				"EmbassyBombed" : 0.25,
 				"TroopMovement" : 0.5,
@@ -104,6 +105,7 @@
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
 			"Type": "Super",
+			"Day": 0,
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
@@ -188,6 +190,7 @@
 			"Prev" : ["BorderWar"],
 			"Mutually_Exclusive" : ["Descalation"],
 			"Type": "Super",
+			"Day": 0,
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
@@ -228,6 +231,7 @@
 			"Prev" : ["BorderWar"],
 			"Mutually_Exclusive" : ["Descalation"],
 			"Type": "Super",
+			"Day": 0,
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
@@ -246,6 +250,7 @@
 			"Prev" : ["BorderWar"],
 			"Mutually_Exclusive" : ["TroopMovement", "EmbassyBombed"],
 			"Type": "Super",
+			"Day": 0,
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
@@ -264,6 +269,7 @@
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
 			"Type": "Minor",
+			"Day": 0,
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
@@ -282,6 +288,7 @@
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
 			"Type": "Minor",
+			"Day": 0,
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
@@ -300,6 +307,7 @@
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
 			"Type": "Major",
+			"Day": 0,
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
