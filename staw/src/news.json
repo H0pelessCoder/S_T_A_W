@@ -226,7 +226,7 @@
 		"TroopMovement" : {
 			"Title" : "TroopMovement",
 			"NewsTitle" : "Mass Moblization in both Drastara and Ambernesia",
-			"NewsFull" : "Throughout saturday night, i was kept awake in the news van by a low consistent thumping. Turning to my side, i closed my eyes desperately, attempting to shut out the noise with physical effort. [i] Thump. Thump. [/i] Quietly, i resigned myself, as the civillians of Minthol had, to a sleepless night. This artillery barrage makes up the soundscape around the historic, normally beautiful town of Minthol. Recently, as tensions between the countries have escalated, this pitter-patter of thumping has accelerated, troops now from both sides, numbering in the tens of thousands line up on opposite sides of the city. That morning, we awake to a tank brigade from Drastara making a daring charge across the grasslands on the eastern side of the city. [i] Brrrrrrrt. [/i] A helicopter swiftly dispactches the lead vehicle, missiles barrage the retreating brigade, now one down. The grass burns with an ominous red glare, as the fires of war consume Minthol, the hope of a diplomatic end to the war burn with it.",
+			"NewsFull" : "\t[i]-By Jorge Alejandro\nPolitics Correspondant[/i]\n\n\tThe city of Minthol, a longterm strategic goal for both Ambernesian and Drastaran heads of state for multiple decades now is seeing renewed concentrations of troops. ",
 			"Next" : {},
 			"Prev" : ["BorderWar"],
 			"Mutually_Exclusive" : ["Descalation"],
@@ -264,7 +264,7 @@
 		"CelebrityDeathA" : {
 			"Title" : "CelebrityDeathA",
 			"NewsTitle" : "Celebrity Dead at 21!",
-			"NewsFull" : "Samantha Harvey Bercha, grandaughter of Milos Bercha and successful singer-songwriter was found in her studio apartment earlier today ripped to shreds by a vicious pack of geese!",
+			"NewsFull" : "\t[i]-By Alexandrovitch Katenka Afanasievna\nHealth & Lifestyle Correspondant[/i]\n\n\tSamantha Harriet, Granddaughter of the former Firm Fuel CEO Emmanuel Harriet was found dead on tuesday in her Flaeton apartment. Samantha, a paragon of her community and singer in the band [i]\"Top Pop!\"[/i], had severe lacerations and puncture wounds across her torso, the images are too graphic to show but leaked crime scene photos do clearly show goose feathers in her apartment. It has been known that Samantha liked the bird, she wore goose themed hats to special occasions, like her famous 'Feast Day Foul' incident, however no one suspected she would've gone so far as to keep one of the birds in her house. Considered an exotic pet, geese have been banned to own in Paxtoria for over a hundred years, although clearly she didn't get the memo, because according to leading police theories she was mauled to death by her own illegal pet! Fans of her have been sparking an outrage online, calling for laws banning the hunting of local geese populations to be repealed. So far, no government officals in the city or on the barony level have responded to our request for an interview.",
 			"Next" : {},
 			"Prev" : [],
 			"Mutually_Exclusive" : [],

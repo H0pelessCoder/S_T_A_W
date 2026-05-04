@@ -24,7 +24,7 @@ func determineTodaysNews():
 	global.day += 1
 	var Events = global.News["Events"]
 	if(global.profile["userName"] == "Admin"):
-		happeningEvents = eventsToTest
+		happeningEvents = availableEvents
 	var eventsToProcess = availableEvents
 	chooseEvents(pendingEvents)
 	chooseEvents(eventsToProcess)
