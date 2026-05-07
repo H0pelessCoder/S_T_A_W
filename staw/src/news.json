@@ -264,7 +264,7 @@
 		"CelebrityDeathA" : {
 			"Title" : "CelebrityDeathA",
 			"NewsTitle" : "Celebrity Dead at 21!",
-			"NewsFull" : "\t[i]-By Alexandrovitch Katenka Afanasievna\nHealth & Lifestyle Correspondant[/i]\n\n\tSamantha Harriet, Granddaughter of the former Firm Fuel CEO Emmanuel Harriet was found dead on tuesday in her Flaeton apartment. Samantha, a paragon of her community and singer in the band [i]\"Top Pop!\"[/i], had severe lacerations and puncture wounds across her torso, the images are too graphic to show but leaked crime scene photos do clearly show goose feathers in her apartment. It has been known that Samantha liked the bird, she wore goose themed hats to special occasions, like her famous 'Feast Day Foul' incident, however no one suspected she would've gone so far as to keep one of the birds in her house. Considered an exotic pet, geese have been banned to own in Paxtoria for over a hundred years, although clearly she didn't get the memo, because according to leading police theories she was mauled to death by her own illegal pet! Fans of her have been sparking an outrage online, calling for laws banning the hunting of local geese populations to be repealed. So far, no government officals in the city or on the barony level have responded to our request for an interview.",
+			"NewsFull" : "\t[i]-By Alexandrovitch Katenka Afanasievna\nHealth & Lifestyle Correspondant[/i]\n\n\tSamantha Harriet, Granddaughter of the former Firm Fuel CEO Emmanuel Harriet was found dead on tuesday in her Flaeton apartment. Samantha, a paragon of her community and singer in the band [i]\"Top Pop!\"[/i], had severe lacerations and puncture wounds across her torso, the images are too graphic to show but leaked crime scene photos do clearly show goose feathers in her apartment. It has been known that Samantha liked the bird, she wore goose themed hats to special occasions, like her famous 'Feast Day Foul' incident, however no one suspected she would've gone so far as to keep one of the birds in her house. Considered an exotic pet, geese have been banned to own in Paxtoria for over a hundred years, although clearly she didn't get the memo, because according to leading police theories she was mauled to death by her own illegal pet! Fans of her have been sparking outrage online, calling for laws banning the hunting of local geese populations to be repealed. So far, no government officals in the city or on the barony level have responded to our request for an interview.",
 			"Next" : {},
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
@@ -273,17 +273,39 @@
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
-				"Industries" : {},
 				"Market" : 	{
-						"Velocity" : 1,
-						"Variance" : 1
+					"Velocity" : 1,
+					"Variance" : 1
+				},
+				"Industries" : {
+					"Food" : {
+						
+						"Effects" : {
+							"Velocity" : 1,
+							"Variance" : 1.02
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 1.05,
+									"Variance" : 1.1
+								},
+								
+								{
+									"Velocity" : 0.98,
+									"Variance" : 1.1
+								}
+							
+						]
+					}
 				}
+
 			}
 		},
 		"Sphere" : {
 			"Title" : "Sphere",
 			"NewsTitle" : "Mysterious Object off the Coast of Praxtoria",
-			"NewsFull" : "A strange oblong sphere was found floating off the coast of the Catarius Beach earlier this week. Dr. Dain explores the object in an exclusive interview with the Praxtoria News Network.",
+			"NewsFull" : "\t[i]-By Alexandrovitch Katenka Afanasievna\nHealth & Lifestyle Correspondant[/i]\n\n\tA strange, oblong sphere that is 3 meters by 2 meters was discovered off the coast of Paxtoria. The vessel, a shining brilliant white was found by local fisherman in the Matthins barony of southern Kaddia, originally the father-son duo who found the object believed it to be a large rare pearl, that could be valued at well over $4 million pax. But when they turned it in to the local authorities, an appraiser discovered that in fact it was made of the incredibly rare and expensive alloy Vandium Steel, however Vandium isn't buoyant, so speculation has circulated that the object might be an Alien spaceship or even a secret government project. Dr Dain, host of the highly controversial and loved show[i] Ancient History, [/i] had the following to say on the mystery in an interview with PNN. \"The device- mind you device, no one hides Vandium Steel in the ocean without an expectation it'll do something- tracks with my theories on the ancient continent of Lemuria. The Lemurians, an ancient people with technology far more advanced then ours today likely hid the device in order to subdue our innate telepathic Chi-Waves in order to facilitate a future Lemurian invasion.\" With theories like this one abounding, its no wonder the sphere has been the subject of much governmental interest. Recently, the Matthins Museum of Culture and Anthropology announced they'd be exhibiting it, but no date has yet been announced.",
 			"Next" : {},
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
@@ -292,11 +314,33 @@
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
-				"Industries" : {},
 				"Market" : 	{
-						"Velocity" : 1,
-						"Variance" : 1
+					"Velocity" : 1,
+					"Variance" : 1
+				},
+				"Industries" : {
+					"Luxury" : {
+						
+						"Effects" : {
+							"Velocity" : 1.05,
+							"Variance" : 1.2
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 1.02,
+									"Variance" : 1
+								},
+								
+								{
+									"Velocity" : 1.04,
+									"Variance" : 1
+								}
+							
+						]
+					}
 				}
+
 			}
 		},
 		"Pirates" : {

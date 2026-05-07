@@ -17,7 +17,7 @@ static var happeningEvents := eventFormat()
 static var pendingEvents := eventFormat()
 static var availableEvents : Dictionary 
 static var currEffects : Dictionary
-static var eventsToTest = {"Super": ["EmbassyBombed", "TroopMovement"], "Major": ["Geese"], "Minor": []}
+static var eventsToTest = {"Super": [], "Major": [], "Minor": []}
 func determineTodaysNews():
 	happeningEvents = eventFormat()
 	currEffects = {}
