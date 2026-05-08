@@ -222,6 +222,7 @@ mouse_filter = 2
 color = Color(0.7867422, 0.07991169, 0.2798978, 1)
 
 [node name="NewsMenu" type="Control" parent="." unique_id=2121891766]
+visible = false
 anchors_preset = 0
 offset_left = -947.0
 offset_top = -518.0
@@ -2048,6 +2049,52 @@ script = ExtResource("6_fj5cn")
 [node name="Tutorial" parent="." unique_id=1340638950 instance=ExtResource("24_v61lp")]
 visible = false
 layout_mode = 1
+
+[node name="GraphEdit" type="GraphEdit" parent="." unique_id=356089273]
+layout_mode = 0
+offset_left = -357.0
+offset_top = -513.0
+offset_right = 108.44208
+offset_bottom = 51.598755
+scroll_offset = Vector2(-6.156616, -3.218872)
+connection_lines_thickness = 6.7
+minimap_enabled = false
+
+[node name="GraphFrame" type="GraphFrame" parent="GraphEdit" unique_id=317827560]
+layout_mode = 0
+offset_left = 6.156616
+offset_top = 3.218872
+offset_right = 471.5987
+offset_bottom = 567.8176
+mouse_filter = 1
+
+[node name="GraphElement" type="GraphElement" parent="GraphEdit/GraphFrame" unique_id=989968743]
+layout_mode = 2
+
+[node name="GraphNode2" type="GraphNode" parent="GraphEdit/GraphFrame/GraphElement" unique_id=1203809658]
+layout_mode = 2
+title = "B"
+
+[node name="GraphElement2" type="GraphElement" parent="GraphEdit/GraphFrame" unique_id=1344870652]
+layout_mode = 2
+
+[node name="GraphNode2" type="GraphNode" parent="GraphEdit/GraphFrame/GraphElement2" unique_id=1461156431]
+layout_mode = 2
+title = "B"
+
+[node name="GraphElement3" type="GraphElement" parent="GraphEdit/GraphFrame" unique_id=735130973]
+layout_mode = 2
+
+[node name="GraphNode2" type="GraphNode" parent="GraphEdit/GraphFrame/GraphElement3" unique_id=577085717]
+layout_mode = 2
+title = "B"
+
+[node name="GraphElement4" type="GraphElement" parent="GraphEdit/GraphFrame" unique_id=72258511]
+layout_mode = 2
+
+[node name="GraphNode2" type="GraphNode" parent="GraphEdit/GraphFrame/GraphElement4" unique_id=1568088083]
+layout_mode = 2
+title = "B"
 
 [connection signal="determineNews" from="." to="NewsMenu" method="determineTodaysNews"]
 [connection signal="drawNewsScreen" from="." to="NewsMenu" method="loadNewsScreen"]
