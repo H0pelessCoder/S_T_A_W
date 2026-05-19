@@ -21,6 +21,7 @@ func _ready() -> void:
 	spacing = set_spacing
 func _physics_process(delta):
 	time += delta
+	print(change_speed)
 	r_amp = move_toward(r_amp, amp, change_speed * delta)
 	for i in points.size():
 		var sin_time = time * speed + i

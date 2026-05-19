@@ -305,7 +305,7 @@
 		"Sphere" : {
 			"Title" : "Sphere",
 			"NewsTitle" : "Mysterious Object off the Coast of Praxtoria",
-			"NewsFull" : "\t[i]-By Alexandrovitch Katenka Afanasievna\nHealth & Lifestyle Correspondant[/i]\n\n\tA strange, oblong sphere that is 3 meters by 2 meters was discovered off the coast of Paxtoria. The vessel, a shining brilliant white was found by local fisherman in the Matthins barony of southern Kaddia, originally the father-son duo who found the object believed it to be a large rare pearl, that could be valued at well over $4 million pax. But when they turned it in to the local authorities, an appraiser discovered that in fact it was made of the incredibly rare and expensive alloy Vandium Steel, however Vandium isn't buoyant, so speculation has circulated that the object might be an Alien spaceship or even a secret government project. Dr Dain, host of the highly controversial and loved show[i] Ancient History, [/i] had the following to say on the mystery in an interview with PNN. \"The device- mind you device, no one hides Vandium Steel in the ocean without an expectation it'll do something- tracks with my theories on the ancient continent of Lemuria. The Lemurians, an ancient people with technology far more advanced then ours today likely hid the device in order to subdue our innate telepathic Chi-Waves in order to facilitate a future Lemurian invasion.\" With theories like this one abounding, its no wonder the sphere has been the subject of much governmental interest. Recently, the Matthins Museum of Culture and Anthropology announced they'd be exhibiting it, but no date has yet been announced.",
+			"NewsFull" : "\t[i]-By Alexandrovitch Katenka Afanasievna\nHealth & Lifestyle Correspondant[/i]\n\n\tA strange, oblong sphere that is 3 meters by 2 meters was discovered off the coast of Paxtoria. The vessel, a shining brilliant white was found by local fisherman in the Matthins barony of southern Kaddia, originally the father-son duo who found the object believed it to be a large rare pearl, that could be valued at well over $4 million pax. But when they turned it in to the local authorities, an appraiser discovered that in fact it was made of the incredibly rare and expensive alloy Vandium Steel, however Vandium isn't buoyant, so speculation has circulated that the object might be an Alien spaceship or even a secret government project. Dr Dain, host of the highly controversial and loved show[i] Ancient History, [/i] had the following to say on the mystery in an interview with PNN. \"The device- mind you device, no one hides Vandium Steel in the ocean without an expectation it'll do something- tracks with my theories on the ancient continent of Lemuria. The Lemurians, an ancient people with technology far more advanced then ours today likely hid the device in order to subdue our innate telepathic Chi-Waves in order to facilitate a future Lemurian invasion.\" With theories like this one abounding, its no wonder the sphere has been the subject of much governmental interest. Recently, the Matthins Museum of Culture and Anthropology announced they'd be exhibiting it, but the day of opening is still to be determined.",
 			"Next" : {},
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
@@ -346,7 +346,7 @@
 		"Pirates" : {
 			"Title" : "Pirates",
 			"NewsTitle" : "Pirate Attack on Flaeton Shipping!",
-			"NewsFull" : "A pirate fleet consisting of 8 ships, multiple over 300m in length attacked a Flaeton Shipping convoy valued at well over $130 Million Pax. Cautiously, Flaeton shipping has begun negotiations for the return of the ships and goods, especially the wheat shipment to Paxtoria.",
+			"NewsFull" : "\t[i]-By Astrid Raveana\nBuisness Corespondant[/i]\n\n\tNegotiations are ongoing for a large scale pirate attack off the coast of Shritai on a grain convoy sent by Flaeton Shipping to Mercatoria. The pirates- a group called the Sat Sassri, a local Sassari name meaning \"The Sea Citizens\"- have been in recent months escalating attacks on shipping convoys going through the vital Patrian strait, which is set only slightly behind the border between Shritai and Patrieus. Ammar Zekkal, representative of the Intercontinental Merchants Union voices his concern over piracy in the region. \"In 2034, there were 80 attacks on merchant vessels in the region- this year that number has ballooned to over 400. While representitives have been in touch with both Patrian and Shritain officials, neither state have proved responsive to our concerns. Next year, projections show that attacks will reach over 1000. As long as the local monarchies prove too weak to demonstrate control over the strait- which over 20% of all intercontinental trade goes through- the Intercontinental community will have to endure trade disruptions and increased prices on the shelves.\" On that note, various ICA officials have already offered naval aid to Patrieus, but the aloof theocracy remains adamant that an international prescense will be met with military force.",
 			"Next" : {},
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
@@ -355,11 +355,93 @@
 			"Done" : false,
 			"Image" : "",
 			"Effects" : {
-				"Industries" : {},
 				"Market" : 	{
-						"Velocity" : 1,
-						"Variance" : 1
+					"Velocity" : 0.98,
+					"Variance" : 1.1
 				},
+				"Industries" : {
+					"Shipping" : {
+						
+						"Effects" : {
+							"Velocity" : 0.85,
+							"Variance" : 1.2
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 1.05,
+									"Variance" : 1.2
+								},
+								
+								{
+									"Velocity" : 0.95,
+									"Variance" : 0.9
+								}
+							
+						]
+					},
+					"Electricity" : {
+						
+						"Effects" : {
+							"Velocity" : 0.95,
+							"Variance" : 1.05
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 0.98,
+									"Variance" : 1.1
+								},
+								
+								{
+									"Velocity" : 1.1,
+									"Variance" : 1
+								}
+							
+						]						
+					},
+					"Food" : {
+						
+						"Effects" : {
+							"Velocity" : 0.95,
+							"Variance" : 1.05
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 1.04,
+									"Variance" : 1
+								},
+								
+								{
+									"Velocity" : 0.98,
+									"Variance" : 1.2
+								}
+							
+						]						
+					},
+					"Weapons" : {
+						
+						"Effects" : {
+							"Velocity" : 1.05,
+							"Variance" : 1.05
+						},
+						
+						"Stocks" : [
+								{
+									"Velocity" : 0.96,
+									"Variance" : 1.1
+								},
+								
+								{
+									"Velocity" : 1.02,
+									"Variance" : 1.1
+								}
+							
+						]						
+					}
+				}
+
 			}
 		}
 		}

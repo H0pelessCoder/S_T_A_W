@@ -50,7 +50,6 @@ script = ExtResource("1_0fbet")
 position = Vector2(-2, -4)
 
 [node name="MainMenu" type="Control" parent="." unique_id=962578855]
-visible = false
 anchors_preset = 0
 offset_left = -947.0
 offset_top = -526.0
@@ -1059,6 +1058,7 @@ offset_bottom = 568.0
 mouse_filter = 2
 
 [node name="TradingMenu" type="Control" parent="." unique_id=694765132]
+visible = false
 anchors_preset = 0
 offset_left = -943.0
 offset_top = -518.0
@@ -1713,13 +1713,13 @@ color = Color(0, 0, 0, 1)
 
 [node name="Line2D" type="Line2D" parent="TradingMenu/Chi-Wave" unique_id=60311877]
 z_index = 1
-position = Vector2(757.65686, 597.1361)
-scale = Vector2(7.784198, 35.269005)
-points = PackedVector2Array(0.999, 0.62096, 1, 0.033292353, 2, 0.305885, 3, 0.8302661, 4, 1.2572801, 5, 1.1642363, 6, 0.45089707, 7, -0.52287805, 8, -1.1955191, 9, -1.2383459, 10, -0.7868152, 11, -0.2731785, 12, -0.024880448, 13, 0.0010418877, 14, 0.11204863, 15, 0.51630753, 16, 1.0553511, 17, 1.2975707, 18, 0.91936946, 19, 0.027380005, 20, -0.88054734, 21, -1.2941701, 22, -1.080519, 23, -0.5455981, 24, -0.12621868, 25, -0.0018609222, 25.001, -0.0018609222)
+position = Vector2(755.41986, 594.9157)
+scale = Vector2(7.7134976, 13.921686)
+points = PackedVector2Array(0.999, 0.12700278, 1, 0.10927003, 2, 0.46045408, 3, 0.22781779, 4, -0.3642075, 5, -0.8340894, 6, -0.864667, 7, -0.5364868, 8, -0.18278547, 9, -0.029742297, 10, 0.022333298, 11, 0.2655761, 12, 0.83040965, 13, 1.4615812, 14, 1.6637994, 15, 1.1135269, 16, -0.02462815, 17, -1.1701694, 18, -1.742563, 19, -1.5721605, 20, -0.9640295, 21, -0.38237128, 22, -0.05474439, 23, 0.150646, 24, 0.48826176, 25, 0.990485, 25.001, -1.1766334)
 width = 0.1
 default_color = Color(0, 1, 1, 1)
 script = ExtResource("18_w5605")
-change_speed = null
+speed = 5.0
 
 [node name="ProfitScreen" type="Control" parent="." unique_id=1415367012]
 visible = false
