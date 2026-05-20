@@ -96,11 +96,9 @@
 		"BorderWar" : {
 			"Title" : "BorderWar",
 			"NewsTitle" : "Ambernesia and Drastara clash at Minthol",
-			"NewsFull" : "\t[i]-By Jorge Alejandro\nPolitics Correspondant[/i]\n\n\tMembers of the radical far right militia operating in the northeast of Drastara, the Rozbójnik Osin, earlier today opened fire on an Ambernesian national guard patrol near the city of Minthol. The city, the former capital of Drastara before the war of Ambernesian Independance, has become a source of renewed tensions in recent months after Ambenesian President Milos Bercha announced the 'liberation' of the city as chief concern in his reelection campaign. This is not the first time shots have been fired over the 450,000 population city. Following the end of the second intercontinental war, Ambernesian forces, who sided with the Concordat to fight against the Southern Alliance which Drastara was a part of, refused to end their occupation of the city. In response, Drastaran terror campaigns for months drained Ambernesia's grip on the region until the state peacefully withdrew. After that, the battle for control over the city had raged in the halls of the ICA. Although the Ambernesian-Drastaran peace treaty drafted now almost a hundred years ago in 1928 did call for 'deoccupation' of the city by the occuping Ambernesian forces, the vaugeness of the exact terms left room for both states ot interpret the issue of ownership at will. Although since then ICA legislation has ruled against past Ambernesian ambition, as Drastara shifts further torwards Xiadia and against the ICA it remains to be seen whether the ICA's priorities will shift on the issue.",
+			"NewsFull" : "\t[i]-By Jorge Alejandro\nPolitics Correspondant[/i]\n\n\tMembers of the radical far right militia operating in the northeast of Drastara, the Rozbójnik Osin, earlier today opened fire on an Ambernesian national guard patrol near the city of Minthol. The city, the former capital of Drastara before the war of Ambernesian Independance, has become a source of renewed tensions in recent months after Ambenesian President Milos Bercha announced the 'liberation' of the city as chief concern in his reelection campaign. This is not the first time shots have been fired over the 450,000 population city. Following the end of the second intercontinental war, Ambernesian forces, who sided with the Concordat to fight against the Southern Alliance which Drastara was a part of, refused to end their occupation of the city. In response, Drastaran terror campaigns for months drained Ambernesia's grip on the region until the state peacefully withdrew. After that, the battle for control over the city had raged in the halls of the ICA. Although the Ambernesian-Drastaran peace treaty drafted now almost a hundred years ago in 1952 did call for 'deoccupation' of the city by the occuping Ambernesian forces, the vaugeness of the exact terms left room for both states ot interpret the issue of ownership at will. Although since then ICA legislation has ruled against past Ambernesian ambition, as Drastara shifts further torwards Xiadia and against the ICA it remains to be seen whether the ICA's priorities will shift on the issue.",
 			"Next" : {
-				"EmbassyBombed" : 0.25,
-				"TroopMovement" : 0.5,
-				"Descalation" : 0.25
+				"EmbassyBombed" : 1.0
  			},
 			"Prev" : [],
 			"Mutually_Exclusive" : [],
@@ -183,12 +181,13 @@
 		"EmbassyBombed" : {
 			"Title" : "EmbassyBombed",
 			"NewsTitle" : "The Ambernesian Embassy in Drastara bombed!",
-			"NewsFull" : "\t[i]-By Jorge Alejandro\nPolitics Correspondant[/i]\n\n\tSince 1996, Ambernesia has maintained an embassy in the Drastaran city of Zhelmov, however early last morning several large truck mounted bombs detonated outside of the 15-story diplomatic center. The explosions, estimated to have killed around 12 people and injured hundreds more, caused severe damage to the building and the surrounding area. The Rozbójnik Osin, a far right Drastran milita group who largely control the city and the north-eastern side of Drastara, have already claimed responsibility for the incident and have promised further military actions against the state of Ambernesia. This event has followed several other aggressive actions by the militia, last saturday an incident involving Ambernesian national guardsmen near Minthol escalated into a deadly shooting. Since then, military buildup in Minthol has escalated, with neither side claiming responsibility for the incident. Now, with the open act of hostility against Ambernesia, the Rozbójnik Osin seem to be preparing for a full blown war with Ambernesia. Although the Drastaran president, Igor Ivanovitch, has not made an official statement regarding the incident, Ambernesian president Milos Bercha has already condemned the attack and declared it an \"Act of unprovoked hostility\" in a speech given to reporters shortly after the bombing.",
+			"NewsFull" : "\t[i]-By Jorge Alejandro\nPolitics Correspondant[/i]\n\n\tSince 1996, Ambernesia has maintained an embassy in the Drastaran city of Zhelmov, however early last morning several large truck mounted bombs detonated outside of the 15-story diplomatic center. The explosions, estimated to have killed around 12 people and injured hundreds more, caused severe damage to the building and the surrounding area. The Rozbójnik Osin, a far right Drastran milita group who largely control the city and the north-eastern side of Drastara, have already claimed responsibility for the incident and have promised further military actions against the state of Ambernesia. This event has followed several other aggressive actions by the militia, last saturday an incident involving Ambernesian national guardsmen near Minthol escalated into a deadly shooting. Since then, military buildup in Minthol has escalated, with neither side claiming responsibility for the incident. Now, with the open act of hostility against Ambernesia, the Rozbójnik Osin seem to be preparing for a full blown war with Ambernesia. Although the Drastaran president, Igor Ivanovitch, has not made an official statement regarding the incident, Ambernesian president Milos Bercha has already condemned the attack and declared it an \"Act of unprovoked hostility\" in a speech given to reporters shortly after the bombing. Milos Bercha in that same speech promised to \"Rescue the Ambernesians still trapped in the illegally occupied city of Minthol\"",
 			"Next" : {
-				"TroopMovement" : 1.0
+				"TroopMovement" : 1.0,
+				"EmbassyBombed" : 1.0
  			},
 			"Prev" : ["BorderWar"],
-			"Mutually_Exclusive" : ["Descalation"],
+			"Mutually_Exclusive" : [],
 			"Type": "Super",
 			"Day": 0,
 			"Done" : false,
@@ -226,9 +225,9 @@
 		"TroopMovement" : {
 			"Title" : "TroopMovement",
 			"NewsTitle" : "Mass Moblization in both Drastara and Ambernesia",
-			"NewsFull" : "\t[i]-By Jorge Alejandro\nPolitics Correspondant[/i]\n\n\tThe city of Minthol, a longterm strategic goal for both Ambernesian and Drastaran heads of state for multiple decades now is seeing renewed concentrations of troops. ",
+			"NewsFull" : "\t[i]-By Jorge Alejandro\nPolitics Correspondant[/i]\n\n\tThe city of Minthol, a longterm strategic goal for both Ambernesian and Drastaran heads of state for multiple decades now is seeing a renewed concentrations of troops. Both the Rozbójnik Osin and Ambernesian First Infantry Division have arrived en masse in the suburbs surrounding the population centre in numbers well over 40,000. The city, a former defensive spoke in the Drastaran \"Great Defense Work\" circa 1992 has been fortified by Drastaran forces all the way up until 2029. However, Ambernesia holds a key claim to the city, the 1952 ICA charter which called for 'Deoccupation' of the city by Ambernesian forces following the first Ambernesian-Drastaran war left the exact terms of the 'Deoccupation' vauge. Since then, Ambernesia has repeatedly attempted to legally acquire the city via the ICA, however after the latest attempt following the bombing of the Drastaran city of Zhelmov's Ambernesian Embassy, they appear to be ramping up for a more direct approach to acquiring the city.",
 			"Next" : {},
-			"Prev" : ["BorderWar"],
+			"Prev" : ["EmbassyBombed"],
 			"Mutually_Exclusive" : ["Descalation"],
 			"Type": "Super",
 			"Day": 0,
@@ -244,11 +243,11 @@
 		},
 		"Descalation" : {
 			"Title" : "Descalation",
-			"NewsTitle" : "Peace Talks Between Ambernesia and Drastara",
-			"NewsFull" : "Peace summits at the ICA headquarters have begun. Although the area around Minthol remains dangerous, our on the ground reporter is adamant that the situation is descelating",
+			"NewsTitle" : "Ambernesia acquires Minthol",
+			"NewsFull" : "\t[i]-By Jorge Alejandro\nPolitics Correspondant[/i]\n\n\tFollowing the bombing of the Ambernesian embassy in the Drastaran city of Zhelmov, Ambernesia was allowed to by the ICA to assert control over Minthol. The city- a bastion for Drastara and according to Ambernesian politicans an illegaly occupied Ambernesian city- historically has been the source of tension between the two countries. Following a vauge 1952 peace deal between the two states which called for an Ambernesian 'Deoccupation' of the city, Ambernesia has long argued that the city should be legally theirs, and has refused to acknowledge Drastaran ownership of it. However, following a devestating bombing of the Ambernesian embassy in Zhelmov the ICA has relinqushed their long held position on the debate and allowed Ambernesia to sieze control over the city. The First Ambernesian I.D has already responded by encamping in the city's historical urban core, the Park Krasnyy Kholm.",
 			"Next" : {},
-			"Prev" : ["BorderWar"],
-			"Mutually_Exclusive" : ["TroopMovement", "EmbassyBombed"],
+			"Prev" : ["EmbassyBombed"],
+			"Mutually_Exclusive" : ["TroopMovement"],
 			"Type": "Super",
 			"Day": 0,
 			"Done" : false,

@@ -26,8 +26,11 @@ func determineTodaysNews():
 	if(global.profile["userName"] == "Admin"):
 		happeningEvents = availableEvents
 	var eventsToProcess = availableEvents
+	print(pendingEvents)
 	chooseEvents(pendingEvents)
+	print(eventsToProcess)
 	chooseEvents(eventsToProcess)
+	print(happeningEvents)
 	processEffects()
 	global.save()
 	loadNewsScreen()
@@ -93,7 +96,7 @@ static func sortEvents(Events):
 #Takes String
 func isEventAllowed(event):
 	event = getEvent(event)
-	if event["Day"] < global.day:
+	if event["Day"] > global.day:
 		return false
 	for exclusive in event["Mutually_Exclusive"]:
 		exclusive = getEvent(exclusive)

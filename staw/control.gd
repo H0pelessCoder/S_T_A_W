@@ -3,6 +3,7 @@ class_name global
 signal determineNews
 signal drawStockMenu
 signal drawTradingMenu
+signal resetChi
 signal drawSaveScreen
 signal drawNewsScreen
 signal drawProfitScreen
@@ -128,7 +129,7 @@ func _on_timer_timeout() -> void:
 	$ProfitScreen.visible = true
 	$TradingMenu.visible = false
 	emit_signal("determineNews")	
-	
+	emit_signal("resetChi")
 	#This will lead to profit screen and stuff
 	## INITS THE TRADING SECTION ##		
 func _on_start_day() -> void:

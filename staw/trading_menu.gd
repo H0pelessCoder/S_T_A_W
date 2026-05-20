@@ -84,3 +84,17 @@ func _on_sub_timer_timeout() -> void:
 			x+=1
 	makeStockScreen()
 	$subTimer.start()
+
+
+func _on_trade() -> void:
+	var chiWave = $"Chi-Wave/Wave"
+	var currHealth = chiWave.get_material().get_shader_parameter("health_pct")
+	chiWave.get_material().set_shader_parameter("health_pct", currHealth-0.16)
+	var currFreq = chiWave.get_material().get_shader_parameter("frequency")
+	chiWave.get_material().set_shader_parameter("frequency", currFreq+0.6)	
+
+func reset_Chi_Wave() -> void:
+	var chiWave = $"Chi-Wave/Wave"
+	chiWave.get_material().set_shader_parameter("health_pct", 1)
+	chiWave.get_material().set_shader_parameter("frequency", 4)	
+	

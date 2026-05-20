@@ -1,5 +1,5 @@
 extends Button
-
+signal trade
 
 func _on_pressed() -> void:
 	var industry = global.currentIndustry
@@ -11,4 +11,5 @@ func _on_pressed() -> void:
 	$"../../StockBText/Blocker".visible = true
 	stock["savedStockPoint"] = stock["timeFrame"][13]
 	stock["typeOfInvestment"] = get_meta("typeOfInvestment")
+	emit_signal("trade")
 	

@@ -20,10 +20,10 @@
 [ext_resource type="Script" uid="uid://5r4fex7aa8ji" path="res://trading_menu.gd" id="17_oq4si"]
 [ext_resource type="Script" uid="uid://c4pyj6kvejgrj" path="res://timer_text.gd" id="18_m4egf"]
 [ext_resource type="Script" uid="uid://dpg5ox7knjge5" path="res://buy_button.gd" id="18_pi4e7"]
-[ext_resource type="Script" uid="uid://65l7wtxa0cco" path="res://chi_wave_drawerer.gd" id="18_w5605"]
 [ext_resource type="Script" uid="uid://baeqi3mntw288" path="res://profit_screen.gd" id="20_3fl80"]
 [ext_resource type="FontFile" uid="uid://bq712651mp56e" path="res://src/fonts/jejakrupa-regular.otf" id="20_kuuv8"]
 [ext_resource type="Script" uid="uid://bhm2h4w7lchke" path="res://signing_activator.gd" id="21_ou021"]
+[ext_resource type="Shader" uid="uid://bik45jmmrwp48" path="res://heart_beat.gdshader" id="21_w5605"]
 [ext_resource type="Script" uid="uid://dk5ypn0pfkhxg" path="res://return_news_button.gd" id="24_2pj6v"]
 [ext_resource type="Script" uid="uid://brnyk1tq1bm1f" path="res://save_screen.gd" id="24_858bn"]
 [ext_resource type="PackedScene" uid="uid://ffdqr6ameryy" path="res://tutorial.tscn" id="24_v61lp"]
@@ -36,6 +36,16 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kbped"]
 load_path = "res://.godot/imported/settings_icon.png-2aec0f18b1e0fd16c56ba34ef69ef014.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_87wg0"]
+shader = ExtResource("21_w5605")
+shader_parameter/health_pct = 1.0
+shader_parameter/scan_speed = 0.5
+shader_parameter/thickness = 0.015
+shader_parameter/ball_size = 0.0
+shader_parameter/frequency = 4.0
+shader_parameter/amplitude = 0.5
+shader_parameter/trail_length = 4.0
 
 [node name="Main" type="Control" unique_id=2053659831]
 layout_mode = 3
@@ -1694,32 +1704,28 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="TradingMenu/Chi-Wave" unique_id=1310666994]
-layout_mode = 0
-offset_left = 764.6548
-offset_top = 549.1479
-offset_right = 951.201
-offset_bottom = 645.0717
-color = Color(0.20871016, 0.20871013, 0.2087102, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="TradingMenu/Chi-Wave" unique_id=324059388]
+[node name="Monitor" type="ColorRect" parent="TradingMenu/Chi-Wave" unique_id=324059388]
 z_index = -1
 layout_mode = 0
-offset_left = 763.42346
-offset_top = 547.21655
-offset_right = 953.6637
-offset_bottom = 647.6469
+offset_left = 764.0391
+offset_top = 546.57275
+offset_right = 952.4324
+offset_bottom = 647.0031
 color = Color(0, 0, 0, 1)
 
-[node name="Line2D" type="Line2D" parent="TradingMenu/Chi-Wave" unique_id=60311877]
-z_index = 1
-position = Vector2(755.41986, 594.9157)
-scale = Vector2(7.7134976, 13.921686)
-points = PackedVector2Array(0.999, 0.12700278, 1, 0.10927003, 2, 0.46045408, 3, 0.22781779, 4, -0.3642075, 5, -0.8340894, 6, -0.864667, 7, -0.5364868, 8, -0.18278547, 9, -0.029742297, 10, 0.022333298, 11, 0.2655761, 12, 0.83040965, 13, 1.4615812, 14, 1.6637994, 15, 1.1135269, 16, -0.02462815, 17, -1.1701694, 18, -1.742563, 19, -1.5721605, 20, -0.9640295, 21, -0.38237128, 22, -0.05474439, 23, 0.150646, 24, 0.48826176, 25, 0.990485, 25.001, -1.1766334)
-width = 0.1
-default_color = Color(0, 1, 1, 1)
-script = ExtResource("18_w5605")
-speed = 5.0
+[node name="Wave" type="ColorRect" parent="TradingMenu/Chi-Wave" unique_id=2117213194]
+material = SubResource("ShaderMaterial_87wg0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 765.2705
+offset_top = 545.28516
+offset_right = 912.43243
+offset_bottom = 606.3593
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.71426857, 0.14437675, 0.47617573, 1)
 
 [node name="ProfitScreen" type="Control" parent="." unique_id=1415367012]
 visible = false
@@ -2088,6 +2094,7 @@ layout_mode = 1
 [connection signal="drawSaveScreen" from="." to="SaveScreen" method="drawSaveScreen"]
 [connection signal="drawStockMenu" from="." to="StockMenu" method="makeStockScreen"]
 [connection signal="drawTradingMenu" from="." to="TradingMenu" method="makeStockScreen"]
+[connection signal="resetChi" from="." to="TradingMenu" method="reset_Chi_Wave"]
 [connection signal="pressed" from="MainMenu/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/SettingsOpener" to="MainMenu/SettingsOpener" method="_on_pressed"]
 [connection signal="pressed" from="MainMenu/LoadGame" to="." method="_on_load_game_pressed"]
@@ -2211,9 +2218,13 @@ layout_mode = 1
 [connection signal="mouse_entered" from="TradingMenu/StockBGraph/14" to="TradingMenu/StockBGraph/14" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TradingMenu/StockBGraph/14" to="TradingMenu/StockBGraph/14" method="_on_mouse_exited"]
 [connection signal="pressed" from="TradingMenu/StockAText/BuyButton" to="TradingMenu/StockAText/BuyButton" method="_on_pressed"]
+[connection signal="trade" from="TradingMenu/StockAText/BuyButton" to="TradingMenu" method="_on_trade"]
 [connection signal="pressed" from="TradingMenu/StockAText/SellButton" to="TradingMenu/StockAText/SellButton" method="_on_pressed"]
+[connection signal="trade" from="TradingMenu/StockAText/SellButton" to="TradingMenu" method="_on_trade"]
 [connection signal="pressed" from="TradingMenu/StockBText/BuyButton" to="TradingMenu/StockBText/BuyButton" method="_on_pressed"]
+[connection signal="trade" from="TradingMenu/StockBText/BuyButton" to="TradingMenu" method="_on_trade"]
 [connection signal="pressed" from="TradingMenu/StockBText/SellButton" to="TradingMenu/StockBText/SellButton" method="_on_pressed"]
+[connection signal="trade" from="TradingMenu/StockBText/SellButton" to="TradingMenu" method="_on_trade"]
 [connection signal="mouse_entered" from="TradingMenu/StockAGraph/1" to="TradingMenu/StockAGraph/1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TradingMenu/StockAGraph/1" to="TradingMenu/StockAGraph/1" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="TradingMenu/StockAGraph/2" to="TradingMenu/StockAGraph/2" method="_on_mouse_entered"]
