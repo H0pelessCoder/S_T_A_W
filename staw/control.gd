@@ -15,6 +15,7 @@ static var gameStarted = false
 static var profile : Dictionary
 static var News : Dictionary
 static var currTime := -1
+static var quota = 0
 
 func _on_button_pressed():
 	if is_instance_valid(global.profile):
@@ -31,6 +32,7 @@ static func save():
 	
 	global.profile["day"] = global.day
 	global.profile["money"] = global.money
+	global.profile["quota"] = global.quota
 	global.profile["stocks"] = global.Industries
 	global.profile["events"] = global.News
 	global.profile["availableEvents"] = eventController.availableEvents
@@ -55,6 +57,7 @@ func loadGame():
 	global.money = global.profile["money"]
 	global.Industries = global.profile["stocks"]
 	global.News = global.profile["events"]
+	global.quota = global.profile["quota"]
 	eventController.availableEvents = global.profile["availableEvents"]
 	eventController.pendingEvents = global.profile["pendingEvents"]
 	eventController.happeningEvents = global.profile["happeningEvents"]

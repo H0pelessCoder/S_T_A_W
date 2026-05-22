@@ -29,7 +29,7 @@ func drawSaveScreen():
 		newProfileSelector.set_meta("saveName", profile["userName"])
 		newProfileName.text = profile["userName"]
 		newProfileDay.text = str(profile["day"] + 1)
-		newProfileMoney.text = str(profile["money"])
+		newProfileMoney.text = str(profile["money"]) + "/" + str(profile["quota"])
 		newProfileDate.text = str(profile["date"])
 		saveSlots.add_child(newProfile)
 		newProfile.visible = true
