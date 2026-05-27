@@ -8,7 +8,8 @@ signal drawSaveScreen
 signal drawNewsScreen
 signal drawProfitScreen
 static var money = 0
-static var day := -1
+static var day := 0
+static var maxDay := 2
 static var currentIndustry := "Shipping"
 static var Industries : Dictionary
 static var gameStarted = false
@@ -123,7 +124,7 @@ static func calculateStockChange(Stock):
 
 	## ONCE THE TRADING SECTION IS OVER ##
 func _on_timer_timeout() -> void:
-
+		
 	 # Replace with function body.
 	print("TIMEOUT!!!!!")
 	#self.visible = true
@@ -131,6 +132,9 @@ func _on_timer_timeout() -> void:
 	emit_signal("drawProfitScreen")
 	$ProfitScreen.visible = true
 	$TradingMenu.visible = false
+	global.day += 1
+	if(day >= maxDay):
+		return		
 	emit_signal("determineNews")	
 	emit_signal("resetChi")
 	#This will lead to profit screen and stuff

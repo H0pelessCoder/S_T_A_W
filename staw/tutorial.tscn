@@ -431,7 +431,7 @@ offset_top = 580.0
 offset_right = 2496.0
 offset_bottom = 1305.0
 theme_override_font_sizes/font_size = 32
-text = "The Paxtoria Trading Company is one of the most prestigious companies in Paxtoria. As a share trader here, we expect you to trade responsibly and earn a consistent 5% APY, however if your performance is expectional you can be expected to earn more. Additional bonuses may be discussed after your probation period ends in 7 days. Until then, you are free to begin. "
+text = "The Paxtoria Trading Company is one of the most prestigious companies in Paxtoria. As a share trader here, we expect you to trade responsibly and earn a consistent 5% APY, however if your performance is expectional you can be expected to earn more. Additional bonuses may be discussed after your probation period ends in 7 days. When you enter, be sure to read the company newspaper, check stock descriptions and predict the market. Quick refresher if you forgot it by the way, taking a long position on a stock means you'll earn money if it goes up, taking a short position does the opposite. Anyways, feel free to begin."
 autowrap_mode = 3
 
 [node name="EmailExit" type="Button" parent="EmailScreen" unique_id=1196767331]

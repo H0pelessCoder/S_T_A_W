@@ -14,7 +14,7 @@ func _on_pressed():
 	var x = 1
 	while x < Signature.text.length()+1:
 		Signature.visible_characters = x
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.1).timeout
 		x+=1
 	get_node(returnButton).visible = true
 

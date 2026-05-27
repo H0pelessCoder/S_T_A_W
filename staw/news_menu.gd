@@ -21,7 +21,6 @@ static var eventsToTest = {"Super": [], "Major": [], "Minor": []}
 func determineTodaysNews():
 	happeningEvents = eventFormat()
 	currEffects = {}
-	global.day += 1
 	var Events = global.News["Events"]
 	if(global.profile["userName"] == "Admin"):
 		happeningEvents = availableEvents

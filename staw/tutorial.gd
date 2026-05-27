@@ -11,10 +11,11 @@ func beginGame():
 	global.instantiateNews()
 	global.profile = {
 		"userName" : $"NamePicker/SigningBox/NameInputer".text,
-		"day" : -1,
+		"day" : 0,
 		"money" : 0,
 		"date" : dateString,
 		"stocks" : global.Industries,
+		"quota" : 0,
 		"events" : global.News,
 		"availableEvents" : eventController.availableEvents,
 		"pendingEvents" : eventController.eventFormat(),
