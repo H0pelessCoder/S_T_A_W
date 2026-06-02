@@ -15,7 +15,7 @@ func drawIndustrySelectors():
 		
 		var industry = Industries[Industries.keys()[currentIndustryPosition + x]]
 		var pchange = percentChange(industry)
-		var industryShort = industry["industryShort"]
+		var industryShort = industry["industryName"]
 		selector.text = industryShort + "\n" + str(snapped(pchange,0.1)) + "%"
 		x+=1
 	var globalpchange = globalPercentChange()

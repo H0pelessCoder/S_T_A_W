@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://di3tdqeh5eul2" path="res://next.gd" id="3_ehuit"]
 [ext_resource type="Script" uid="uid://8m3uvu7c8fke" path="res://next_page.gd" id="4_rwowx"]
 [ext_resource type="Script" uid="uid://bhm2h4w7lchke" path="res://signing_activator.gd" id="5_hu44a"]
+[ext_resource type="Texture2D" uid="uid://csfkulc2rwtta" path="res://src/images/stockscreen.png" id="6_hu44a"]
 
 [node name="Tutorial" type="Control" unique_id=1340638950]
 layout_mode = 3
@@ -16,6 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_5mrt3")
 
 [node name="NamePicker" type="Control" parent="." unique_id=19705131]
+visible = false
 anchors_preset = 0
 offset_left = -708.0
 offset_top = 426.0
@@ -329,7 +331,6 @@ text = "X"
 flat = true
 
 [node name="EmailScreen" type="Control" parent="." unique_id=477486364]
-visible = false
 anchors_preset = 0
 offset_left = -1597.0
 offset_top = -768.0
@@ -353,6 +354,7 @@ offset_bottom = 1430.0
 color = Color(0.15686275, 0.15686275, 0.15686275, 0.58431375)
 
 [node name="Email" type="Control" parent="EmailScreen" unique_id=1227166579]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -443,6 +445,56 @@ offset_right = 793.0
 offset_bottom = 356.0
 theme_override_font_sizes/font_size = 64
 text = "X"
+
+[node name="ImageViewer" type="Control" parent="EmailScreen" unique_id=1447749046]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="EmailScreen/ImageViewer" unique_id=1467023268]
+layout_mode = 0
+offset_left = 876.0
+offset_top = 363.0
+offset_right = 2567.352
+offset_bottom = 1314.0
+texture = ExtResource("6_hu44a")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="EmailScreen/ImageViewer" unique_id=2058664121]
+layout_mode = 0
+offset_left = 2048.0
+offset_top = 418.0
+offset_right = 2224.0
+offset_bottom = 555.0
+theme_override_colors/font_color = Color(0.53986263, 1.0348111e-06, 2.8878452e-07, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "^ Percent change of the stock over the shown period"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="EmailScreen/ImageViewer" unique_id=1477137767]
+layout_mode = 0
+offset_left = 1348.0
+offset_top = 442.0
+offset_right = 1524.0
+offset_bottom = 579.0
+theme_override_colors/font_color = Color(0.53986263, 1.0348111e-06, 2.8878452e-07, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "^ This lets you learn more about each stock"
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="EmailScreen/ImageViewer" unique_id=28476940]
+layout_mode = 0
+offset_left = 1173.0
+offset_top = 1300.0
+offset_right = 1868.0
+offset_bottom = 1437.0
+theme_override_colors/font_color = Color(0.53986263, 1.0348111e-06, 2.8878452e-07, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "Clicking these lets you select which industry you're viewing"
+autowrap_mode = 3
 
 [connection signal="text_changed" from="NamePicker/SigningBox/NameInputer" to="NamePicker/Next" method="_on_name_inputer_text_changed"]
 [connection signal="pressed" from="NamePicker/returnToMainMenu" to="." method="returnToMenu"]
