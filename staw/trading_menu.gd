@@ -31,9 +31,9 @@ func makeStockScreen():
 		var bar = get_node("StockAGraph/" + str(x+1))
 		bar.set_size(Vector2(35, (StockA["timeFrame"][x] - minimum) / scaleFactor ) ) 
 		if(StockA["timeFrame"][x-1] > StockA["timeFrame"][x]):
-			bar.color = Color("darkred")	
+			bar.color = Color(1.157, 0.165, 0.242)	
 		elif(StockA["timeFrame"][x-1] < StockA["timeFrame"][x]):
-			bar.color = Color("darkgreen")	
+			bar.color = Color(0.0, 1.156, 0.379)	
 		
 		
 	for x in range(StockB["timeFrame"].size()):
@@ -43,9 +43,9 @@ func makeStockScreen():
 		
 		#coloring
 		if(StockB["timeFrame"][x-1] > StockB["timeFrame"][x]):
-			bar.color = Color("darkred")	
+			bar.color = Color(1.157, 0.165, 0.242)
 		elif(StockB["timeFrame"][x-1] < StockB["timeFrame"][x]):
-			bar.color = Color("darkgreen")	
+			bar.color = Color(0.0, 1.156, 0.379)
 		
 		if(StockA["savedStockPoint"] != 0 || StockB["savedStockPoint"] != 0):
 			$StockAText/Blocker.visible = true
@@ -53,7 +53,7 @@ func makeStockScreen():
 		else:
 			$StockAText/Blocker.visible = false
 			$StockBText/Blocker.visible = false
-			
+
 		emit_signal("drawStockSelectors")
 
 

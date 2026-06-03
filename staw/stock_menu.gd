@@ -33,9 +33,9 @@ func makeStockScreen():
 			break
 		bar.set_size(Vector2(35, (StockA["timeFrame"][x] - minimum) / scaleFactor ) ) 
 		if(StockA["timeFrame"][x-1] > StockA["timeFrame"][x]):
-			bar.color = Color("darkred")	
+			bar.color = Color(1.157, 0.165, 0.242)
 		elif(StockA["timeFrame"][x-1] < StockA["timeFrame"][x]):
-			bar.color = Color("darkgreen")	
+			bar.color = Color(0.0, 1.156, 0.379)
 		else:
 			bar.color = get_node("StockAGraph/" + str(x)).color
 		
@@ -48,9 +48,9 @@ func makeStockScreen():
 		
 		#coloring
 		if(StockB["timeFrame"][x-1] > StockB["timeFrame"][x]):
-			bar.color = Color("darkred")	
+			bar.color = Color(1.157, 0.165, 0.242)	
 		elif(StockB["timeFrame"][x-1] < StockB["timeFrame"][x]):
-			bar.color = Color("darkgreen")	
+			bar.color = Color(0.0, 1.156, 0.379)	
 		else:
 			bar.color = get_node("StockBGraph/" + str(x)).color		
 		emit_signal("drawStockSelectors")
