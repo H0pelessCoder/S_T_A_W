@@ -15,7 +15,6 @@ func makeStockScreen():
 	var maxHeight = $StockAGraph.size.y
 	var scaleFactor = (maximum - minimum) / maxHeight
 	var pchangeA = global.calculateStockChange(StockA)
-	
 	var pchangeB = global.calculateStockChange(StockB)
 	$StockAText/Title.text = StockA["stockShort"]
 	$StockAText/TitleShort.text = StockA["companyName"]

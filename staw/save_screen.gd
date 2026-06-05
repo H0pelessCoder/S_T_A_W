@@ -38,6 +38,8 @@ func selectSave(save):
 	currentSave = save
 	
 func deleteSave():
+	if(currentSave == ""):
+		return
 	var confirmationMessage = "You are about to delete the profile: " + currentSave
 	var confirmed = await confirm(confirmationMessage)
 	if confirmed == false:
@@ -50,8 +52,11 @@ func deleteSave():
 	saveFile.store_string(newJson)
 	saveFile.close()	
 	drawSaveScreen()
+	currentSave = ""
 	
 func loadSave():
+	if(currentSave == ""):
+		return
 	var confirmationMessage = "You are about to load the profile: " + currentSave
 	var confirmed = await confirm(confirmationMessage)
 	if confirmed == false:
@@ -61,7 +66,7 @@ func loadSave():
 	self.visible = false
 	global.profile = saves[currentSave]
 	emit_signal("loadGame")
-
+	currentSave = ""
 
 func confirm(confirmMessage):
 	confirmationScreen.visible = true

@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cj4hgckj6lw23" path="res://news_menu.gd" id="6_knq72"]
 [ext_resource type="Script" uid="uid://doikjrtifeshd" path="res://news_screen_mover.gd" id="7_iy58a"]
 [ext_resource type="Script" uid="uid://danx0ybhte6gs" path="res://stock_screen_mover.gd" id="8_6a6wx"]
+[ext_resource type="Texture2D" uid="uid://4fivmqbddf1k" path="res://src/images/dark_settings_icon.png" id="8_87wg0"]
 [ext_resource type="Script" uid="uid://bwx8rjvngreaf" path="res://stock_menu.gd" id="9_g31lc"]
 [ext_resource type="Script" uid="uid://b7iu4tsfe51uv" path="res://stockBar.gd" id="9_pxugv"]
 [ext_resource type="Script" uid="uid://d276l67lust3j" path="res://descriptionOpener.gd" id="9_sky72"]
@@ -71,6 +72,7 @@ script = ExtResource("1_0fbet")
 position = Vector2(-2, -4)
 
 [node name="MainMenu" type="Control" parent="." unique_id=962578855]
+visible = false
 anchors_preset = 0
 offset_left = -947.0
 offset_top = -526.0
@@ -296,7 +298,7 @@ offset_left = 25.0
 offset_top = 570.4375
 offset_right = 74.0
 offset_bottom = 621.7097
-icon = SubResource("CompressedTexture2D_kbped")
+icon = ExtResource("8_87wg0")
 expand_icon = true
 script = ExtResource("2_62e2m")
 
@@ -307,6 +309,7 @@ offset_left = 91.0
 offset_top = 570.0
 offset_right = 140.0
 offset_bottom = 621.2722
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
 expand_icon = true
 script = ExtResource("6_fj5cn")
@@ -336,9 +339,9 @@ z_index = 1
 clip_contents = false
 layout_mode = 0
 offset_left = -743.0
-offset_top = -399.0
+offset_top = -583.0
 offset_right = 757.0
-offset_bottom = 342.0
+offset_bottom = 365.0
 
 [node name="Horiz" type="BoxContainer" parent="NewsMenu/EventList" unique_id=326525427]
 layout_mode = 2
@@ -420,10 +423,11 @@ color = Color(1.353256, 1.353256, 1.353256, 1)
 
 [node name="BeginDayButton" type="Button" parent="NewsMenu" unique_id=436614942]
 layout_mode = 0
-offset_left = 986.2939
-offset_top = 596.1441
-offset_right = 1101.294
-offset_bottom = 627.1441
+offset_left = 1025.6964
+offset_top = 596.14417
+offset_right = 1140.6965
+offset_bottom = 627.14417
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Begin Day"
 script = ExtResource("10_xvdhi")
 

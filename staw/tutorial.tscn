@@ -5,8 +5,10 @@
 [ext_resource type="Script" uid="uid://di3tdqeh5eul2" path="res://next.gd" id="3_ehuit"]
 [ext_resource type="Script" uid="uid://8m3uvu7c8fke" path="res://next_page.gd" id="4_rwowx"]
 [ext_resource type="Script" uid="uid://bhm2h4w7lchke" path="res://signing_activator.gd" id="5_hu44a"]
+[ext_resource type="Script" uid="uid://2af5ytguplmm" path="res://Image_opener.gd" id="6_bhfnd"]
 [ext_resource type="Texture2D" uid="uid://csfkulc2rwtta" path="res://src/images/stockscreen.png" id="6_hu44a"]
 [ext_resource type="Texture2D" uid="uid://22laae5rufra" path="res://src/images/tradingscreen.png" id="7_0cr88"]
+[ext_resource type="Script" uid="uid://bdm1o8mdwdaax" path="res://image_exit.gd" id="7_7vrqn"]
 [ext_resource type="Texture2D" uid="uid://b0ttdr85rt3q2" path="res://src/images/newsscreen.png" id="8_4t6hg"]
 
 [node name="Tutorial" type="Control" unique_id=1340638950]
@@ -38,7 +40,6 @@ offset_left = -526.0
 offset_top = -46.0
 offset_right = 461.0
 offset_bottom = -18.138855
-color = Color(0, 0, 0, 1)
 
 [node name="SigningDirections" type="Label" parent="NamePicker/SigningBox" unique_id=1034959388]
 layout_mode = 0
@@ -46,7 +47,7 @@ offset_left = -193.0
 offset_top = -11.0
 offset_right = 84.0
 offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
 text = "Sign Here"
 
@@ -56,6 +57,7 @@ offset_left = -526.0
 offset_top = -252.0
 offset_right = 458.0
 offset_bottom = -52.92212
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_yb1ct")
 theme_override_font_sizes/font_size = 175
 placeholder_text = "Your Name"
@@ -66,7 +68,7 @@ offset_left = -879.0
 offset_top = -442.0
 offset_right = 740.0
 offset_bottom = -375.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 text = "Name Must be less then 20 characters and contain no special symbols"
 
@@ -332,6 +334,7 @@ text = "X"
 flat = true
 
 [node name="EmailScreen" type="Control" parent="." unique_id=477486364]
+visible = false
 anchors_preset = 0
 offset_left = -1597.0
 offset_top = -768.0
@@ -435,7 +438,7 @@ offset_top = 580.0
 offset_right = 2496.0
 offset_bottom = 1305.0
 theme_override_font_sizes/font_size = 32
-text = "The Paxtoria Trading Company is one of the most prestigious companies in Paxtoria. As a share trader here, we expect you to trade responsibly and earn a consistent 5% APY, however if your performance is expectional you can be expected to earn more. Additional bonuses may be discussed after your probation period ends in 7 days. When you enter, be sure to read the company newspaper, check stock descriptions and predict the market. Quick refresher if you forgot it by the way, taking a long position on a stock means you'll earn money if it goes up, taking a short position does the opposite. Anyways, feel free to begin."
+text = "The Paxtoria Trading Company is one of the most prestigious companies in Paxtoria. As a share trader here, we expect you to trade responsibly and earn a consistent 5% APY, however if your performance is expectional you can be expected to earn more. Additional bonuses may be discussed after your probation period ends in 7 days. When you enter, be sure to read the company newspaper, check stock descriptions and predict the market. Below you'll find a few company mandated refreshers for you if you need them, i'd reccomend you take a look at least. Without further ado, i wish you good luck, and enjoy the company pizza party on friday."
 autowrap_mode = 3
 
 [node name="Button" type="Button" parent="EmailScreen/TextViewer" unique_id=1093484746]
@@ -444,6 +447,36 @@ offset_left = 933.0
 offset_top = 1051.0
 offset_right = 941.0
 offset_bottom = 1059.0
+
+[node name="StockViewerEnter" type="Button" parent="EmailScreen/TextViewer" unique_id=1578661874]
+layout_mode = 0
+offset_left = 929.0
+offset_top = 1104.0
+offset_right = 1219.0
+offset_bottom = 1146.0
+theme_override_font_sizes/font_size = 24
+text = "StockScreenTutorial.png"
+script = ExtResource("6_bhfnd")
+
+[node name="TradeViewerEnter" type="Button" parent="EmailScreen/TextViewer" unique_id=199612552]
+layout_mode = 0
+offset_left = 1320.0
+offset_top = 1103.0
+offset_right = 1614.0
+offset_bottom = 1145.0
+theme_override_font_sizes/font_size = 24
+text = "TradeScreenTutorial.png"
+script = ExtResource("6_bhfnd")
+
+[node name="NewsViewerEnter" type="Button" parent="EmailScreen/TextViewer" unique_id=1199585605]
+layout_mode = 0
+offset_left = 1708.0
+offset_top = 1105.0
+offset_right = 1999.0
+offset_bottom = 1147.0
+theme_override_font_sizes/font_size = 24
+text = "NewsScreenTutorial.png"
+script = ExtResource("6_bhfnd")
 
 [node name="EmailExit" type="Button" parent="EmailScreen" unique_id=1196767331]
 visible = false
@@ -455,13 +488,13 @@ offset_bottom = 356.0
 theme_override_font_sizes/font_size = 64
 text = "X"
 
-[node name="StockViewerTutorial" type="Control" parent="EmailScreen" unique_id=1447749046]
+[node name="StockViewer" type="Control" parent="EmailScreen" unique_id=1447749046]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="EmailScreen/StockViewerTutorial" unique_id=1467023268]
+[node name="TextureRect" type="TextureRect" parent="EmailScreen/StockViewer" unique_id=1467023268]
 layout_mode = 0
 offset_left = 867.0
 offset_top = 306.0
@@ -470,7 +503,7 @@ offset_bottom = 1257.0
 texture = ExtResource("6_hu44a")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="EmailScreen/StockViewerTutorial" unique_id=2058664121]
+[node name="Label" type="Label" parent="EmailScreen/StockViewer" unique_id=2058664121]
 layout_mode = 0
 offset_left = 2044.0
 offset_top = 358.0
@@ -482,7 +515,7 @@ theme_override_font_sizes/font_size = 23
 text = "^ Percent change of the stock over the shown period"
 autowrap_mode = 3
 
-[node name="Label2" type="Label" parent="EmailScreen/StockViewerTutorial" unique_id=1477137767]
+[node name="Label2" type="Label" parent="EmailScreen/StockViewer" unique_id=1477137767]
 layout_mode = 0
 offset_left = 1328.0
 offset_top = 386.0
@@ -494,7 +527,7 @@ theme_override_font_sizes/font_size = 23
 text = "^ This lets you learn more about each stock"
 autowrap_mode = 3
 
-[node name="Label3" type="Label" parent="EmailScreen/StockViewerTutorial" unique_id=28476940]
+[node name="Label3" type="Label" parent="EmailScreen/StockViewer" unique_id=28476940]
 layout_mode = 0
 offset_left = 1162.0
 offset_top = 1075.0
@@ -507,7 +540,7 @@ text = "Clicking these lets you select which industry you're viewing
      >"
 autowrap_mode = 3
 
-[node name="Label4" type="Label" parent="EmailScreen/StockViewerTutorial" unique_id=1104120350]
+[node name="Label4" type="Label" parent="EmailScreen/StockViewer" unique_id=1104120350]
 layout_mode = 0
 offset_left = 2115.0
 offset_top = 1114.0
@@ -519,13 +552,23 @@ theme_override_font_sizes/font_size = 23
 text = "Only click this when you're ready to begin the trading section           >"
 autowrap_mode = 3
 
-[node name="TradingSectionTutorial" type="Control" parent="EmailScreen" unique_id=622251247]
+[node name="ImageExit" type="Button" parent="EmailScreen/StockViewer" unique_id=245016286]
+layout_mode = 0
+offset_left = 697.0
+offset_top = 260.0
+offset_right = 793.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 64
+text = "<--"
+script = ExtResource("7_7vrqn")
+
+[node name="TradingViewer" type="Control" parent="EmailScreen" unique_id=622251247]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="EmailScreen/TradingSectionTutorial" unique_id=500483223]
+[node name="TextureRect" type="TextureRect" parent="EmailScreen/TradingViewer" unique_id=500483223]
 layout_mode = 0
 offset_left = 867.0
 offset_top = 306.0
@@ -534,7 +577,7 @@ offset_bottom = 1257.0
 texture = ExtResource("7_0cr88")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="EmailScreen/TradingSectionTutorial" unique_id=1920398131]
+[node name="Label" type="Label" parent="EmailScreen/TradingViewer" unique_id=1920398131]
 layout_mode = 0
 offset_left = 923.0
 offset_top = 481.0
@@ -547,7 +590,7 @@ text = "^                  ^
 Taking a long position on a stock means you're betting that it will gain value from when you selected it while shorting a stock means you bet the opposite will occur"
 autowrap_mode = 3
 
-[node name="Label2" type="Label" parent="EmailScreen/TradingSectionTutorial" unique_id=918947674]
+[node name="Label2" type="Label" parent="EmailScreen/TradingViewer" unique_id=918947674]
 layout_mode = 0
 offset_left = 1632.0
 offset_top = 1122.0
@@ -559,7 +602,7 @@ theme_override_font_sizes/font_size = 23
 text = "This measure your chi-waves, be warned, the effects are permenant >"
 autowrap_mode = 3
 
-[node name="Label3" type="Label" parent="EmailScreen/TradingSectionTutorial" unique_id=363870441]
+[node name="Label3" type="Label" parent="EmailScreen/TradingViewer" unique_id=363870441]
 layout_mode = 0
 offset_left = 1729.0
 offset_top = 289.0
@@ -569,16 +612,26 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 23
 text = "
- In the trading section, you are on a timer. Difficulty controls how long you have to make your trading decisions but you must be fast irregardless"
+ In the trading section, you are on a timer. The difficulty controls how long you have to make your trading decisions but you must be fast irregardless"
 autowrap_mode = 3
 
-[node name="NewspaperTutorial" type="Control" parent="EmailScreen" unique_id=1662663277]
+[node name="ImageExit" type="Button" parent="EmailScreen/TradingViewer" unique_id=1559466530]
+layout_mode = 0
+offset_left = 697.0
+offset_top = 260.0
+offset_right = 793.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 64
+text = "<--"
+script = ExtResource("7_7vrqn")
+
+[node name="NewsViewer" type="Control" parent="EmailScreen" unique_id=1662663277]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="EmailScreen/NewspaperTutorial" unique_id=1031270600]
+[node name="TextureRect" type="TextureRect" parent="EmailScreen/NewsViewer" unique_id=1031270600]
 layout_mode = 0
 offset_left = 867.0
 offset_top = 306.0
@@ -587,7 +640,7 @@ offset_bottom = 1257.0
 texture = ExtResource("8_4t6hg")
 expand_mode = 1
 
-[node name="Label2" type="Label" parent="EmailScreen/NewspaperTutorial" unique_id=485988344]
+[node name="Label2" type="Label" parent="EmailScreen/NewsViewer" unique_id=485988344]
 layout_mode = 0
 offset_left = 1545.0
 offset_top = 1075.0
@@ -597,8 +650,18 @@ theme_override_colors/font_color = Color(0.76020277, 3.706068e-06, 4.813075e-07,
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 23
 text = "                     ^
-Make sure to read the papers everyday and judge how the stock market will respond "
+Make sure to read the papers everyday, the market will respond to the day's events"
 autowrap_mode = 3
+
+[node name="ImageExit" type="Button" parent="EmailScreen/NewsViewer" unique_id=800164263]
+layout_mode = 0
+offset_left = 697.0
+offset_top = 260.0
+offset_right = 793.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 64
+text = "<--"
+script = ExtResource("7_7vrqn")
 
 [connection signal="text_changed" from="NamePicker/SigningBox/NameInputer" to="NamePicker/Next" method="_on_name_inputer_text_changed"]
 [connection signal="pressed" from="NamePicker/returnToMainMenu" to="." method="returnToMenu"]
@@ -609,4 +672,10 @@ autowrap_mode = 3
 [connection signal="pressed" from="Contract/SigningBox/SigningActivator" to="Contract/SigningBox/SigningActivator" method="_on_pressed"]
 [connection signal="pressed" from="Contract/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="EmailScreen/Email/MailSelector" to="." method="_on_mail_selector_pressed"]
+[connection signal="pressed" from="EmailScreen/TextViewer/StockViewerEnter" to="EmailScreen/TextViewer/StockViewerEnter" method="_on_pressed" binds= ["Stock"]]
+[connection signal="pressed" from="EmailScreen/TextViewer/TradeViewerEnter" to="EmailScreen/TextViewer/TradeViewerEnter" method="_on_pressed" binds= ["Trading"]]
+[connection signal="pressed" from="EmailScreen/TextViewer/NewsViewerEnter" to="EmailScreen/TextViewer/NewsViewerEnter" method="_on_pressed" binds= ["News"]]
 [connection signal="pressed" from="EmailScreen/EmailExit" to="." method="_on_email_exit_pressed"]
+[connection signal="pressed" from="EmailScreen/StockViewer/ImageExit" to="EmailScreen/StockViewer/ImageExit" method="_on_pressed"]
+[connection signal="pressed" from="EmailScreen/TradingViewer/ImageExit" to="EmailScreen/TradingViewer/ImageExit" method="_on_pressed"]
+[connection signal="pressed" from="EmailScreen/NewsViewer/ImageExit" to="EmailScreen/NewsViewer/ImageExit" method="_on_pressed"]

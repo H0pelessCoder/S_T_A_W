@@ -42,7 +42,6 @@ func _to_contract() -> void:
 	$NamePicker/Next.visible = false
 	var userName = $NamePicker/SigningBox/NameInputer.text
 	print(userName)
-	$NamePicker/SigningBox/NameInputer.text = ""
 	userName = userName.strip_edges()
 	var text = $Contract/Legalese1
 	text.text = text.text.replace("THEEMPLOYEEREPLACETHIS", userName)
