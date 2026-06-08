@@ -12,12 +12,22 @@ static func effectFormat() -> Dictionary:
 		"Velocity" : 1,
 		"Variance" : 1
 	}
-	
+
+#these are the events that are confirmed to be happening
 static var happeningEvents := eventFormat()
+
+#these events are first in the queue to happen in a day
+#events that are given priority are ones that follow in 
+#an event chain that has already started
 static var pendingEvents := eventFormat()
+
+#this is a list of all events that are valid to happen
 static var availableEvents : Dictionary 
+
+#stores effects for each stock, industry, and market
 static var currEffects : Dictionary
-static var eventsToTest = {"Super": [], "Major": [], "Minor": []}
+
+#populates happening events and event effects
 func determineTodaysNews():
 	happeningEvents = eventFormat()
 	currEffects = {}
@@ -25,24 +35,26 @@ func determineTodaysNews():
 	if(global.profile["userName"] == "Admin"):
 		happeningEvents = availableEvents
 	var eventsToProcess = availableEvents
-	print(pendingEvents)
-	chooseEvents(pendingEvents)
 	print(eventsToProcess)
-	chooseEvents(eventsToProcess)
-	print(happeningEvents)
+	#populates from pending events first
+	chooseEvents(pendingEvents)
+	chooseEvents(eventsToProcess)	
 	processEffects()
 	global.save()
 	loadNewsScreen()
+	#sets all events that are happening to be marked as completed
+	#then adds the next events in the event chain to the pending queue
 	for type in happeningEvents.keys():
 		for event in happeningEvents.get(type):
 			event = getEvent(event)
 			event["Done"] = true
-			randomize()
 			for next in event["Next"]:
 				next = getEvent(next)
 				pendingEvents[next["Type"]].append(next["Title"])
 	happeningEvents = eventFormat()
-#Takes list of strings
+
+#proccesses every events effects
+#in the format of stock: {variance, velocity}, ...
 func processEffects():
 	var Events = global.News["Events"]
 	var Industries = global.Industries
@@ -68,6 +80,8 @@ func processEffects():
 					currEffects[stockName]["Velocity"] += marketVelocity + IndustryVelocity + stockVelocity 
 					currEffects[stockName]["Variance"] += marketVariance + IndustryVariance + stockVariance			
 					x=1			
+
+#for every event allowed in a day, gets a random event
 func chooseEvents(Events):
 	var nEvents = global.News["dailyEvents"][str(global.day)]
 	for type in nEvents.keys():
@@ -86,13 +100,14 @@ func chooseEvents(Events):
 				N-=1
 				
 #Called from Instantiate News, Events must be unsorted
+#Converts a list of events to the event format
 static func sortEvents(Events):
 	var sortedEvents = eventFormat()
 	for event in Events.keys():
 		sortedEvents.get(Events.get(event)["Type"]).append(event)
 	return sortedEvents
 
-#Takes String
+#returns whether or not an event is valid to be chosen
 func isEventAllowed(event):
 	event = getEvent(event)
 	if event["Day"] > global.day:
@@ -108,17 +123,21 @@ func isEventAllowed(event):
 	if event["Done"] == true:
 		return false
 	return true	
-	
+
+#converts an event name into an event dictionary
 static func getEvent(event):
 	return global.News["Events"][event]
 
+#draws the stock screen
 func loadNewsScreen():
+	#clears all current events
 	for child in $EventList/Horiz.get_children():
 		if child.visible == true:
 			child.free()
 	var Events = global.News["Events"]
+	#adds new events
 	for type in happeningEvents.keys():
-
+		
 		for event in happeningEvents[type]:
 			var eventNode = $"EventList/Horiz/EventBase".duplicate()
 			$"EventList/Horiz".add_child(eventNode)
@@ -128,9 +147,10 @@ func loadNewsScreen():
 			
 			var body = get_node(str(eventNode.get_path()) + "/EventBody")
 			body.text = Events[event]["NewsFull"]
+			#Super events theoritcally would also get an image...
 			if type == "Super":
 				pass
-				#I dont have any images yet
+				#...But i haven't implemented that yet
 
 	
 	

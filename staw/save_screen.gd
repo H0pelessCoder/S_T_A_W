@@ -5,12 +5,18 @@ var saveTemplate = $"SaveSlotTemplate"
 var saveSlots = $"SaveSlots"
 @onready
 var confirmationScreen = $"Confirmation"
+#connects to a function in MainMenu called 
+#makeStockScreen
 signal loadGame
+
+#when this signal is activated, confirm continues its function
 signal buttonPressed 
+
 var currentSave = ""
 var yesPressed = false
 var noPressed = false
-# Called when the node enters the scene tree for the first time.
+
+#draws every save 
 func drawSaveScreen():
 	var yesPressed = false
 	var noPressed = false
@@ -36,7 +42,8 @@ func drawSaveScreen():
 		
 func selectSave(save):
 	currentSave = save
-	
+
+#deletes the selected save
 func deleteSave():
 	if(currentSave == ""):
 		return
@@ -53,7 +60,8 @@ func deleteSave():
 	saveFile.close()	
 	drawSaveScreen()
 	currentSave = ""
-	
+
+#loads the selected save
 func loadSave():
 	if(currentSave == ""):
 		return
@@ -68,6 +76,8 @@ func loadSave():
 	emit_signal("loadGame")
 	currentSave = ""
 
+#returns true if the user selects yes
+#returns false otherwise
 func confirm(confirmMessage):
 	confirmationScreen.visible = true
 	$"Confirmation/BodyText".text = confirmMessage

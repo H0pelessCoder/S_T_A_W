@@ -1,6 +1,10 @@
 extends Button
+#connects to a function in MainMenu called 
+#start_trading_section
 signal startDay
+
 #AHHHHHHHHHHHHHHHHHHHH
+
 @onready
 var TradingMenu = $"../../TradingMenu"
 

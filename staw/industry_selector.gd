@@ -3,9 +3,10 @@ extends Control
 class_name IndustryTabs
 static var currentIndustryPosition = 0
 
+#controls which industry is displayed plus the global pchange display 
+#and a few other minor visual things
 
-
-
+#draws the industry selectors and the global pchange display
 func drawIndustrySelectors():
 	var Industries = global.Industries
 	var x = 0
@@ -24,7 +25,8 @@ func drawIndustrySelectors():
 		$DowColor.color = Color("darkgreen")
 	else:
 		$DowColor.color = Color("darkred")
-		
+
+#gets the percent change of all industries combined
 func globalPercentChange():
 	var first = 0
 	var last = 0
@@ -37,16 +39,17 @@ func globalPercentChange():
 		#Stock B
 		first += industry["Stocks"][1]["timeFrame"][0]	
 		last += industry["Stocks"][1]["timeFrame"][13]
-	var change = last - first
+	var change = float(last - first)
 	var pchange = (change / first) * 100
 	return pchange	
-	
+
+#gets the percent change of the specified industry
 func percentChange(industry):
 		var stockAfirst = industry["Stocks"][0]["timeFrame"][0]	
 		var stockAlast = industry["Stocks"][0]["timeFrame"][13]	
 		var stockBfirst = industry["Stocks"][1]["timeFrame"][0]	
 		var stockBlast = industry["Stocks"][1]["timeFrame"][13]		
-		var change = (stockAlast + stockBlast) - (stockAfirst + stockBfirst) 
+		var change = float((stockAlast + stockBlast) - (stockAfirst + stockBfirst))
 		var pchange = (change / (stockAfirst + stockBfirst)) * 100
 		return pchange
 		

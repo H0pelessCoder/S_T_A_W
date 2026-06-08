@@ -9,7 +9,7 @@ signal configReady
 func _ready():
 	loadUserPreferences()
 	emit_signal("configReady")
-	
+		
 func loadUserPreferences():
 	var	prefJson = preload("res://src/userPreferences.json")
 	prefJson = prefJson.data
@@ -28,7 +28,9 @@ func saveUserPreferences():
 	var newJson = JSON.stringify(dict)
 	prefJson.store_string(newJson)
 	prefJson.close()
-
+	
+#most of this is just to make it visually look like you have
+#the difficulty selected
 func setDifficulty(newDifficulty, buttonName):
 	var setter = get_node("DifficultySetter/" + difficultyName + "Setter")
 	var indicator = setter.get_child(1)

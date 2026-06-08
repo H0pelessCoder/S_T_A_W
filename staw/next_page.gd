@@ -7,6 +7,7 @@ var employerSignature = $"../EmployerSignature"
 
 var pg = 1
 
+# goes to the next page of legalese
 func _on_pressed() -> void:
 	if pg == 3:
 		signingBox.visible = true

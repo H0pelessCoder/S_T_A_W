@@ -2,9 +2,8 @@ extends ColorRect
 
 @onready 
 var StockIndicator = $"../StockIndicator"
-# Called when the node enters the scene tree for the first time.
 
-
+#displays the stock value above the bar
 func _on_mouse_entered():
 	var stockNumber = get_node("..").get_meta("stock")
 	var stock = global.Industries[global.currentIndustry]["Stocks"][stockNumber]

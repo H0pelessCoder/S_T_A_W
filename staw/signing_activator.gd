@@ -7,6 +7,8 @@ var returnButton = get_meta("return")
 @onready
 var animating = false
 
+#draws each character of the signature slowly
+#magic number of each letter appearing after 0.1 seconds
 func _on_pressed():
 
 	animating = true

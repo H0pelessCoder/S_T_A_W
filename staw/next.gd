@@ -6,12 +6,13 @@ func _on_name_inputer_text_changed():
 	var userName = textInput.text
 	visible = nameCheck(userName)
 	
-	
+#a name must not have any numbers or special characters
+#be less then 20 characters
+#and not already be in use
 func nameCheck(userName):
 	var saves = load("res://src/saves.json").data
 	var correctLength = userName.length() <= 20 && userName.length() > 0
 	var noSpecialCharacters = true
-	print(userName)
 	for letter in userName.replace(" ",""):
 		if !letter.is_valid_ascii_identifier() && !letter.is_valid_int():
 			noSpecialCharacters = false
